@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_ease/home/newcollection_screen.dart';
+import 'package:shop_ease/home/streetcloths_screen.dart';
 import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/screens/bottomnavigation.dart';
 import 'package:shop_ease/screens/forgotpassword_screen.dart';
@@ -23,6 +25,14 @@ class AppRoute {
       case RouteName.forgotscreen:
         return MaterialPageRoute(
           builder: (context) => const ForgotPassword(),
+        );
+      case RouteName.streetcolths:
+        return MaterialPageRoute(
+          builder: (context) => const StreetCloths(),
+        );
+      case RouteName.newbutton:
+        return MaterialPageRoute(
+          builder: (context) => const NewCollection(),
         );
 
       default:

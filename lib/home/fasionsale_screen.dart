@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+import 'package:shop_ease/provider/screen_provider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -8,14 +10,13 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
-
-
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     List images = [
@@ -64,9 +65,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
               child: SizedBox(
                   height: 36,
                   width: 160,
-                  child: CustomButton(text: 'Check', onPressed: () {
-
-                  })),
+                  child: CustomButton(
+                      text: 'Check',
+                      onPressed: () {
+                        context.read<ScreenProvider>().check(context);
+                      })),
             )
           ]),
           const Padding(
@@ -87,7 +90,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
           const SizedBox(
             height: 20,
           ),
-          Expanded(
+          Container(
+            height: 150,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               physics: const AlwaysScrollableScrollPhysics(),
@@ -103,27 +107,33 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
                             image: NetworkImage(images[index]),
                             fit: BoxFit.fill)),
                   ),
-                  const SizedBox(
-                    height: 40,
-                    width: 60,
-                    child: Card(
-                        color: Colors.black87,
-                        shape: OutlineInputBorder(
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(20))),
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 10, left: 10),
-                          child: Text(
-                            'New',
-                            style: TextStyle(
-                                fontFamily: 'Metropolis', color: Colors.white),
-                          ),
-                        )),
+                  GestureDetector(
+                    onTap: () {
+                      context.read<ScreenProvider>().newButton(context);
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 60,
+                      child: const Card(
+                          color: Colors.black87,
+                          shape: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 10, left: 10),
+                            child: Text(
+                              'New',
+                              style: TextStyle(
+                                  fontFamily: 'Metropolis',
+                                  color: Colors.white),
+                            ),
+                          )),
+                    ),
                   ),
                 ]);
               },
               separatorBuilder: (BuildContext context, int index) =>
-              const SizedBox(
+                  const SizedBox(
                 width: 30,
               ),
               itemCount: images.length,

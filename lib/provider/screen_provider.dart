@@ -15,4 +15,13 @@ class ScreenProvider extends ChangeNotifier {
     Navigator.pushNamed(context, '/forgot');
     notifyListeners();
   }
+
+  void check(BuildContext context) {
+    Navigator.pushNamed(context, '/streetcloths');
+    notifyListeners();
+  }
+  void newButton(BuildContext context){
+    Navigator.pushNamed(context, '/newbutton');
+    notifyListeners();
+  }
 }
