@@ -84,8 +84,11 @@ flutter:
      - family: Metroplis2
        fonts:
          - asset: assets/fonts/Metropolis-Medium.otf
+
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+     - family: popins
+       fonts:
+         - asset: assets/fonts/popins.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

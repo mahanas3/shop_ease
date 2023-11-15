@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../home/fasionsale_screen.dart';
+import '../shop_screen/categories1.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -14,7 +14,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int index = 0;
   List navigation = [
     const Home(),
-    const Home(),
+    const Catergories(),
     const Home(),
     const Home(),
     const Home(),

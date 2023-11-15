@@ -56,8 +56,7 @@ class _StreetClothsState extends State<StreetCloths> {
                   color: Color(0xff9B9B9B), fontFamily: 'Metropolis2'),
             ),
           ),
-          Container(
-            height: 400,
+          Expanded(
             child: ListView.separated(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
@@ -151,7 +150,7 @@ class _StreetClothsState extends State<StreetCloths> {
                       ),
                       Center(
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 180, left: 130),
+                          padding: const EdgeInsets.only(top: 120, left: 130),
                           child: Container(
                             width: 30,
                             height: 30,
@@ -160,8 +159,8 @@ class _StreetClothsState extends State<StreetCloths> {
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.white.withOpacity(0.9),
-                                  offset: const Offset(0, 3),
+                                  color: Colors.black.withOpacity(0.2),
+                                  offset: const Offset(2, 3),
                                 ),
                               ],
                             ),
@@ -173,6 +172,10 @@ class _StreetClothsState extends State<StreetCloths> {
                           ),
                         ),
                       ),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 40,left: 20),
+                        child: Text('Discounts',style: TextStyle(fontFamily: 'Metropolis',fontSize: 20),),
+                      )
                     ]));
               },
               separatorBuilder: (BuildContext context, int index) =>
