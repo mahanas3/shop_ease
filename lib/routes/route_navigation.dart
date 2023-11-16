@@ -4,6 +4,7 @@ import 'package:shop_ease/home/streetcloths_screen.dart';
 import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/screens/bottomnavigation.dart';
 import 'package:shop_ease/screens/forgotpassword_screen.dart';
+import 'package:shop_ease/shop_screen/womens_tops.dart';
 import '../screens/login_screen.dart';
 import '../screens/signup_screen.dart';
 
@@ -33,6 +34,10 @@ class AppRoute {
       case RouteName.newbutton:
         return MaterialPageRoute(
           builder: (context) => const NewCollection(),
+        );
+      case RouteName.womenstop:
+        return MaterialPageRoute(
+          builder: (context) => const WomenTop(),
         );
 
       default:

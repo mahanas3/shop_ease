@@ -1,0 +1,146 @@
+import 'package:flutter/material.dart';
+import 'package:shop_ease/shop_screen/blouse_screen.dart';
+import 'package:shop_ease/shop_screen/croptops_screen.dart';
+import 'package:shop_ease/shop_screen/sleeveless_screen.dart';
+import 'package:shop_ease/shop_screen/tshirt_screen.dart';
+
+class WomenTop extends StatefulWidget {
+  const WomenTop({super.key});
+
+  @override
+  State<WomenTop> createState() => _WomensTopsState();
+}
+
+class _WomensTopsState extends State<WomenTop>
+    with SingleTickerProviderStateMixin {
+  TabController? _tabController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _tabController = TabController(length: 4, vsync: this);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0.2,
+        actions: const [
+          Icon(
+            Icons.search,
+            color: Colors.black87,
+          )
+        ],
+      ),
+      body: Column(children: [
+        const Padding(
+          padding: EdgeInsets.only(left: 15, top: 20),
+          child: Text(
+            'Women’s tops',
+            style: TextStyle(
+                fontSize: 34, color: Colors.black87, fontFamily: 'Metropolis'),
+          ),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        DefaultTabController(
+          length: 4,
+          initialIndex: 0,
+          child: TabBar(
+              unselectedLabelColor: Colors.red,
+              indicatorSize: TabBarIndicatorSize.tab,
+              indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50), color: Colors.black),
+              controller: _tabController,
+              isScrollable: true,
+              tabs: const [
+                Padding(
+                  padding: EdgeInsets.only(right: 30),
+                  child: Tab(
+                    child: Text(
+                      'T-Shirts',
+                      style: TextStyle(
+                          fontFamily: 'POPINS',
+                          color: Colors.white,
+                          fontSize: 18),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 30),
+                  child: Tab(
+                    child: Text('Crop tops',
+                        style: TextStyle(
+                            fontFamily: 'POPINS',
+                            color: Colors.white,
+                            fontSize: 18)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 30),
+                  child: Tab(
+                    child: Text('Sleeveless',
+                        style: TextStyle(
+                            fontFamily: 'POPINS',
+                            color: Colors.white,
+                            fontSize: 18)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 30),
+                  child: Tab(
+                    child: Text('Blouses',
+                        style: TextStyle(
+                            fontFamily: 'POPINS',
+                            color: Colors.white,
+                            fontSize: 18)),
+                  ),
+                ),
+              ]),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Container(height: 50,
+          color: Colors.white,
+          child: const Row(
+            children: [
+              Icon(Icons.filter, color: Colors.black),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                'Filters',
+                style: TextStyle(fontFamily: 'Metropolis2'),
+              ),
+              SizedBox(
+                width: 40,
+              ),
+              Icon(Icons.vertical_align_center),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                'Price: lowest to high',
+                style: TextStyle(fontFamily: 'Metropolis2'),
+              ),
+              SizedBox(
+                width: 50,
+              ),
+              Icon(Icons.view_list_outlined)
+            ],
+          ),
+        ),
+        Expanded(
+          child: TabBarView(
+              controller: _tabController,
+              children: const [Tshirt(), Croptops(), Sleeveless(), Blouse()]),
+        ),
+      ]),
+    );
+  }
+}

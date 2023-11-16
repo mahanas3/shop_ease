@@ -6,14 +6,13 @@ import 'package:shop_ease/shop_screen/womens_page.dart';
 class Catergories extends StatefulWidget {
   const Catergories({super.key});
 
-
   @override
   State<Catergories> createState() => _CatergoriesState();
 }
 
-class _CatergoriesState extends State<Catergories> with SingleTickerProviderStateMixin {
+class _CatergoriesState extends State<Catergories>
+    with SingleTickerProviderStateMixin {
   TabController? _tabController;
-
 
   @override
   void initState() {
@@ -32,9 +31,7 @@ class _CatergoriesState extends State<Catergories> with SingleTickerProviderStat
             child: Text(
               'Categories',
               style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'popins',
-                  color: Colors.black87),
+                  fontSize: 18, fontFamily: 'popins', color: Colors.black87),
             ),
           ),
           actions: const [
@@ -43,29 +40,54 @@ class _CatergoriesState extends State<Catergories> with SingleTickerProviderStat
               color: Colors.black87,
             )
           ]),
-      body:  Column(children: [
-        TabBar(
-            controller: _tabController,
-            isScrollable: true,
-            tabs: const [
-              Tab(
-                child: Text(
-                  'Now Playing',
-                  style: TextStyle(fontFamily: 'popins2'),
+      backgroundColor: Colors.white,
+      body: Column(children: [
+        DefaultTabController(
+          length: 3,
+          child: TabBar(
+              labelColor: Colors.black,
+              indicatorColor: const Color(0xffDB3022),
+              unselectedLabelColor: const Color(0xff222222),
+              controller: _tabController,
+              isScrollable: true,
+              tabs: const [
+                Padding(
+                  padding: EdgeInsets.only(right: 30),
+                  child: Tab(
+                    child: Text(
+                      'Women',
+                      style: TextStyle(
+                          fontFamily: 'POPINS',
+                          color: Colors.black87,
+                          fontSize: 18),
+                    ),
+                  ),
                 ),
-              ),
-              Tab(
-                child: Text('Upcoming',
-                    style: TextStyle(fontFamily: 'popins2')),
-              ),
-              Tab(
-                child: Text('Top rated',
-                    style: TextStyle(fontFamily: 'popins2')),
-              ),
-            ]),
+                Padding(
+                  padding: EdgeInsets.only(right: 30),
+                  child: Tab(
+                    child: Text('Men',
+                        style: TextStyle(
+                            fontFamily: 'POPINS',
+                            color: Colors.black87,
+                            fontSize: 18)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 30),
+                  child: Tab(
+                    child: Text('Kids',
+                        style: TextStyle(
+                            fontFamily: 'POPINS',
+                            color: Colors.black87,
+                            fontSize: 18)),
+                  ),
+                ),
+              ]),
+        ),
         Expanded(
           child: TabBarView(controller: _tabController, children: const [
-            WomensScreen(),
+            WomenScreen(),
             MensPage(),
             KidsPage(),
           ]),
