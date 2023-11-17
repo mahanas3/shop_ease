@@ -6,4 +6,5 @@ class RouteName {
   static const String streetcolths = '/streetcloths';
   static const String newbutton='/newbutton';
   static const String womenstop='/womenstop';
+  static const String categories='/categories';
 }

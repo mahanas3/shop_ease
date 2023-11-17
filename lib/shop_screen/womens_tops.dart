@@ -107,35 +107,38 @@ class _WomensTopsState extends State<WomenTop>
         const SizedBox(
           height: 20,
         ),
-        Container(
-          height: 50,
-          color: Colors.white,
-          child: const Row(
-            children: [
-              Icon(Icons.filter, color: Colors.black),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                'Filters',
-                style: TextStyle(fontFamily: 'Metropolis2'),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Icon(Icons.vertical_align_center),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                'Price: lowest to high',
-                style: TextStyle(fontFamily: 'Metropolis2'),
-              ),
-              SizedBox(
-                width: 50,
-              ),
-              Icon(Icons.view_list_outlined)
-            ],
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 50,
+            color: Colors.white,
+            child: const Row(
+              children: [
+                Icon(Icons.filter, color: Colors.black),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Filters',
+                  style: TextStyle(fontFamily: 'Metropolis2'),
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+                Icon(Icons.vertical_align_center),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Price: lowest to high',
+                  style: TextStyle(fontFamily: 'Metropolis2'),
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+                Icon(Icons.view_list_outlined)
+              ],
+            ),
           ),
         ),
         Expanded(

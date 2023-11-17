@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_ease/provider/screen_provider.dart';
 
 class NewCollection extends StatefulWidget {
   const NewCollection({Key? key}) : super(key: key);
@@ -85,34 +87,39 @@ class _NewCollectionState extends State<NewCollection> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Container(
-                        height: 200,
-                        color: Colors.white,
-                        child: const Padding(
-                          padding: EdgeInsets.only(top: 60, left: 16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Summer',
-                                style: TextStyle(
-                                  color: Color(0xffDB3022),
-                                  fontFamily: 'Metropolis',
-                                  fontSize: 34,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 8, right: 70),
-                                child: Text(
-                                  'sale',
+                      GestureDetector(
+                        onTap: () {
+                          context.read<ScreenProvider>().summerSale(context);
+                        },
+                        child: Container(
+                          height: 200,
+                          color: Colors.white,
+                          child: const Padding(
+                            padding: EdgeInsets.only(top: 60, left: 16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Summer',
                                   style: TextStyle(
                                     color: Color(0xffDB3022),
                                     fontFamily: 'Metropolis',
                                     fontSize: 34,
                                   ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: EdgeInsets.only(top: 8, right: 70),
+                                  child: Text(
+                                    'sale',
+                                    style: TextStyle(
+                                      color: Color(0xffDB3022),
+                                      fontFamily: 'Metropolis',
+                                      fontSize: 34,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

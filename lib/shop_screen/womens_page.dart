@@ -70,49 +70,45 @@ class _WomenScreenState extends State<WomenScreen> {
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return Card(
-                    child: Container(
-                        height: Dimensions.heightCalc(context, 100),
-                        width: 343,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              spreadRadius: 2,
-                              blurRadius: 5,
-                              offset: const Offset(0, 3),
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: Text(names[index],
-                                  style: const TextStyle(
-                                      fontFamily: 'Metropolis', fontSize: 20)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 90),
-                              child: InkWell(
-                                onTap: () {
-                                  context.read<ScreenProvider>().tops(context);
-                                },
-                                child: Container(
-                                  height: 90,
-                                  width: 70,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image:
-                                              NetworkImage(salesImages[index]),
-                                          fit: BoxFit.fill)),
+                      elevation: 5,
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 6),
+                      child: InkWell(onTap: (){
+                        context.read<ScreenProvider>().tops(context);
+                      },
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                child: Image(
+                                  image: NetworkImage(salesImages[index]),
+                                  height: 120,
+                                  width: 120,
+                                  fit: BoxFit.fill,
                                 ),
                               ),
-                            )
-                          ],
-                        )),
-                  );
+                              const SizedBox(width: 40,),
+                              Container(
+                                padding: const EdgeInsets.only(bottom: 8),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      names[index],
+                                      style: const TextStyle(
+                                          fontFamily: 'Metropolis', fontSize: 20),
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ));
                 },
                 separatorBuilder: (BuildContext context, int index) =>
                     const SizedBox(

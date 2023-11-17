@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_ease/home/newcollection_screen.dart';
 import 'package:shop_ease/home/streetcloths_screen.dart';
@@ -7,6 +8,7 @@ import 'package:shop_ease/screens/forgotpassword_screen.dart';
 import 'package:shop_ease/shop_screen/womens_tops.dart';
 import '../screens/login_screen.dart';
 import '../screens/signup_screen.dart';
+import '../shop_screen/categories1.dart';
 
 class AppRoute {
   static Route<dynamic> routesetting(RouteSettings setting) {
@@ -39,6 +41,8 @@ class AppRoute {
         return MaterialPageRoute(
           builder: (context) => const WomenTop(),
         );
+      case RouteName.categories:
+        return MaterialPageRoute(builder: (context) => const Catergories());
 
       default:
         {

@@ -42,6 +42,9 @@ class _CatergoriesState extends State<Catergories>
           ]),
       backgroundColor: Colors.white,
       body: Column(children: [
+        const SizedBox(
+          height: 20,
+        ),
         DefaultTabController(
           length: 3,
           child: TabBar(
@@ -57,7 +60,7 @@ class _CatergoriesState extends State<Catergories>
                     child: Text(
                       'Women',
                       style: TextStyle(
-                          fontFamily: 'POPINS',
+                          fontFamily: 'Metropolis2',
                           color: Colors.black87,
                           fontSize: 18),
                     ),
@@ -68,7 +71,7 @@ class _CatergoriesState extends State<Catergories>
                   child: Tab(
                     child: Text('Men',
                         style: TextStyle(
-                            fontFamily: 'POPINS',
+                            fontFamily: 'Metropolis2',
                             color: Colors.black87,
                             fontSize: 18)),
                   ),
@@ -78,7 +81,7 @@ class _CatergoriesState extends State<Catergories>
                   child: Tab(
                     child: Text('Kids',
                         style: TextStyle(
-                            fontFamily: 'POPINS',
+                            fontFamily: 'Metropolis2',
                             color: Colors.black87,
                             fontSize: 18)),
                   ),
