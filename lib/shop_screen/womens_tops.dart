@@ -17,7 +17,6 @@ class _WomensTopsState extends State<WomenTop>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
   }
@@ -41,7 +40,7 @@ class _WomensTopsState extends State<WomenTop>
           child: Text(
             'Women’s tops',
             style: TextStyle(
-                fontSize: 34, color: Colors.black87, fontFamily: 'Metropolis'),
+                fontSize: 30, color: Colors.black87, fontFamily: 'Metropolis'),
           ),
         ),
         const SizedBox(
@@ -52,14 +51,17 @@ class _WomensTopsState extends State<WomenTop>
           initialIndex: 0,
           child: TabBar(
               unselectedLabelColor: Colors.red,
-              indicatorSize: TabBarIndicatorSize.tab,
+              indicatorColor: Colors.blueGrey,
+              indicatorSize: TabBarIndicatorSize.label,
               indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50), color: Colors.black),
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.black,
+              ),
               controller: _tabController,
               isScrollable: true,
               tabs: const [
                 Padding(
-                  padding: EdgeInsets.only(right: 30),
+                  padding: EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text(
                       'T-Shirts',
@@ -71,7 +73,7 @@ class _WomensTopsState extends State<WomenTop>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 30),
+                  padding: EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text('Crop tops',
                         style: TextStyle(
@@ -81,7 +83,7 @@ class _WomensTopsState extends State<WomenTop>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 30),
+                  padding: EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text('Sleeveless',
                         style: TextStyle(
@@ -91,9 +93,9 @@ class _WomensTopsState extends State<WomenTop>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 30),
+                  padding: EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
-                    child: Text('Blouses',
+                    child: Text('Kurthies',
                         style: TextStyle(
                             fontFamily: 'POPINS',
                             color: Colors.white,
@@ -105,7 +107,8 @@ class _WomensTopsState extends State<WomenTop>
         const SizedBox(
           height: 20,
         ),
-        Container(height: 50,
+        Container(
+          height: 50,
           color: Colors.white,
           child: const Row(
             children: [
@@ -138,7 +141,7 @@ class _WomensTopsState extends State<WomenTop>
         Expanded(
           child: TabBarView(
               controller: _tabController,
-              children: const [Tshirt(), Croptops(), Sleeveless(), Blouse()]),
+              children: const [Tshirt(), Croptops(), Sleeveless(), Kurthies()]),
         ),
       ]),
     );
