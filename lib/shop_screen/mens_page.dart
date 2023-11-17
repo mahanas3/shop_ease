@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_ease/provider/screen_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
 class MensPage extends StatefulWidget {
@@ -11,7 +13,7 @@ class MensPage extends StatefulWidget {
 class _MensPageState extends State<MensPage> {
   @override
   Widget build(BuildContext context) {
-    List menDressName = ['New', 'Hoodies', 'Footwear', 'Watch'];
+    List names = ['Shirt', 'Hoodies', 'Footwear', 'Watch'];
 
     List mensImages = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbqTS_sjzrFCOfuZpjp7n4UksZC1Dybrhaxw&usqp=CAU',
@@ -68,46 +70,48 @@ class _MensPageState extends State<MensPage> {
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return Card(
-                    child: Container(
-                        height: Dimensions.heightCalc(context, 100),
-                        width: 343,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              spreadRadius: 2,
-                              blurRadius: 5,
-                              offset: const Offset(0, 3),
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: Text(menDressName[index],
-                                  style: const TextStyle(
-                                      fontFamily: 'Metropolis', fontSize: 20)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 90),
-                              child: Container(
-                                height: 90,
-                                width: 70,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: NetworkImage(mensImages[index]),
-                                        fit: BoxFit.fill)),
+                      elevation: 5,
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 6),
+                      child: InkWell(onTap: (){
+                        context.read<ScreenProvider>().tops(context);
+                      },
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                child: Image(
+                                  image: NetworkImage(mensImages[index]),
+                                  height: 120,
+                                  width: 120,
+                                  fit: BoxFit.fill,
+                                ),
                               ),
-                            )
-                          ],
-                        )),
-                  );
+                              const SizedBox(width: 40,),
+                              Container(
+                                padding: const EdgeInsets.only(bottom: 8),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      names[index],
+                                      style: const TextStyle(
+                                          fontFamily: 'Metropolis', fontSize: 20),
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ));
                 },
                 separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 itemCount: mensImages.length,
@@ -119,3 +123,5 @@ class _MensPageState extends State<MensPage> {
     );
   }
 }
+
+

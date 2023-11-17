@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,7 +14,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -34,7 +34,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           children: [
             Stack(children: [
               Container(
-                height: 450,
+                height: Dimensions.heightCalc(context, 400),
                 child: const Image(
                   image: NetworkImage(
                       'https://thumbs.dreamstime.com/b/smiling-woman-red-dress-shopping-bags-sale-gifts-holidays-concept-sunglasses-43723994.jpg'),
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(top: 250, left: 20),
+                padding: EdgeInsets.only(top: 230, left: 20),
                 child: Text(
                   'Fashion ',
                   style: TextStyle(
@@ -52,7 +52,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(top: 300, left: 20),
+                padding: EdgeInsets.only(top: 280, left: 20),
                 child: Text(
                   'Sale',
                   style: TextStyle(
@@ -62,7 +62,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 370, left: 20),
+                padding: const EdgeInsets.only(top: 340, left: 17),
                 child: SizedBox(
                     height: 36,
                     width: 160,
