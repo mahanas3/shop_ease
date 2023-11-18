@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_ease/custom_widget/custom_button.dart';
 
 class WomenNew extends StatefulWidget {
   const WomenNew({super.key});
@@ -14,10 +15,10 @@ class _WomenNewState extends State<WomenNew> {
     List title = ['Under \$ 20', 'Under \$ 30', 'Under \$ 20', 'Under \$50'];
 
     List images = [
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv3bXG5_Hm15jMsdx35PG_Q3d8NYCGrAESAg&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRenV0nupPbfSPyMpz0waPhBo0U8EvU2U5fwQ&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR__5qRQjzmYW7wKfGR0XM9_UvmVyoBuBgXDg&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO2KFgLL8EqDo6ojOjBBpzi5xzWTmJ11PxeVZ_bPqh8XkiUIAUb5Sibq0Zygyy4gkZqXc&usqp=CAU'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRacVbLx4ZotPxz0XhW-bvJUjVBE6JrFR_PHg&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFZOBJ2-aFKuSd2QDrCqMrRG8W4L8GEG3nig&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMDORGb0Y8lTps4Aqs1d_51re5wJ6k_o_kWw&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkJBPd1cXmyCw2j2l7uduvf5FlltP8SmgVqQ&usqp=CAU'
     ];
 
     return Scaffold(
@@ -54,7 +55,7 @@ class _WomenNewState extends State<WomenNew> {
                   child: Card(
                     elevation: 5,
                     margin:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     child: Container(
                       height: 160,
                       width: double.infinity,
@@ -73,15 +74,36 @@ class _WomenNewState extends State<WomenNew> {
                         padding: const EdgeInsets.only(top: 10, left: 10),
                         child: Row(
                           children: [
-                            Text(title[index],
-                                style: const TextStyle(
-                                    fontFamily: 'salinaa', fontSize: 25)),
+                            Column(
+                              children: [
+                                Text(title[index],
+                                    style: const TextStyle(
+                                        fontFamily: 'salinaa', fontSize: 25)),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 30),
+                                      child: CustomButton(
+                                          text: 'Add Cart', onPressed: () {}),
+                                    ),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 30),
+                                      child: CustomButton(
+                                          text: 'Buy', onPressed: () {}),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                             const SizedBox(
                               width: 40,
                             ),
                             Container(
                               width: 100,
-                              height: 100,
+                              height: 120,
                               child: Image(image: NetworkImage(images[index])),
                             )
                           ],

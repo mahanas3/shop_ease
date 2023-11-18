@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_ease/custom_widget/custom_button.dart';
 
 class KidsNew extends StatefulWidget {
   const KidsNew({super.key});
@@ -14,10 +15,10 @@ class _KidsNewState extends State<KidsNew> {
     List title = ['Under \$ 20', 'Under \$ 30', 'Under \$ 20', 'Under \$50'];
 
     List images = [
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv3bXG5_Hm15jMsdx35PG_Q3d8NYCGrAESAg&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRenV0nupPbfSPyMpz0waPhBo0U8EvU2U5fwQ&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHHiBXP2EFEJBmQCbzub576PGDIUwsLcMZ-Q&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1zd5RearTQofwMY-oy65HiYaCZ4zkePLasA&usqp=CAU',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR__5qRQjzmYW7wKfGR0XM9_UvmVyoBuBgXDg&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO2KFgLL8EqDo6ojOjBBpzi5xzWTmJ11PxeVZ_bPqh8XkiUIAUb5Sibq0Zygyy4gkZqXc&usqp=CAU'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnp5CxuLUf3mo-HP3j0mtcUCTY7QmSQjSqtA&usqp=CAU'
     ];
 
     return Scaffold(
@@ -54,7 +55,7 @@ class _KidsNewState extends State<KidsNew> {
                   child: Card(
                     elevation: 5,
                     margin:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     child: Container(
                       height: 160,
                       width: double.infinity,
@@ -73,9 +74,27 @@ class _KidsNewState extends State<KidsNew> {
                         padding: const EdgeInsets.only(top: 10, left: 10),
                         child: Row(
                           children: [
-                            Text(title[index],
-                                style: const TextStyle(
-                                    fontFamily: 'salinaa', fontSize: 25)),
+                            Column(
+                              children: [
+                                Text(title[index],
+                                    style: const TextStyle(
+                                        fontFamily: 'salinaa', fontSize: 25)),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 30),
+                                  child: Row(
+                                    children: [
+                                      CustomButton(
+                                          text: 'Add Cart', onPressed: () {}),
+                                      const SizedBox(
+                                        width: 8,
+                                      ),
+                                      CustomButton(
+                                          text: 'Buy', onPressed: () {})
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                             const SizedBox(
                               width: 40,
                             ),
