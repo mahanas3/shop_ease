@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:shop_ease/home/newcollection_screen.dart';
+import 'package:shop_ease/home/Menshodies.dart';
 import 'package:shop_ease/home/streetcloths_screen.dart';
 import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/screens/bottomnavigation.dart';
@@ -35,7 +35,7 @@ class AppRoute {
         );
       case RouteName.newbutton:
         return MaterialPageRoute(
-          builder: (context) => const NewCollection(),
+          builder: (context) => const MensHoodies(),
         );
       case RouteName.womenstop:
         return MaterialPageRoute(

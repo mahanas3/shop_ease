@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/provider/screen_provider.dart';
 
-class NewCollection extends StatefulWidget {
-  const NewCollection({Key? key}) : super(key: key);
+class MensHoodies extends StatefulWidget {
+  const MensHoodies({Key? key}) : super(key: key);
 
   @override
-  State<NewCollection> createState() => _NewCollectionState();
+  State<MensHoodies> createState() => _MensHoodiesState();
 }
 
-class _NewCollectionState extends State<NewCollection> {
+class _MensHoodiesState extends State<MensHoodies> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

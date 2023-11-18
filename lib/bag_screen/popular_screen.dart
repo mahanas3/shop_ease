@@ -12,20 +12,26 @@ class _PopularScreenState extends State<PopularScreen> {
   @override
   Widget build(BuildContext context) {
     List<String> bagImages = [
-      'assets/images/tshirtt.png',
-      'assets/images/tshirtt.png',
-      'assets/images/tshirtt.png',
-      'assets/images/tshirtt.png',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM0EfM-uksLFOXh47QOAFiLia9FfXz94f0mg&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQovxLOm-PFCbGhZaX_6DIcqaE2j1SuAkLjeg&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyubKnudLuuuBez79edqA32jWyFJxfSyuvng&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQubBzVRriiDWokNctCu1Pat3YEBGVIpRcAug&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-dtr-dxu3G6T-Jo1Qv_A-ZeWkUZDPK_QQNQ&usqp=CAU'
     ];
-    List name = ['Mango', 'Dorothi Perkings', 'Mango', 'Dorothi Perkings'];
+    List name = [
+      'College Bag',
+      'Side Bag',
+      'Back Bag',
+      'Leather Bag',
+      'Office Bag'
+    ];
     return Scaffold(
-      backgroundColor: const Color(0xff),
+      backgroundColor: const Color(0x000000ff),
       body: Padding(
         padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
         child: GridView.builder(
-          shrinkWrap: true,
           scrollDirection: Axis.vertical,
-          physics: const AlwaysScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: bagImages.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -45,7 +51,7 @@ class _PopularScreenState extends State<PopularScreen> {
                           topRight: Radius.circular(25)),
                       child: Stack(children: [
                         Image(
-                          image: AssetImage(bagImages[index]),
+                          image: NetworkImage(bagImages[index]),
                           fit: BoxFit.fill,
                           height: 150,
                           width: 100,

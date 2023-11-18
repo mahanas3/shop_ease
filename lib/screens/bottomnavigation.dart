@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_ease/bag_screen/bagproduct_screen.dart';
+import 'package:shop_ease/profile_screen/myprofile_page.dart';
 import '../home/fasionsale_screen.dart';
 import '../shop_screen/categories1.dart';
 
@@ -18,7 +19,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     const Catergories(),
     const ProductScreen(),
     const Home(),
-    const Home(),
+    const Profile(),
   ];
 
   void onitemTapped(int num) {

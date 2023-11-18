@@ -59,6 +59,11 @@ class _MensPageState extends State<MensPage> {
                       )
                     ],
                   ),
+                ),
+                const Image(
+                  image: AssetImage('assets/images/neww.png'),
+                  height: 100,
+                  width: 100,
                 )
               ]),
             ),
@@ -73,9 +78,10 @@ class _MensPageState extends State<MensPage> {
                       elevation: 5,
                       margin: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 6),
-                      child: InkWell(onTap: (){
-                        context.read<ScreenProvider>().tops(context);
-                      },
+                      child: InkWell(
+                        onTap: () {
+                          context.read<ScreenProvider>().tops(context);
+                        },
                         child: Container(
                           padding: const EdgeInsets.all(8),
                           child: Row(
@@ -90,7 +96,9 @@ class _MensPageState extends State<MensPage> {
                                   fit: BoxFit.fill,
                                 ),
                               ),
-                              const SizedBox(width: 40,),
+                              const SizedBox(
+                                width: 40,
+                              ),
                               Container(
                                 padding: const EdgeInsets.only(bottom: 8),
                                 child: Column(
@@ -100,7 +108,8 @@ class _MensPageState extends State<MensPage> {
                                     Text(
                                       names[index],
                                       style: const TextStyle(
-                                          fontFamily: 'Metropolis', fontSize: 20),
+                                          fontFamily: 'Metropolis',
+                                          fontSize: 20),
                                     )
                                   ],
                                 ),
@@ -111,7 +120,7 @@ class _MensPageState extends State<MensPage> {
                       ));
                 },
                 separatorBuilder: (BuildContext context, int index) =>
-                const SizedBox(
+                    const SizedBox(
                   height: 10,
                 ),
                 itemCount: mensImages.length,
@@ -123,5 +132,3 @@ class _MensPageState extends State<MensPage> {
     );
   }
 }
-
-

@@ -147,13 +147,13 @@ class _ProductScreenState extends State<ProductScreen>
                               ),
                             ]),
                         SizedBox(
-                          height: 700,
+                          height: 900,
                           child: TabBarView(
-                            physics: const NeverScrollableScrollPhysics(),
+                            //physics: const NeverScrollableScrollPhysics(),
                             controller: _tabController,
                             children: const [
                               PopularScreen(),
-                              TopRated(),
+                              TopRate(),
                               NewCollection(),
                             ],
                           ),

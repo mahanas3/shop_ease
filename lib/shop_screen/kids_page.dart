@@ -15,7 +15,6 @@ class _KidsPageState extends State<KidsPage> {
   Widget build(BuildContext context) {
     List names = ['T-shirt', 'Gown', 'Footwear', 'Accessories'];
 
-
     List kidsImages = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNdkA9YpSnuVOIn3WVmkxg04Vhv15RLiNBYw&usqp=CAU',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTstM9W7rqQxaJU8u1-Di34btjiKmjd98x0bw&usqp=CAU',
@@ -60,6 +59,14 @@ class _KidsPageState extends State<KidsPage> {
                       )
                     ],
                   ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: const Image(
+                    image: AssetImage('assets/images/neww.png'),
+                    height: 100,
+                    width: 100,
+                  ),
                 )
               ]),
             ),
@@ -74,9 +81,10 @@ class _KidsPageState extends State<KidsPage> {
                       elevation: 5,
                       margin: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 6),
-                      child: InkWell(onTap: (){
-                        context.read<ScreenProvider>().tops(context);
-                      },
+                      child: InkWell(
+                        onTap: () {
+                          context.read<ScreenProvider>().tops(context);
+                        },
                         child: Container(
                           padding: const EdgeInsets.all(8),
                           child: Row(
@@ -91,7 +99,9 @@ class _KidsPageState extends State<KidsPage> {
                                   fit: BoxFit.fill,
                                 ),
                               ),
-                              const SizedBox(width: 40,),
+                              const SizedBox(
+                                width: 40,
+                              ),
                               Container(
                                 padding: const EdgeInsets.only(bottom: 8),
                                 child: Column(
@@ -101,7 +111,8 @@ class _KidsPageState extends State<KidsPage> {
                                     Text(
                                       names[index],
                                       style: const TextStyle(
-                                          fontFamily: 'Metropolis', fontSize: 20),
+                                          fontFamily: 'Metropolis',
+                                          fontSize: 20),
                                     )
                                   ],
                                 ),
@@ -112,7 +123,7 @@ class _KidsPageState extends State<KidsPage> {
                       ));
                 },
                 separatorBuilder: (BuildContext context, int index) =>
-                const SizedBox(
+                    const SizedBox(
                   height: 10,
                 ),
                 itemCount: kidsImages.length,
@@ -124,5 +135,3 @@ class _KidsPageState extends State<KidsPage> {
     );
   }
 }
-
-
