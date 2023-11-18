@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_ease/home/Menshodies.dart';
+import 'package:shop_ease/home/newitems.dart';
 import 'package:shop_ease/home/streetcloths_screen.dart';
 import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/screens/bottomnavigation.dart';
@@ -43,6 +43,8 @@ class AppRoute {
         );
       case RouteName.categories:
         return MaterialPageRoute(builder: (context) => const Catergories());
+      case RouteName.newItems:
+        return MaterialPageRoute(builder: (context) => const NewItems());
 
       default:
         {

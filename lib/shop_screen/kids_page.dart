@@ -61,7 +61,9 @@ class _KidsPageState extends State<KidsPage> {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    context.read<ScreenProvider>().newItems(context);
+                  },
                   child: const Image(
                     image: AssetImage('assets/images/neww.png'),
                     height: 100,

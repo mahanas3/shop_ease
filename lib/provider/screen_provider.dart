@@ -34,4 +34,7 @@ class ScreenProvider extends ChangeNotifier {
   void summerSale(BuildContext context) {
     Navigator.pushNamed(context, '/categories');
   }
+  void newItems(BuildContext context){
+    Navigator.pushNamed(context, '/newItems');
+  }
 }

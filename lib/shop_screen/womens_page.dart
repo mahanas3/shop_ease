@@ -60,10 +60,14 @@ class _WomenScreenState extends State<WomenScreen> {
                     ],
                   ),
                 ),
-                const Image(
-                  image: AssetImage('assets/images/neww.png'),
-                  height: 100,
-                  width: 100,
+                InkWell(onTap: (){
+                  context.read<ScreenProvider>().newItems(context);
+                },
+                  child: const Image(
+                    image: AssetImage('assets/images/neww.png'),
+                    height: 100,
+                    width: 100,
+                  ),
                 )
               ]),
             ),
