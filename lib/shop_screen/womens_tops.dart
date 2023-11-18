@@ -50,8 +50,7 @@ class _WomensTopsState extends State<WomenTop>
           length: 4,
           initialIndex: 0,
           child: TabBar(
-              unselectedLabelColor: Colors.red,
-              indicatorColor: Colors.blueGrey,
+              unselectedLabelColor: Colors.black,
               indicatorSize: TabBarIndicatorSize.label,
               indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
@@ -65,10 +64,7 @@ class _WomensTopsState extends State<WomenTop>
                   child: Tab(
                     child: Text(
                       'T-Shirts',
-                      style: TextStyle(
-                          fontFamily: 'POPINS',
-                          color: Colors.white,
-                          fontSize: 18),
+                      style: TextStyle(fontFamily: 'POPINS', fontSize: 18),
                     ),
                   ),
                 ),
@@ -76,30 +72,21 @@ class _WomensTopsState extends State<WomenTop>
                   padding: EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text('Crop tops',
-                        style: TextStyle(
-                            fontFamily: 'POPINS',
-                            color: Colors.white,
-                            fontSize: 18)),
+                        style: TextStyle(fontFamily: 'POPINS', fontSize: 18)),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text('Sleeveless',
-                        style: TextStyle(
-                            fontFamily: 'POPINS',
-                            color: Colors.white,
-                            fontSize: 18)),
+                        style: TextStyle(fontFamily: 'POPINS', fontSize: 18)),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text('Kurthies',
-                        style: TextStyle(
-                            fontFamily: 'POPINS',
-                            color: Colors.white,
-                            fontSize: 18)),
+                        style: TextStyle(fontFamily: 'POPINS', fontSize: 18)),
                   ),
                 ),
               ]),
