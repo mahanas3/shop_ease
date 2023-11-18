@@ -62,7 +62,7 @@ class _MensPageState extends State<MensPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    context.read<ScreenProvider>().newItems(context);
+                    context.read<ScreenProvider>().mensNew(context);
                   },
                   child: const Image(
                     image: AssetImage('assets/images/neww.png'),

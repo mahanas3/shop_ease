@@ -8,4 +8,7 @@ class RouteName {
   static const String womenstop='/womenstop';
   static const String categories='/categories';
   static const String newItems='/newItems';
+  static const String womensnew='/womensnew';
+  static const String mensnew='/mensnew';
+  static const String kidsnew='/kidsnew';
 }

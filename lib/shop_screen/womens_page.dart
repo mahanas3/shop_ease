@@ -61,7 +61,7 @@ class _WomenScreenState extends State<WomenScreen> {
                   ),
                 ),
                 InkWell(onTap: (){
-                  context.read<ScreenProvider>().newItems(context);
+                  context.read<ScreenProvider>().womenNew(context);
                 },
                   child: const Image(
                     image: AssetImage('assets/images/neww.png'),

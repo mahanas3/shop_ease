@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_ease/shop_screen/blouse_screen.dart';
+import 'package:shop_ease/shop_screen/kurthi_screen.dart';
 import 'package:shop_ease/shop_screen/croptops_screen.dart';
 import 'package:shop_ease/shop_screen/sleeveless_screen.dart';
 import 'package:shop_ease/shop_screen/tshirt_screen.dart';

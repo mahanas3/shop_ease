@@ -6,6 +6,7 @@ import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/screens/bottomnavigation.dart';
 import 'package:shop_ease/screens/forgotpassword_screen.dart';
 import 'package:shop_ease/shop_screen/womens_tops.dart';
+import 'package:shop_ease/shop_screen/womensnew_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/signup_screen.dart';
 import '../shop_screen/categories1.dart';
@@ -44,6 +45,11 @@ class AppRoute {
       case RouteName.categories:
         return MaterialPageRoute(builder: (context) => const Catergories());
       case RouteName.newItems:
+        return MaterialPageRoute(builder: (context) => const NewItems());
+
+      case RouteName.womensnew:
+        return MaterialPageRoute(builder: (context) => const WomenNew());
+      case RouteName.mensnew:
         return MaterialPageRoute(builder: (context) => const NewItems());
 
       default:

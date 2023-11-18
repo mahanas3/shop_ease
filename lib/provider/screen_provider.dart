@@ -37,4 +37,13 @@ class ScreenProvider extends ChangeNotifier {
   void newItems(BuildContext context){
     Navigator.pushNamed(context, '/newItems');
   }
+  void womenNew(BuildContext context){
+    Navigator.pushNamed(context, '/womensnew');
+  }
+  void mensNew(BuildContext context){
+    Navigator.pushNamed(context, '/mensnew');
+  }
+  void kidsNew(BuildContext context){
+    Navigator.pushNamed(context, '/kidsnew');
+  }
 }
