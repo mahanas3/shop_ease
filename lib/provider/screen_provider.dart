@@ -10,6 +10,7 @@ class ScreenProvider extends ChangeNotifier {
     try {
       signUpPage =
           await ApiServices().signUp(UserName, Password, Name, PhoneNo);
+      print(signUpPage);
       Navigator.pushNamed(context, '/home');
       notifyListeners();
     } catch (e) {
@@ -60,5 +61,9 @@ class ScreenProvider extends ChangeNotifier {
 
   void kidsNew(BuildContext context) {
     Navigator.pushNamed(context, '/kidsnew');
+  }
+
+  void blackDress(BuildContext context) {
+    Navigator.pushNamed(context, '/blackdress');
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_ease/home/Menshodies.dart';
+import 'package:shop_ease/home/newcollections.dart';
+import 'package:shop_ease/home/blackdress_screen.dart';
 import 'package:shop_ease/home/newitems.dart';
 import 'package:shop_ease/home/streetcloths_screen.dart';
 import 'package:shop_ease/routes/route_name.dart';
@@ -55,6 +56,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const MenNew());
       case RouteName.kidsnew:
         return MaterialPageRoute(builder: (context) => const KidsNew());
+      case RouteName.blackdress:
+        return MaterialPageRoute(builder: (context) => const BlackDresses());
 
       default:
         {

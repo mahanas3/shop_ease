@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shop_ease/provider/screen_provider.dart';
 import 'package:shop_ease/routes/route_navigation.dart';
 
-void main() {
+bool? email;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  email = prefs?.getBool('islogedIn') ?? false;
   runApp(ChangeNotifierProvider(
     create: (context) => ScreenProvider(),
     child: const Main(),
@@ -15,9 +21,9 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: email == false ? '/' : '/home',
       onGenerateRoute: AppRoute.routesetting,
     );
   }

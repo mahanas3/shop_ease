@@ -11,4 +11,6 @@ class RouteName {
   static const String womensnew='/womensnew';
   static const String mensnew='/mensnew';
   static const String kidsnew='/kidsnew';
+  static const String blackdress='/blackdress';
+
 }

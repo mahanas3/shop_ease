@@ -129,14 +129,19 @@ class _MensHoodiesState extends State<MensHoodies> {
                         ),
                       ),
                       Stack(children: [
-                        Container(
-                          height: 210,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhRXMUzftK8u_jDviKRdFIC9aeaExuvWIVSA&usqp=CAU',
+                        InkWell(
+                          onTap: () {
+                            context.read<ScreenProvider>().blackDress(context);
+                          },
+                          child: Container(
+                            height: 210,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhRXMUzftK8u_jDviKRdFIC9aeaExuvWIVSA&usqp=CAU',
+                                ),
+                                fit: BoxFit.fill,
                               ),
-                              fit: BoxFit.fill,
                             ),
                           ),
                         ),
