@@ -17,6 +17,7 @@ class _SignUpState extends State<SignUp> {
     final namecontroller = TextEditingController();
     final emailcontroller = TextEditingController();
     final passwordcontroller = TextEditingController();
+    final phonenocontroller = TextEditingController();
 
     var _formkey = GlobalKey<FormState>();
 
@@ -28,7 +29,7 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             children: [
               const Padding(
-                padding: EdgeInsets.only(top: 120, right: 190),
+                padding: EdgeInsets.only(top: 70, right: 190),
                 child: Text(
                   'Sign Up',
                   style: TextStyle(
@@ -38,13 +39,13 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 35,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 child: CustomTextfield(
-                    text1: 'Name',
-                    text2: 'Name',
+                    text1: 'UserName',
+                    text2: 'UserName',
                     controller: namecontroller,
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -52,6 +53,25 @@ class _SignUpState extends State<SignUp> {
                       }
                       return null;
                     }),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: CustomTextfield(
+                  text1: 'Password',
+                  text2: 'Password',
+                  controller: passwordcontroller,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Enter a valid password!';
+                    } else if (value.length < 8) {
+                      return 'Password must be at least 6 characters';
+                    }
+                    return null;
+                  },
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -81,14 +101,14 @@ class _SignUpState extends State<SignUp> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 child: CustomTextfield(
-                  text1: 'Password',
-                  text2: 'Password',
-                  controller: passwordcontroller,
+                  text1: 'PhoneNo',
+                  text2: 'PhoneNo',
+                  controller: phonenocontroller,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Enter a valid password!';
-                    } else if (value.length < 8) {
-                      return 'Password must be at least 6 characters';
+                      return 'Enter a valid Number!';
+                    } else if (value.length < 9) {
+                      return 'PhoneNo must be at least 10 characters';
                     }
                     return null;
                   },
@@ -125,9 +145,13 @@ class _SignUpState extends State<SignUp> {
                 child: CustomButton(
                   text: 'SIGN UP',
                   onPressed: () {
-                    //namecontroller.text;
                     if (_formkey.currentState!.validate()) {
-                      context.read<ScreenProvider>().signUp(context);
+                      context.read<ScreenProvider>().signUpScreen(
+                          context,
+                          namecontroller.text,
+                          passwordcontroller.text,
+                          emailcontroller.text,
+                          phonenocontroller.text);
                     }
                   },
                 ),

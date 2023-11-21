@@ -1,9 +1,20 @@
 import 'package:flutter/cupertino.dart';
+import 'package:shop_ease/model_class/user_model.dart';
+import 'package:shop_ease/services/api_function.dart';
 
 class ScreenProvider extends ChangeNotifier {
-  void signUp(BuildContext context) {
-    Navigator.pushNamed(context, '/home');
-    notifyListeners();
+  Details? signUpPage;
+
+  void signUpScreen(BuildContext context, String UserName, String Password,
+      String Name, String PhoneNo) async {
+    try {
+      signUpPage =
+          await ApiServices().signUp(UserName, Password, Name, PhoneNo);
+      Navigator.pushNamed(context, '/home');
+      notifyListeners();
+    } catch (e) {
+      print(e);
+    }
   }
 
   void login(BuildContext context) {
@@ -34,16 +45,20 @@ class ScreenProvider extends ChangeNotifier {
   void summerSale(BuildContext context) {
     Navigator.pushNamed(context, '/categories');
   }
-  void newItems(BuildContext context){
+
+  void newItems(BuildContext context) {
     Navigator.pushNamed(context, '/newItems');
   }
-  void womenNew(BuildContext context){
+
+  void womenNew(BuildContext context) {
     Navigator.pushNamed(context, '/womensnew');
   }
-  void mensNew(BuildContext context){
+
+  void mensNew(BuildContext context) {
     Navigator.pushNamed(context, '/mensnew');
   }
-  void kidsNew(BuildContext context){
+
+  void kidsNew(BuildContext context) {
     Navigator.pushNamed(context, '/kidsnew');
   }
 }
