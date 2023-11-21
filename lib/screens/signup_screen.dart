@@ -125,6 +125,7 @@ class _SignUpState extends State<SignUp> {
                 child: CustomButton(
                   text: 'SIGN UP',
                   onPressed: () {
+                    //namecontroller.text;
                     if (_formkey.currentState!.validate()) {
                       context.read<ScreenProvider>().signUp(context);
                     }
