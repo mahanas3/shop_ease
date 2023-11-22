@@ -30,10 +30,6 @@ class ScreenProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-
-
-
-
   void cartFavourite(
       String image, String name, String price, BuildContext context) {
     cart.add({"image": image, "name": name, "price": price});
