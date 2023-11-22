@@ -30,48 +30,10 @@ class ScreenProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void check(BuildContext context) {
-    Navigator.pushNamed(context, '/streetcloths');
-    notifyListeners();
-  }
 
-  void newButton(BuildContext context) {
-    Navigator.pushNamed(context, '/newbutton');
-    notifyListeners();
-  }
 
-  void tops(BuildContext context) {
-    Navigator.pushNamed(context, '/womenstop');
-    notifyListeners();
-  }
 
-  void summerSale(BuildContext context) {
-    Navigator.pushNamed(context, '/categories');
-  }
 
-  void newItems(BuildContext context) {
-    Navigator.pushNamed(context, '/newItems');
-  }
-
-  void womenNew(BuildContext context) {
-    Navigator.pushNamed(context, '/womensnew');
-  }
-
-  void mensNew(BuildContext context) {
-    Navigator.pushNamed(context, '/mensnew');
-  }
-
-  void kidsNew(BuildContext context) {
-    Navigator.pushNamed(context, '/kidsnew');
-  }
-
-  void blackDress(BuildContext context) {
-    Navigator.pushNamed(context, '/blackdress');
-  }
-
-  void mensHoodies(BuildContext context) {
-    Navigator.pushNamed(context, '/menshoodies');
-  }
   void cartFavourite(
       String image, String name, String price, BuildContext context) {
     cart.add({"image": image, "name": name, "price": price});

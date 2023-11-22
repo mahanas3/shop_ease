@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
+
+import '../provider/home_provider.dart';
 
 class WomenScreen extends StatefulWidget {
   const WomenScreen({super.key});
@@ -61,7 +64,7 @@ class _WomenScreenState extends State<WomenScreen> {
                   ),
                 ),
                 InkWell(onTap: (){
-                  context.read<ScreenProvider>().womenNew(context);
+                  context.read<ShopProvider>().womenNew(context);
                 },
                   child: const Image(
                     image: AssetImage('assets/images/neww.png'),
@@ -84,7 +87,7 @@ class _WomenScreenState extends State<WomenScreen> {
                           horizontal: 10, vertical: 6),
                       child: InkWell(
                         onTap: () {
-                          context.read<ScreenProvider>().tops(context);
+                          context.read<HomeProvider>().tops(context);
                         },
                         child: Container(
                           padding: const EdgeInsets.all(8),

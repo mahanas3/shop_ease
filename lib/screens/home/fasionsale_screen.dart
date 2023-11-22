@@ -4,6 +4,8 @@ import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/screen_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
+import '../../provider/home_provider.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -69,7 +71,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     child: CustomButton(
                         text: 'Check',
                         onPressed: () {
-                          context.read<ScreenProvider>().check(context);
+                          context.read<HomeProvider>().check(context);
                         })),
               )
             ]),
@@ -110,7 +112,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     ),
                     GestureDetector(
                       onTap: () {
-                        context.read<ScreenProvider>().newButton(context);
+                        context.read<HomeProvider>().newButton(context);
                       },
                       child: Container(
                         height: 40,

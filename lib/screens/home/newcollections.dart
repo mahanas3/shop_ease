@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/provider/screen_provider.dart';
 
+import '../../provider/home_provider.dart';
+
 class MensHoodies extends StatefulWidget {
   const MensHoodies({Key? key}) : super(key: key);
 
@@ -21,7 +23,7 @@ class _MensHoodiesState extends State<MensHoodies> {
               children: [
                 InkWell(
                   onTap: () {
-                    context.read<ScreenProvider>().newItems(context);
+                    context.read<HomeProvider>().newItems(context);
                   },
                   child: Container(
                     height: 384,
@@ -64,13 +66,14 @@ class _MensHoodiesState extends State<MensHoodies> {
                         ),
                       ),
                     ),
-                     Column(children: [
+                    Column(children: [
                       Padding(
-                        padding: EdgeInsets.only(top: 170, left: 20),
-                        child: InkWell(onTap: (){
-                          context.read<ScreenProvider>().mensHoodies(context);
-                        },
-                          child: Text(
+                        padding: const EdgeInsets.only(top: 170, left: 20),
+                        child: InkWell(
+                          onTap: () {
+                            context.read<HomeProvider>().mensHoodies(context);
+                          },
+                          child: const Text(
                             'Men’s',
                             style: TextStyle(
                                 fontFamily: 'Metropolis',
@@ -79,7 +82,7 @@ class _MensHoodiesState extends State<MensHoodies> {
                           ),
                         ),
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 20),
                         child: Text(
                           'hoodies',
@@ -98,7 +101,7 @@ class _MensHoodiesState extends State<MensHoodies> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          context.read<ScreenProvider>().summerSale(context);
+                          context.read<HomeProvider>().summerSale(context);
                         },
                         child: Container(
                           height: 200,
@@ -135,7 +138,7 @@ class _MensHoodiesState extends State<MensHoodies> {
                       Stack(children: [
                         InkWell(
                           onTap: () {
-                            context.read<ScreenProvider>().blackDress(context);
+                            context.read<HomeProvider>().blackDress(context);
                           },
                           child: Container(
                             height: 210,
