@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shop_ease/routes/route_name.dart';
-import 'package:shop_ease/screens/forgotpassword_screen.dart';
 import 'package:shop_ease/shop_screen/kidsnew_screen.dart';
 import 'package:shop_ease/shop_screen/mensnew_screen.dart';
 import 'package:shop_ease/shop_screen/womens_tops.dart';
 import 'package:shop_ease/shop_screen/womensnew_screen.dart';
+import '../screens/auth_screen/forgott_screen.dart';
+import '../screens/auth_screen/login_screen.dart';
+import '../screens/auth_screen/signup_screen.dart';
 import '../screens/favourite_screen/favourite_page.dart';
 import '../screens/home/blackdress_screen.dart';
 import '../screens/home/bottomnavigation.dart';
 import '../screens/home/menshoodies_screen.dart';
 import '../screens/home/newitems.dart';
 import '../screens/home/streetcloths_screen.dart';
-import '../screens/login_screen.dart';
-import '../screens/signup_screen.dart';
 import '../shop_screen/categories1.dart';
 
 class AppRoute {
