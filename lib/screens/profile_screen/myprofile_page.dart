@@ -56,7 +56,7 @@ class _ProfileState extends State<Profile> {
                       child: Text(
                         'User',
                         style:
-                            TextStyle(fontSize: 22, fontFamily: 'Metropolis'),
+                        TextStyle(fontSize: 22, fontFamily: 'Metropolis'),
                       ),
                     ),
                     SizedBox(
