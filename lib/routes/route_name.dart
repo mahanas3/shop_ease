@@ -13,6 +13,5 @@ class RouteName {
   static const String kidsnew='/kidsnew';
   static const String blackdress='/blackdress';
   static const String menshoodies='/menshoodies';
-
-
+  static const String favourite='/favourite';
 }

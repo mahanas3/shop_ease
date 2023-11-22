@@ -1,8 +1,14 @@
+import 'package:badges/badges.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_ease/favourite_screen/favourite_page.dart';
+import 'package:shop_ease/provider/screen_provider.dart';
 import 'package:shop_ease/shop_screen/kurthi_screen.dart';
 import 'package:shop_ease/shop_screen/croptops_screen.dart';
 import 'package:shop_ease/shop_screen/sleeveless_screen.dart';
 import 'package:shop_ease/shop_screen/tshirt_screen.dart';
+import 'package:badges/src/badge.dart' as badge;
 
 class WomenTop extends StatefulWidget {
   const WomenTop({super.key});
@@ -27,10 +33,45 @@ class _WomensTopsState extends State<WomenTop>
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.2,
-        actions: const [
-          Icon(
-            Icons.search,
-            color: Colors.black87,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Row(
+              children: [
+                const Icon(
+                  Icons.search_off_outlined,
+                  size: 35,
+                  color: Colors.black87,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: badge.Badge(
+                    position: BadgePosition.topEnd(),
+                    badgeContent: SizedBox(
+                      height: 17,
+                      width: 17,
+                      child: Center(
+                        child: Text(context
+                            .read<ScreenProvider>()
+                            .cart
+                            .length
+                            .toString()),
+                      ),
+                    ),
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Favourite()));
+                        },
+                        icon: const Icon(CupertinoIcons.cart),
+                        color: Colors.black87,
+                        iconSize: 35),
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_ease/favourite_screen/favourite_page.dart';
 import 'package:shop_ease/home/newcollections.dart';
 import 'package:shop_ease/home/blackdress_screen.dart';
 import 'package:shop_ease/home/newitems.dart';
@@ -60,7 +61,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const BlackDresses());
       case RouteName.menshoodies:
         return MaterialPageRoute(builder: (context) => const MensHoodies());
-
+      case RouteName.favourite:
+        return MaterialPageRoute(builder: (context) => const Favourite());
       default:
         {
           return MaterialPageRoute(

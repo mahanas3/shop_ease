@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class Tshirt extends StatefulWidget {
   const Tshirt({super.key});
@@ -18,6 +21,9 @@ class _TshirtState extends State<Tshirt> {
       'assets/images/tshirtt.png',
     ];
     List name = ['Mango', 'Dorothi Perkings', 'Mango', 'Dorothi Perkings'];
+
+    List price = ['9\$', '20\$', '50\$', '25\$'];
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
@@ -46,8 +52,8 @@ class _TshirtState extends State<Tshirt> {
                         Image(
                           image: AssetImage(tshirtImages[index]),
                           fit: BoxFit.fill,
-                          height: 150,
-                          width: 100,
+                          height: Dimensions.heightCalc(context, 150),
+                          width: Dimensions.widthCalc(context, 100),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 70, top: 10),
@@ -85,12 +91,12 @@ class _TshirtState extends State<Tshirt> {
                     const SizedBox(
                       height: 5,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(right: 115),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 115),
                       child: Text(
-                        '9' + '\$',
-                        style:
-                            TextStyle(fontFamily: 'Metropolis', fontSize: 16),
+                        price[index],
+                        style: const TextStyle(
+                            fontFamily: 'Metropolis', fontSize: 16),
                       ),
                     )
                   ],
@@ -99,14 +105,20 @@ class _TshirtState extends State<Tshirt> {
               Padding(
                 padding: const EdgeInsets.only(top: 210, left: 120),
                 child: Container(
-                  width: 100,
-                  height: 90,
+                  width: Dimensions.widthCalc(context, 100),
+                  height: Dimensions.heightCalc(context, 90),
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
                   ),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.read<ScreenProvider>().cartFavourite(
+                          tshirtImages[index],
+                          name[index],
+                          price[index],
+                          context);
+                    },
                     child: const Icon(
                       Icons.favorite_border,
                       size: 25,

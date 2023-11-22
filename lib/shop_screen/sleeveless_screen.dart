@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+
+import '../provider/screen_provider.dart';
 
 class Sleeveless extends StatefulWidget {
   const Sleeveless({super.key});
@@ -18,6 +21,9 @@ class _SleevelessState extends State<Sleeveless> {
       'assets/images/sleeveless.png',
     ];
     List name = ['Mango', 'Dorothi Perkings', 'Mango', 'Dorothi Perkings'];
+
+    List price = ['9\$', '20\$', '50\$', '25\$'];
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
@@ -106,7 +112,11 @@ class _SleevelessState extends State<Sleeveless> {
                     color: Colors.white,
                   ),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.read<ScreenProvider>().cartFavourite(
+                          tshirtImages[index], name[index], price[index],
+                          context);
+                    },
                     child: const Icon(
                       Icons.favorite_border,
                       size: 25,

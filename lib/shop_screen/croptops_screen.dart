@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+import 'package:shop_ease/provider/screen_provider.dart';
 
 class Croptops extends StatefulWidget {
   const Croptops({super.key});
@@ -18,6 +20,9 @@ class _CroptopsState extends State<Croptops> {
       'assets/images/croptop.png',
     ];
     List name = ['Mango', 'Dorothi Perkings', 'Mango', 'Dorothi Perkings'];
+
+    List price = ['9\$', '20\$', '50\$', '25\$'];
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
@@ -85,12 +90,12 @@ class _CroptopsState extends State<Croptops> {
                     const SizedBox(
                       height: 5,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(right: 115),
+                     Padding(
+                      padding: const EdgeInsets.only(right: 115),
                       child: Text(
-                        '9' + '\$',
+                        price[index],
                         style:
-                            TextStyle(fontFamily: 'Metropolis', fontSize: 16),
+                        const TextStyle(fontFamily: 'Metropolis', fontSize: 16),
                       ),
                     )
                   ],
@@ -106,7 +111,11 @@ class _CroptopsState extends State<Croptops> {
                     color: Colors.white,
                   ),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.read<ScreenProvider>().cartFavourite(
+                          tshirtImages[index], name[index], price[index],
+                          context);
+                    },
                     child: const Icon(
                       Icons.favorite_border,
                       size: 25,

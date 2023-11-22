@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:shop_ease/model_class/user_model.dart';
 
@@ -7,7 +6,7 @@ class ApiServices {
   Future<Details> signUp(
       String UserName, String Password, String Email, String PhoneNo) async {
     final http.Response response = await http.post(
-        Uri.parse('https://8114-117-204-87-247.ngrok.io/api/user-registration'),
+        Uri.parse('https://4c15-117-252-213-40.ngrok.io/api/user-registration'),
         headers: <String, String>{
           'Content-type': 'application/x-www-form-urlencoded'
         },

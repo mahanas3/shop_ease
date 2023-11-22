@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+
+import '../provider/screen_provider.dart';
 
 class NewCollection extends StatefulWidget {
   const NewCollection({super.key});
@@ -25,6 +28,9 @@ class _NewCollectionState extends State<NewCollection> {
       'Leather Bag',
       'Office Bag'
     ];
+
+    List price = ['9\$', '20\$', '50\$', '25\$'];
+
     return Scaffold(
       backgroundColor: const Color(0x000000ff),
       body: Padding(
@@ -113,7 +119,10 @@ class _NewCollectionState extends State<NewCollection> {
                     color: Colors.white,
                   ),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.read<ScreenProvider>().cartFavourite(
+                          bagImages[index], name[index], price[index], context);
+                    },
                     child: const Icon(
                       Icons.favorite_border,
                       size: 25,

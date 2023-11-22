@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+
+import '../provider/screen_provider.dart';
 
 class StreetCloths extends StatefulWidget {
   const StreetCloths({super.key});
@@ -18,6 +21,11 @@ class _StreetClothsState extends State<StreetCloths> {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf43pNLYwfYBVkTTILlf2nh2GEZNPtQyV_sA&usqp=CAU',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXBFe4xr3cbjelITJtYrFzWqvsH6pZf5EjFQ&usqp=CAU'
     ];
+
+    List name = ['Dorothy Perkings', 'Salvar', 'kurthi', 'short', 'Shirt'];
+
+    List price = ['16\$', '25\$', '25\$', '25\$', '50\$'];
+
     return Scaffold(
       body: Column(
         children: [
@@ -64,7 +72,9 @@ class _StreetClothsState extends State<StreetCloths> {
               itemCount: saleImages.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                    padding: const EdgeInsets.only(left: 10,),
+                    padding: const EdgeInsets.only(
+                      left: 10,
+                    ),
                     child: Stack(children: [
                       Container(
                         width: 148,
@@ -75,11 +85,11 @@ class _StreetClothsState extends State<StreetCloths> {
                           image: DecorationImage(
                               image: NetworkImage(saleImages[index])),
                         ),
-                        child: const Padding(
-                          padding: EdgeInsets.only(top: 300),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 300),
                           child: Column(
                             children: [
-                              Row(
+                              const Row(
                                 children: [
                                   Icon(
                                     Icons.star,
@@ -108,35 +118,41 @@ class _StreetClothsState extends State<StreetCloths> {
                                 ],
                               ),
                               Padding(
-                                padding: EdgeInsets.only(right: 20),
-                                child: Text(
-                                  'Dorothy Perkins',
-                                  style: TextStyle(
-                                    fontFamily: 'Metropolis',
-                                    color: Color(0xff9B9B9B),
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Align(
+                                  alignment: AlignmentDirectional.centerStart,
+                                  child: Text(
+                                    name[index],
+                                    style: const TextStyle(
+                                      fontFamily: 'Metropolis',
+                                      color: Color(0xff9B9B9B),
+                                    ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
-                              Text(
-                                'Evening Dress',
-                                style: TextStyle(
-                                    fontFamily: 'Metropolis', fontSize: 18),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 10),
+                                child: Text(
+                                  'Evening Dress',
+                                  style: TextStyle(
+                                      fontFamily: 'Metropolis', fontSize: 18),
+                                ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               Padding(
-                                padding: EdgeInsets.only(left: 15),
+                                padding: const EdgeInsets.only(left: 8),
                                 child: Row(
                                   children: [
-                                    Text('\$15'),
-                                    SizedBox(
+                                    Text(price[index]),
+                                    const SizedBox(
                                       width: 10,
                                     ),
-                                    Text('\$15')
+                                    const Text('\$15')
                                   ],
                                 ),
                               )
@@ -164,17 +180,30 @@ class _StreetClothsState extends State<StreetCloths> {
                                 ),
                               ],
                             ),
-                            child: const Icon(
-                              Icons.favorite_border,
-                              size: 20,
-                              color: Colors.black,
+                            child: InkWell(
+                              onTap: () {
+                                context.read<ScreenProvider>().cartFavourite(
+                                    saleImages[index],
+                                    name[index],
+                                    price[index],
+                                    context);
+                              },
+                              child: const Icon(
+                                Icons.favorite_border,
+                                size: 20,
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(top: 40,left: 20),
-                        child: Text('Discounts',style: TextStyle(fontFamily: 'Metropolis',fontSize: 20),),
+                        padding: EdgeInsets.only(top: 40, left: 20),
+                        child: Text(
+                          'Discounts',
+                          style:
+                              TextStyle(fontFamily: 'Metropolis', fontSize: 20),
+                        ),
                       )
                     ]));
               },

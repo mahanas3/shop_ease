@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+
+import '../provider/screen_provider.dart';
 
 class TopRate extends StatefulWidget {
   const TopRate({super.key});
@@ -25,6 +28,8 @@ class _TopRateState extends State<TopRate> {
       'Leather Bag',
       'Office Bag'
     ];
+    List price = ['9\$', '20\$', '50\$', '25\$'];
+
     return Scaffold(
       backgroundColor: const Color(0x000000ff),
       body: Padding(
@@ -113,7 +118,10 @@ class _TopRateState extends State<TopRate> {
                     color: Colors.white,
                   ),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.read<ScreenProvider>().cartFavourite(
+                          bagImages[index], name[index], price[index], context);
+                    },
                     child: const Icon(
                       Icons.favorite_border,
                       size: 25,

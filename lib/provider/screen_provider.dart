@@ -5,6 +5,8 @@ import 'package:shop_ease/services/api_function.dart';
 class ScreenProvider extends ChangeNotifier {
   Details? signUpPage;
 
+  List<Map<String, dynamic>> cart = [];
+
   void signUpScreen(BuildContext context, String UserName, String Password,
       String Name, String PhoneNo) async {
     try {
@@ -69,5 +71,11 @@ class ScreenProvider extends ChangeNotifier {
 
   void mensHoodies(BuildContext context) {
     Navigator.pushNamed(context, '/menshoodies');
+  }
+  void cartFavourite(
+      String image, String name, String price, BuildContext context) {
+    cart.add({"image": image, "name": name, "price": price});
+    Navigator.pushNamed(context, '/favourite');
+    notifyListeners();
   }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+
+import '../provider/screen_provider.dart';
 
 class PopularScreen extends StatefulWidget {
   const PopularScreen({super.key});
@@ -25,6 +28,9 @@ class _PopularScreenState extends State<PopularScreen> {
       'Leather Bag',
       'Office Bag'
     ];
+
+    List price = ['9\$', '20\$', '50\$', '25\$'];
+
     return Scaffold(
       backgroundColor: const Color(0x000000ff),
       body: Padding(
@@ -92,12 +98,12 @@ class _PopularScreenState extends State<PopularScreen> {
                     const SizedBox(
                       height: 5,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(right: 115),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 115),
                       child: Text(
-                        '9' + '\$',
-                        style:
-                            TextStyle(fontFamily: 'Metropolis', fontSize: 16),
+                        price[index],
+                        style: const TextStyle(
+                            fontFamily: 'Metropolis', fontSize: 16),
                       ),
                     )
                   ],
@@ -113,7 +119,10 @@ class _PopularScreenState extends State<PopularScreen> {
                     color: Colors.white,
                   ),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.read<ScreenProvider>().cartFavourite(
+                          bagImages[index], name[index], price[index], context);
+                    },
                     child: const Icon(
                       Icons.favorite_border,
                       size: 25,
