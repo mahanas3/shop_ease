@@ -64,15 +64,19 @@ class _MensHoodiesState extends State<MensHoodies> {
                         ),
                       ),
                     ),
-                    const Column(children: [
+                     Column(children: [
                       Padding(
                         padding: EdgeInsets.only(top: 170, left: 20),
-                        child: Text(
-                          'Men’s',
-                          style: TextStyle(
-                              fontFamily: 'Metropolis',
-                              fontSize: 34,
-                              color: Colors.white),
+                        child: InkWell(onTap: (){
+                          context.read<ScreenProvider>().mensHoodies(context);
+                        },
+                          child: Text(
+                            'Men’s',
+                            style: TextStyle(
+                                fontFamily: 'Metropolis',
+                                fontSize: 34,
+                                color: Colors.white),
+                          ),
                         ),
                       ),
                       Padding(

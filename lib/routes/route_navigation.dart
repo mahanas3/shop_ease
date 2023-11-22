@@ -58,6 +58,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const KidsNew());
       case RouteName.blackdress:
         return MaterialPageRoute(builder: (context) => const BlackDresses());
+      case RouteName.menshoodies:
+        return MaterialPageRoute(builder: (context) => const MensHoodies());
 
       default:
         {
