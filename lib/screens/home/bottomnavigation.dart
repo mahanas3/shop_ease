@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_ease/screens/profile_screen/myprofile_page.dart';
-import '../../shop_screen/categories1.dart';
 import '../bag_screen/bagproduct_screen.dart';
 import '../favourite_screen/favourite_page.dart';
+import '../shop_screen/categories1.dart';
 import 'fasionsale_screen.dart';
 
 class BottomNavigation extends StatefulWidget {

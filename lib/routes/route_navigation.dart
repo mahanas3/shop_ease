@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop_ease/routes/route_name.dart';
-import 'package:shop_ease/screens/bag_screen/newcollection_screen.dart';
 import 'package:shop_ease/screens/home/newcollections.dart';
 import 'package:shop_ease/screens/profile_screen/order_screen.dart';
 import 'package:shop_ease/screens/profile_screen/orderdetails_screen.dart';
-import 'package:shop_ease/shop_screen/kidsnew_screen.dart';
-import 'package:shop_ease/shop_screen/mensnew_screen.dart';
-import 'package:shop_ease/shop_screen/womens_tops.dart';
-import 'package:shop_ease/shop_screen/womensnew_screen.dart';
 import '../screens/auth_screen/forgott_screen.dart';
 import '../screens/auth_screen/login_screen.dart';
 import '../screens/auth_screen/signup_screen.dart';
@@ -17,7 +12,11 @@ import '../screens/home/bottomnavigation.dart';
 import '../screens/home/menshoodies_screen.dart';
 import '../screens/home/newitems.dart';
 import '../screens/home/streetcloths_screen.dart';
-import '../shop_screen/categories1.dart';
+import '../screens/shop_screen/categories1.dart';
+import '../screens/shop_screen/newkids_screen.dart';
+import '../screens/shop_screen/newmens_screen.dart';
+import '../screens/shop_screen/newwomens_screen.dart';
+import '../screens/shop_screen/womenstops_screen.dart';
 
 class AppRoute {
   static Route<dynamic> routesetting(RouteSettings setting) {

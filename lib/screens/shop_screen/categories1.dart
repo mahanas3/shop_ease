@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shop_ease/shop_screen/kids_page.dart';
-import 'package:shop_ease/shop_screen/mens_page.dart';
-import 'package:shop_ease/shop_screen/womens_page.dart';
+import 'package:shop_ease/screens/shop_screen/womens_screen.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
+import 'kids_screen.dart';
+import 'mens_screen.dart';
 
 class Catergories extends StatefulWidget {
   const Catergories({super.key});
