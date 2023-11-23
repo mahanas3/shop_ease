@@ -42,6 +42,8 @@ class AppRoute {
         return MaterialPageRoute(
           builder: (context) => const MensHoodies(),
         );
+
+        //bottomsheet
       case RouteName.womenstop:
         return MaterialPageRoute(
           builder: (context) => const WomenTop(),
@@ -62,6 +64,8 @@ class AppRoute {
       case RouteName.menshoodies:
         return MaterialPageRoute(builder: (context) => const MensHoodies());
       case RouteName.favourite:
+        return MaterialPageRoute(builder: (context) => const Favourite());
+      case RouteName.myOrder:
         return MaterialPageRoute(builder: (context) => const Favourite());
       default:
         {
