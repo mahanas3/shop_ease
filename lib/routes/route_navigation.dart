@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop_ease/routes/route_name.dart';
+import 'package:shop_ease/screens/bag_screen/newcollection_screen.dart';
+import 'package:shop_ease/screens/home/newcollections.dart';
+import 'package:shop_ease/screens/profile_screen/order_screen.dart';
+import 'package:shop_ease/screens/profile_screen/orderdetails_screen.dart';
 import 'package:shop_ease/shop_screen/kidsnew_screen.dart';
 import 'package:shop_ease/shop_screen/mensnew_screen.dart';
 import 'package:shop_ease/shop_screen/womens_tops.dart';
@@ -40,10 +44,9 @@ class AppRoute {
         );
       case RouteName.newbutton:
         return MaterialPageRoute(
-          builder: (context) => const MensHoodies(),
+          builder: (context) => const NewCollection(),
         );
-
-        //bottomsheet
+      //bottomsheet
       case RouteName.womenstop:
         return MaterialPageRoute(
           builder: (context) => const WomenTop(),
@@ -52,7 +55,6 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const Catergories());
       case RouteName.newItems:
         return MaterialPageRoute(builder: (context) => const NewItems());
-
       case RouteName.womensnew:
         return MaterialPageRoute(builder: (context) => const WomenNew());
       case RouteName.mensnew:
@@ -66,7 +68,9 @@ class AppRoute {
       case RouteName.favourite:
         return MaterialPageRoute(builder: (context) => const Favourite());
       case RouteName.myOrder:
-        return MaterialPageRoute(builder: (context) => const Favourite());
+        return MaterialPageRoute(builder: (context) => const MyOrder());
+      case RouteName.orderDetails:
+        return MaterialPageRoute(builder: (context) => const OrderDetails());
       default:
         {
           return MaterialPageRoute(

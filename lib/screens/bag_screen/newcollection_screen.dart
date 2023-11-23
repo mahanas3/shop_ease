@@ -6,14 +6,14 @@ import 'package:shop_ease/provider/cart_provider.dart';
 import '../../provider/auth_provider.dart';
 
 
-class NewCollection extends StatefulWidget {
-  const NewCollection({super.key});
+class NewBagCollection extends StatefulWidget {
+  const NewBagCollection({super.key});
 
   @override
-  State<NewCollection> createState() => _NewCollectionState();
+  State<NewBagCollection> createState() => _NewBagCollectionState();
 }
 
-class _NewCollectionState extends State<NewCollection> {
+class _NewBagCollectionState extends State<NewBagCollection> {
   @override
   Widget build(BuildContext context) {
     List<String> bagImages = [

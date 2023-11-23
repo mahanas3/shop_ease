@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_ease/screens/profile_screen/cancelled_screen.dart';
+import 'package:shop_ease/screens/profile_screen/deliverd_screen.dart';
+import 'package:shop_ease/screens/profile_screen/processing_screen.dart';
 
 class MyOrder extends StatefulWidget {
   const MyOrder({super.key});
@@ -22,7 +25,7 @@ class _MyOrderState extends State<MyOrder> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0x000000ff),
         elevation: 0,
         actions: const [
           Icon(
@@ -33,9 +36,15 @@ class _MyOrderState extends State<MyOrder> with SingleTickerProviderStateMixin {
       ),
       body: Column(
         children: [
-          const Text(
-            'My Orders',
-            style: TextStyle(fontSize: 34, fontFamily: 'Metropolis'),
+          const Padding(
+            padding: EdgeInsets.only(top: 15, right: 150),
+            child: Text(
+              'My Orders',
+              style: TextStyle(fontSize: 34, fontFamily: 'Metropolis'),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
           ),
           DefaultTabController(
             length: 4,
@@ -55,7 +64,8 @@ class _MyOrderState extends State<MyOrder> with SingleTickerProviderStateMixin {
                     child: Tab(
                       child: Text(
                         'Delivered',
-                        style: TextStyle(fontFamily: 'POPINS', fontSize: 18),
+                        style:
+                            TextStyle(fontFamily: 'Metropolis2', fontSize: 18),
                       ),
                     ),
                   ),
@@ -63,17 +73,29 @@ class _MyOrderState extends State<MyOrder> with SingleTickerProviderStateMixin {
                     padding: EdgeInsets.only(right: 5, left: 5),
                     child: Tab(
                       child: Text('Processing',
-                          style: TextStyle(fontFamily: 'POPINS', fontSize: 18)),
+                          style: TextStyle(
+                              fontFamily: 'Metropolis2', fontSize: 18)),
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(right: 5, left: 5),
                     child: Tab(
                       child: Text('Cancelled',
-                          style: TextStyle(fontFamily: 'POPINS', fontSize: 18)),
+                          style: TextStyle(
+                              fontFamily: 'Metropolis2', fontSize: 18)),
                     ),
                   ),
                 ]),
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: const [
+                Delivered(),
+                Processing(),
+                Cancellation(),
+              ],
+            ),
           ),
         ],
       ),

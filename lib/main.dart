@@ -11,9 +11,10 @@ import 'package:shop_ease/routes/route_navigation.dart';
 bool? email;
 
 void main() async {
+ // Provider.debugCheckInvalidValueType = null;
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  email = prefs?.getBool('islogedIn') ?? false;
+  //email = prefs?.getBool('islogedIn') ?? false;
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => HomeProvider()),
