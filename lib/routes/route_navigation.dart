@@ -3,6 +3,7 @@ import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/screens/home/newcollections.dart';
 import 'package:shop_ease/screens/profile_screen/order_screen.dart';
 import 'package:shop_ease/screens/profile_screen/orderdetails_screen.dart';
+import 'package:shop_ease/screens/profile_screen/shippingaddress_screen.dart';
 import '../screens/auth_screen/forgott_screen.dart';
 import '../screens/auth_screen/login_screen.dart';
 import '../screens/auth_screen/signup_screen.dart';
@@ -70,6 +71,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const MyOrder());
       case RouteName.orderDetails:
         return MaterialPageRoute(builder: (context) => const OrderDetails());
+      case RouteName.shippingAddress:
+        return MaterialPageRoute(builder: (context) => const ShippingAddress());
       default:
         {
           return MaterialPageRoute(

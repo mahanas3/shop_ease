@@ -284,9 +284,9 @@ class _OrderDetailsState extends State<OrderDetails> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15, left: 10),
+                padding: const EdgeInsets.only(top: 15, left: 4),
                 child: Text(
-                  '3 Newbridge Court ,',
+                  '3 NewBridge Court ,',
                   style: TextStyle(
                       fontSize: Dimensions.heightCalc(context, 16),
                       fontFamily: 'Metropolis2'),
@@ -403,7 +403,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                 width: 10,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10, left: 20),
+                padding: const EdgeInsets.only(top: 10, left: 17),
                 child: Text(
                   '133\$',
                   style: TextStyle(
@@ -417,38 +417,30 @@ class _OrderDetailsState extends State<OrderDetails> {
           SizedBox(
             height: Dimensions.heightCalc(context, 20),
           ),
-          SizedBox(
-            height: Dimensions.heightCalc(context, 50),
-            width: Dimensions.widthCalc(context, 100),
-            child: Padding(
-              padding: const EdgeInsets.only(right: 50),
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      side: const BorderSide(color: Colors.black87),
-                      backgroundColor: const Color(0x000000ff),
-                      elevation: 0),
-                  onPressed: () {
-                    context.read<ProfileProvider>().orderDetails(context);
-                  },
-                  child: Row(
-                    children: [
-                      Text(
+          Padding(
+            padding: const EdgeInsets.only(left: 50),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: Dimensions.widthCalc(context, 130),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0x000000ff),
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                              side: const BorderSide(color: Colors.black87),
+                              borderRadius: BorderRadius.circular(20))),
+                      onPressed: () {},
+                      child: const Text(
                         'Reorder',
-                        style: TextStyle(
-                            fontSize: Dimensions.heightCalc(context, 14),
-                            color: Colors.black87),
-                      ),
-                      SizedBox(
-                        width: Dimensions.widthCalc(context, 30),
-                      ),
-                      SizedBox(
-                          height: Dimensions.heightCalc(context, 50),
-                          child: CustomButton(
-                              text: 'Leave feedback', onPressed: () {}))
-                    ],
-                  )),
+                        style: TextStyle(color: Colors.black87),
+                      )),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                CustomButton(text: 'Leave feedback', onPressed: () {})
+              ],
             ),
           ),
         ]),

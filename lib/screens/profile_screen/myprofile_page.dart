@@ -30,11 +30,13 @@ class _ProfileState extends State<Profile> {
       ),
       body: Column(
         children: [
-           Padding(
+          Padding(
             padding: const EdgeInsets.only(right: 130, top: 20),
             child: Text(
               'My profile',
-              style: TextStyle(fontSize: Dimensions.heightCalc(context, 34), fontFamily: 'Metropolis'),
+              style: TextStyle(
+                  fontSize: Dimensions.heightCalc(context, 34),
+                  fontFamily: 'Metropolis'),
             ),
           ),
           Padding(
@@ -49,17 +51,18 @@ class _ProfileState extends State<Profile> {
                       image: DecorationImage(
                           image: AssetImage('assets/images/profile.png'))),
                 ),
-                 SizedBox(
+                SizedBox(
                   width: Dimensions.widthCalc(context, 22),
                 ),
-                 Column(
+                Column(
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(right: 90),
                       child: Text(
                         'User',
-                        style:
-                        TextStyle(fontSize: Dimensions.heightCalc(context, 22), fontFamily: 'Metropolis'),
+                        style: TextStyle(
+                            fontSize: Dimensions.heightCalc(context, 22),
+                            fontFamily: 'Metropolis'),
                       ),
                     ),
                     const SizedBox(
@@ -77,9 +80,10 @@ class _ProfileState extends State<Profile> {
               ],
             ),
           ),
-          InkWell(onTap: (){
-            context.read<ProfileProvider>().myOrder(context);
-          },
+          InkWell(
+            onTap: () {
+              context.read<ProfileProvider>().myOrder(context);
+            },
             child: Container(
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
@@ -90,13 +94,15 @@ class _ProfileState extends State<Profile> {
                   ),
                 ],
               ),
-              child:  Column(
+              child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 200, top: 20),
                     child: Text(
                       'My orders',
-                      style: TextStyle(fontSize: Dimensions.heightCalc(context, 18), fontFamily: 'metropolis'),
+                      style: TextStyle(
+                          fontSize: Dimensions.heightCalc(context, 18),
+                          fontFamily: 'metropolis'),
                     ),
                   ),
                   Padding(
@@ -114,39 +120,42 @@ class _ProfileState extends State<Profile> {
               ),
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.white.withOpacity(0.5),
-                  //spreadRadius: 5,
-                  blurRadius: 4,
-                  //offset: const Offset(9, 9),
-                ),
-              ],
-            ),
-            child:  Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(right: 120, top: 30),
-                  child: Text(
-                    'Shipping addresses',
-                    style: TextStyle(fontSize: 18, fontFamily: 'metropolis'),
+          InkWell(
+            onTap: () {
+              context.read<ProfileProvider>().shippingAddress(context);
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.white.withOpacity(0.5),
+                    blurRadius: 4,
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 230, top: 5),
-                  child: Text(
-                    '3 dresses',
-                    style: TextStyle(
-                      fontFamily: 'Metropolis2',
-                      fontSize: Dimensions.heightCalc(context, 15),
-                      color: Colors.grey,
+                ],
+              ),
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(right: 120, top: 30),
+                    child: Text(
+                      'Shipping addresses',
+                      style: TextStyle(fontSize: 18, fontFamily: 'metropolis'),
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(right: 230, top: 5),
+                    child: Text(
+                      '3 dresses',
+                      style: TextStyle(
+                        fontFamily: 'Metropolis2',
+                        fontSize: Dimensions.heightCalc(context, 15),
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Container(
@@ -159,7 +168,7 @@ class _ProfileState extends State<Profile> {
                 ),
               ],
             ),
-            child:  Column(
+            child: Column(
               children: [
                 const Padding(
                   padding: EdgeInsets.only(right: 130, top: 30),
@@ -192,7 +201,7 @@ class _ProfileState extends State<Profile> {
                 ),
               ],
             ),
-            child:  Column(
+            child: Column(
               children: [
                 const Padding(
                   padding: EdgeInsets.only(right: 180, top: 30),
@@ -225,7 +234,7 @@ class _ProfileState extends State<Profile> {
                 ),
               ],
             ),
-            child:  Column(
+            child: Column(
               children: [
                 const Padding(
                   padding: EdgeInsets.only(right: 190, top: 30),
@@ -258,7 +267,7 @@ class _ProfileState extends State<Profile> {
                 ),
               ],
             ),
-            child:  Column(
+            child: Column(
               children: [
                 const Padding(
                   padding: EdgeInsets.only(right: 220, top: 30),
@@ -273,7 +282,8 @@ class _ProfileState extends State<Profile> {
                     'Notifications, password',
                     style: TextStyle(
                       fontFamily: 'Metropolis2',
-                      fontSize: Dimensions.heightCalc(context, 15),                      color: Colors.grey,
+                      fontSize: Dimensions.heightCalc(context, 15),
+                      color: Colors.grey,
                     ),
                   ),
                 ),

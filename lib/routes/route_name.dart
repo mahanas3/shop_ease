@@ -16,4 +16,5 @@ class RouteName {
   static const String favourite='/favourite';
   static const String myOrder='/myOrder';
   static const String orderDetails='/orderDetails';
+  static const String shippingAddress='/shippingAddress';
 }
