@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
-import 'package:shop_ease/provider/auth_provider.dart';
-
 import '../../utilities/dimensions.dart';
 
 class Favourite extends StatefulWidget {
@@ -47,18 +45,18 @@ class _FavouriteState extends State<Favourite> {
                                 width: Dimensions.widthCalc(context, 140),
                               ),
                             ])),
-                        const SizedBox(
-                          height: 10,
+                        SizedBox(
+                          height: Dimensions.heightCalc(context, 10),
                         ),
                         Align(
                           alignment: Alignment.bottomLeft,
                           child: Padding(
                             padding: const EdgeInsets.only(left: 13),
                             child: Text(
-                              context.read<CartProvider>().cart[index]
-                              ['name'],
-                              style: const TextStyle(
-                                  fontSize: 15, fontFamily: 'Metropolis'),
+                              context.read<CartProvider>().cart[index]['name'],
+                              style: TextStyle(
+                                  fontSize: Dimensions.heightCalc(context, 15),
+                                  fontFamily: 'Metropolis'),
                             ),
                           ),
                         ),
@@ -67,10 +65,10 @@ class _FavouriteState extends State<Favourite> {
                           child: Padding(
                             padding: const EdgeInsets.only(left: 13),
                             child: Text(
-                              context.read<CartProvider>().cart[index]
-                              ['price'],
-                              style: const TextStyle(
-                                  fontSize: 15, fontFamily: 'Metropolis'),
+                              context.read<CartProvider>().cart[index]['price'],
+                              style: TextStyle(
+                                  fontSize: Dimensions.heightCalc(context, 15),
+                                  fontFamily: 'Metropolis'),
                             ),
                           ),
                         )

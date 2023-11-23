@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_ease/screens/bag_screen/popular_screen.dart';
 import 'package:shop_ease/screens/bag_screen/toprated_screen.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 import 'newcollection_screen.dart';
 
@@ -34,7 +35,7 @@ class _ProductScreenState extends State<ProductScreen>
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 700,
+                    height: Dimensions.heightCalc(context, 700),
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/images/bagbackground.png'),
@@ -54,20 +55,20 @@ class _ProductScreenState extends State<ProductScreen>
                           padding: const EdgeInsets.only(top: 20, right: 20),
                           child: Row(
                             children: [
-                              const Text(
+                              Text(
                                 'Bag Collections',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 25,
+                                  fontSize: Dimensions.heightCalc(context, 25),
                                   fontFamily: 'Metropolis',
                                 ),
                               ),
-                              const SizedBox(
-                                width: 60,
+                              SizedBox(
+                                width: Dimensions.widthCalc(context, 60),
                               ),
                               Container(
-                                height: 35,
-                                width: 35,
+                                height: Dimensions.heightCalc(context, 35),
+                                width: Dimensions.widthCalc(context, 35),
                                 decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Colors.white,
@@ -104,12 +105,13 @@ class _ProductScreenState extends State<ProductScreen>
                                       borderRadius: BorderRadius.circular(50),
                                       border: Border.all(
                                           color: Colors.white, width: 5)),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: Alignment.center,
                                     child: Text("Popular",
                                         style: TextStyle(
                                           fontFamily: 'Metropolis',
-                                          fontSize: 15,
+                                          fontSize: Dimensions.heightCalc(
+                                              context, 15),
                                         )),
                                   ),
                                 ),
@@ -120,12 +122,13 @@ class _ProductScreenState extends State<ProductScreen>
                                       borderRadius: BorderRadius.circular(50),
                                       border: Border.all(
                                           color: Colors.white, width: 5)),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: Alignment.center,
                                     child: Text("Top Rated",
                                         style: TextStyle(
                                           fontFamily: 'Metropolis',
-                                          fontSize: 15,
+                                          fontSize: Dimensions.heightCalc(
+                                              context, 15),
                                         )),
                                   ),
                                 ),
@@ -136,19 +139,20 @@ class _ProductScreenState extends State<ProductScreen>
                                       borderRadius: BorderRadius.circular(50),
                                       border: Border.all(
                                           color: Colors.white, width: 5)),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: Alignment.center,
                                     child: Text("New Collection",
                                         style: TextStyle(
                                           fontFamily: 'Metropolis',
-                                          fontSize: 15,
+                                          fontSize: Dimensions.heightCalc(
+                                              context, 15),
                                         )),
                                   ),
                                 ),
                               ),
                             ]),
                         SizedBox(
-                          height: 900,
+                          height: Dimensions.heightCalc(context, 900),
                           child: TabBarView(
                             controller: _tabController,
                             children: const [

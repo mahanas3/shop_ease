@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/provider/profile_provider.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -29,11 +30,11 @@ class _ProfileState extends State<Profile> {
       ),
       body: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.only(right: 130, top: 20),
+           Padding(
+            padding: const EdgeInsets.only(right: 130, top: 20),
             child: Text(
               'My profile',
-              style: TextStyle(fontSize: 34, fontFamily: 'Metropolis'),
+              style: TextStyle(fontSize: Dimensions.heightCalc(context, 34), fontFamily: 'Metropolis'),
             ),
           ),
           Padding(
@@ -41,35 +42,35 @@ class _ProfileState extends State<Profile> {
             child: Row(
               children: [
                 Container(
-                  height: 80,
-                  width: 80,
+                  height: Dimensions.heightCalc(context, 80),
+                  width: Dimensions.widthCalc(context, 80),
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
                           image: AssetImage('assets/images/profile.png'))),
                 ),
-                const SizedBox(
-                  width: 22,
+                 SizedBox(
+                  width: Dimensions.widthCalc(context, 22),
                 ),
-                const Column(
+                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(right: 90),
+                      padding: const EdgeInsets.only(right: 90),
                       child: Text(
                         'User',
                         style:
-                        TextStyle(fontSize: 22, fontFamily: 'Metropolis'),
+                        TextStyle(fontSize: Dimensions.heightCalc(context, 22), fontFamily: 'Metropolis'),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
                       'user@gmail.com',
                       style: TextStyle(
                           fontFamily: 'Metropolis2',
-                          fontSize: 18,
-                          color: Color(0xff9B9B9B)),
+                          fontSize: Dimensions.heightCalc(context, 18),
+                          color: const Color(0xff9B9B9B)),
                     )
                   ],
                 )
@@ -89,22 +90,22 @@ class _ProfileState extends State<Profile> {
                   ),
                 ],
               ),
-              child: const Column(
+              child:  Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(right: 200, top: 20),
+                    padding: const EdgeInsets.only(right: 200, top: 20),
                     child: Text(
                       'My orders',
-                      style: TextStyle(fontSize: 18, fontFamily: 'metropolis'),
+                      style: TextStyle(fontSize: Dimensions.heightCalc(context, 18), fontFamily: 'metropolis'),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 140, top: 5),
+                    padding: const EdgeInsets.only(right: 140, top: 5),
                     child: Text(
                       'Already have 12 orders',
                       style: TextStyle(
                         fontFamily: 'Metropolis2',
-                        fontSize: 15,
+                        fontSize: Dimensions.heightCalc(context, 15),
                         color: Colors.grey,
                       ),
                     ),
@@ -125,9 +126,9 @@ class _ProfileState extends State<Profile> {
                 ),
               ],
             ),
-            child: const Column(
+            child:  Column(
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(right: 120, top: 30),
                   child: Text(
                     'Shipping addresses',
@@ -135,12 +136,12 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 230, top: 5),
+                  padding: const EdgeInsets.only(right: 230, top: 5),
                   child: Text(
                     '3 dresses',
                     style: TextStyle(
                       fontFamily: 'Metropolis2',
-                      fontSize: 15,
+                      fontSize: Dimensions.heightCalc(context, 15),
                       color: Colors.grey,
                     ),
                   ),
@@ -154,15 +155,13 @@ class _ProfileState extends State<Profile> {
               boxShadow: [
                 BoxShadow(
                   color: Colors.white.withOpacity(0.5),
-                  //spreadRadius: 5,
                   blurRadius: 4,
-                  //offset: const Offset(9, 9),
                 ),
               ],
             ),
-            child: const Column(
+            child:  Column(
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(right: 130, top: 30),
                   child: Text(
                     'Payment methods',
@@ -170,12 +169,12 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 225, top: 5),
+                  padding: const EdgeInsets.only(right: 225, top: 5),
                   child: Text(
                     'Visa  **34',
                     style: TextStyle(
                       fontFamily: 'Metropolis2',
-                      fontSize: 15,
+                      fontSize: Dimensions.heightCalc(context, 15),
                       color: Colors.grey,
                     ),
                   ),
@@ -189,28 +188,26 @@ class _ProfileState extends State<Profile> {
               boxShadow: [
                 BoxShadow(
                   color: Colors.white.withOpacity(0.5),
-                  //spreadRadius: 5,
                   blurRadius: 4,
-                  //offset: const Offset(9, 9),
                 ),
               ],
             ),
-            child: const Column(
+            child:  Column(
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(right: 180, top: 30),
                   child: Text(
                     'PromoCodes',
-                    style: TextStyle(fontSize: 18, fontFamily: 'metropolis'),
+                    style: TextStyle(fontSize: 18, fontFamily: 'Metropolis'),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 100, top: 5),
+                  padding: const EdgeInsets.only(right: 100, top: 5),
                   child: Text(
                     'You have special promocodes',
                     style: TextStyle(
                       fontFamily: 'Metropolis2',
-                      fontSize: 15,
+                      fontSize: Dimensions.heightCalc(context, 15),
                       color: Colors.grey,
                     ),
                   ),
@@ -224,15 +221,13 @@ class _ProfileState extends State<Profile> {
               boxShadow: [
                 BoxShadow(
                   color: Colors.white.withOpacity(0.5),
-                  //spreadRadius: 5,
                   blurRadius: 4,
-                  //offset: const Offset(9, 9),
                 ),
               ],
             ),
-            child: const Column(
+            child:  Column(
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(right: 190, top: 30),
                   child: Text(
                     'My reviews',
@@ -240,12 +235,12 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 165, top: 5),
+                  padding: const EdgeInsets.only(right: 165, top: 5),
                   child: Text(
                     'Reviews for 4 items',
                     style: TextStyle(
                       fontFamily: 'Metropolis2',
-                      fontSize: 15,
+                      fontSize: Dimensions.heightCalc(context, 15),
                       color: Colors.grey,
                     ),
                   ),
@@ -259,29 +254,26 @@ class _ProfileState extends State<Profile> {
               boxShadow: [
                 BoxShadow(
                   color: Colors.white.withOpacity(0.5),
-                  //spreadRadius: 5,
                   blurRadius: 4,
-                  //offset: const Offset(9, 9),
                 ),
               ],
             ),
-            child: const Column(
+            child:  Column(
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(right: 220, top: 30),
                   child: Text(
                     'Settings',
-                    style: TextStyle(fontSize: 18, fontFamily: 'metropolis'),
+                    style: TextStyle(fontSize: 18, fontFamily: 'Metropolis'),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 144, top: 5),
+                  padding: const EdgeInsets.only(right: 144, top: 5),
                   child: Text(
                     'Notifications, password',
                     style: TextStyle(
                       fontFamily: 'Metropolis2',
-                      fontSize: 15,
-                      color: Colors.grey,
+                      fontSize: Dimensions.heightCalc(context, 15),                      color: Colors.grey,
                     ),
                   ),
                 ),

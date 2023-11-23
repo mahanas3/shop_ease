@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_ease/shop_screen/kids_page.dart';
 import 'package:shop_ease/shop_screen/mens_page.dart';
 import 'package:shop_ease/shop_screen/womens_page.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class Catergories extends StatefulWidget {
   const Catergories({super.key});
@@ -42,8 +43,8 @@ class _CatergoriesState extends State<Catergories>
           ]),
       backgroundColor: Colors.white,
       body: Column(children: [
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: Dimensions.heightCalc(context, 20),
         ),
         DefaultTabController(
           length: 3,
@@ -53,37 +54,37 @@ class _CatergoriesState extends State<Catergories>
               unselectedLabelColor: const Color(0xff222222),
               controller: _tabController,
               isScrollable: true,
-              tabs: const [
+              tabs:  [
                 Padding(
-                  padding: EdgeInsets.only(right: 30),
+                  padding: const EdgeInsets.only(right: 30),
                   child: Tab(
                     child: Text(
                       'Women',
                       style: TextStyle(
                           fontFamily: 'Metropolis2',
                           color: Colors.black87,
-                          fontSize: 18),
+                          fontSize: Dimensions.heightCalc(context, 18)),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 30),
+                  padding: const EdgeInsets.only(right: 30),
                   child: Tab(
                     child: Text('Men',
                         style: TextStyle(
                             fontFamily: 'Metropolis2',
                             color: Colors.black87,
-                            fontSize: 18)),
+                            fontSize: Dimensions.heightCalc(context, 18))),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 30),
+                  padding: const EdgeInsets.only(right: 30),
                   child: Tab(
                     child: Text('Kids',
                         style: TextStyle(
                             fontFamily: 'Metropolis2',
                             color: Colors.black87,
-                            fontSize: 18)),
+                            fontSize: Dimensions.heightCalc(context, 18))),
                   ),
                 ),
               ]),

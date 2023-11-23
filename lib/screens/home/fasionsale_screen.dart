@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
-import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
-
 import '../../provider/home_provider.dart';
 
 class Home extends StatefulWidget {
@@ -43,31 +41,31 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   fit: BoxFit.fill,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 230, left: 20),
+              Padding(
+                padding: const EdgeInsets.only(top: 230, left: 20),
                 child: Text(
                   'Fashion ',
                   style: TextStyle(
                       fontFamily: 'Metropolis',
-                      fontSize: 48,
+                      fontSize: Dimensions.heightCalc(context, 48),
                       color: Colors.black),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 280, left: 20),
+              Padding(
+                padding: const EdgeInsets.only(top: 280, left: 20),
                 child: Text(
                   'Sale',
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 48,
+                      fontSize: Dimensions.heightCalc(context, 48),
                       fontFamily: 'Metropolis'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 340, left: 17),
                 child: SizedBox(
-                    height: 36,
-                    width: 160,
+                    height: Dimensions.heightCalc(context, 36),
+                    width: Dimensions.widthCalc(context, 160),
                     child: CustomButton(
                         text: 'Check',
                         onPressed: () {
@@ -90,11 +88,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     fontFamily: 'Metropolis2', color: Color(0xff9B9B9B)),
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: Dimensions.heightCalc(context, 20),
             ),
             Container(
-              height: 200,
+              height: Dimensions.heightCalc(context, 200),
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 physics: const AlwaysScrollableScrollPhysics(),
@@ -102,7 +100,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 itemBuilder: (BuildContext context, int index) {
                   return Stack(children: [
                     Container(
-                      width: 150,
+                      width: Dimensions.widthCalc(context, 150),
                       decoration: BoxDecoration(
                           color: const Color(0xff9B9B9B),
                           borderRadius: BorderRadius.circular(20),
@@ -115,8 +113,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         context.read<HomeProvider>().newButton(context);
                       },
                       child: Container(
-                        height: 40,
-                        width: 60,
+                        height: Dimensions.heightCalc(context, 40),
+                        width: Dimensions.widthCalc(context, 60),
                         child: const Card(
                             color: Colors.black87,
                             shape: OutlineInputBorder(
@@ -135,9 +133,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     ),
                   ]);
                 },
-                separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(
-                  width: 30,
+                separatorBuilder: (BuildContext context, int index) => SizedBox(
+                  width: Dimensions.widthCalc(context, 30),
                 ),
                 itemCount: images.length,
               ),

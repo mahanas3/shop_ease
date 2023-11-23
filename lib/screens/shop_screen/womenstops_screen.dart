@@ -3,14 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
-import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/shop_screen/kurthi_screen.dart';
 import 'package:shop_ease/shop_screen/croptops_screen.dart';
 import 'package:shop_ease/shop_screen/sleeveless_screen.dart';
 import 'package:shop_ease/shop_screen/tshirt_screen.dart';
 import 'package:badges/src/badge.dart' as badge;
-
-import '../screens/favourite_screen/favourite_page.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
+import '../favourite_screen/favourite_page.dart';
 
 class WomenTop extends StatefulWidget {
   const WomenTop({super.key});
@@ -50,8 +49,8 @@ class _WomensTopsState extends State<WomenTop>
                   child: badge.Badge(
                     position: BadgePosition.topEnd(),
                     badgeContent: SizedBox(
-                      height: 17,
-                      width: 17,
+                      height: Dimensions.heightCalc(context, 17),
+                      width: Dimensions.widthCalc(context, 17),
                       child: Center(
                         child: Text(context
                             .read<CartProvider>()
@@ -78,16 +77,18 @@ class _WomensTopsState extends State<WomenTop>
         ],
       ),
       body: Column(children: [
-        const Padding(
-          padding: EdgeInsets.only(left: 15, top: 20),
+        Padding(
+          padding: const EdgeInsets.only(left: 15, top: 20),
           child: Text(
             'Women’s tops',
             style: TextStyle(
-                fontSize: 30, color: Colors.black87, fontFamily: 'Metropolis'),
+                fontSize: Dimensions.heightCalc(context, 30),
+                color: Colors.black87,
+                fontFamily: 'Metropolis'),
           ),
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: Dimensions.heightCalc(context, 20),
         ),
         DefaultTabController(
           length: 4,
@@ -101,72 +102,84 @@ class _WomensTopsState extends State<WomenTop>
               ),
               controller: _tabController,
               isScrollable: true,
-              tabs: const [
+              tabs: [
                 Padding(
-                  padding: EdgeInsets.only(right: 5, left: 5),
+                  padding: const EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text(
                       'T-Shirts',
-                      style: TextStyle(fontFamily: 'POPINS', fontSize: 18),
+                      style: TextStyle(
+                        fontFamily: 'POPINS',
+                        fontSize: Dimensions.heightCalc(context, 18),
+                      ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 5, left: 5),
+                  padding: const EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text('Crop tops',
-                        style: TextStyle(fontFamily: 'POPINS', fontSize: 18)),
+                        style: TextStyle(
+                          fontFamily: 'POPINS',
+                          fontSize: Dimensions.heightCalc(context, 18),
+                        )),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 5, left: 5),
+                  padding: const EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text('Sleeveless',
-                        style: TextStyle(fontFamily: 'POPINS', fontSize: 18)),
+                        style: TextStyle(
+                          fontFamily: 'POPINS',
+                          fontSize: Dimensions.heightCalc(context, 18),
+                        )),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 5, left: 5),
+                  padding: const EdgeInsets.only(right: 5, left: 5),
                   child: Tab(
                     child: Text('Kurthies',
-                        style: TextStyle(fontFamily: 'POPINS', fontSize: 18)),
+                        style: TextStyle(
+                          fontFamily: 'POPINS',
+                          fontSize: Dimensions.heightCalc(context, 18),
+                        )),
                   ),
                 ),
               ]),
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: Dimensions.heightCalc(context, 20),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            height: 50,
+            height: Dimensions.heightCalc(context, 50),
             color: Colors.white,
-            child: const Row(
+            child: Row(
               children: [
-                Icon(Icons.filter, color: Colors.black),
-                SizedBox(
+                const Icon(Icons.filter, color: Colors.black),
+                const SizedBox(
                   width: 10,
                 ),
-                Text(
+                const Text(
                   'Filters',
                   style: TextStyle(fontFamily: 'Metropolis2'),
                 ),
                 SizedBox(
-                  width: 40,
+                  width: Dimensions.widthCalc(context, 40),
                 ),
-                Icon(Icons.vertical_align_center),
-                SizedBox(
+                const Icon(Icons.vertical_align_center),
+                const SizedBox(
                   width: 10,
                 ),
-                Text(
+                const Text(
                   'Price: lowest to high',
                   style: TextStyle(fontFamily: 'Metropolis2'),
                 ),
                 SizedBox(
-                  width: 40,
+                  width: Dimensions.widthCalc(context, 40),
                 ),
-                Icon(Icons.view_list_outlined)
+                const Icon(Icons.view_list_outlined)
               ],
             ),
           ),

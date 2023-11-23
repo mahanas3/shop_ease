@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_ease/screens/profile_screen/cancelled_screen.dart';
 import 'package:shop_ease/screens/profile_screen/deliverd_screen.dart';
 import 'package:shop_ease/screens/profile_screen/processing_screen.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class MyOrder extends StatefulWidget {
   const MyOrder({super.key});
@@ -36,15 +37,17 @@ class _MyOrderState extends State<MyOrder> with SingleTickerProviderStateMixin {
       ),
       body: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 15, right: 150),
+          Padding(
+            padding: const EdgeInsets.only(top: 15, right: 150),
             child: Text(
               'My Orders',
-              style: TextStyle(fontSize: 34, fontFamily: 'Metropolis'),
+              style: TextStyle(
+                  fontSize: Dimensions.heightCalc(context, 34),
+                  fontFamily: 'Metropolis'),
             ),
           ),
-          const SizedBox(
-            height: 30,
+          SizedBox(
+            height: Dimensions.heightCalc(context, 30),
           ),
           DefaultTabController(
             length: 4,
@@ -58,31 +61,34 @@ class _MyOrderState extends State<MyOrder> with SingleTickerProviderStateMixin {
                 ),
                 controller: _tabController,
                 isScrollable: true,
-                tabs: const [
+                tabs: [
                   Padding(
-                    padding: EdgeInsets.only(right: 5, left: 5),
+                    padding: const EdgeInsets.only(right: 5, left: 5),
                     child: Tab(
                       child: Text(
                         'Delivered',
-                        style:
-                            TextStyle(fontFamily: 'Metropolis2', fontSize: 18),
+                        style: TextStyle(
+                            fontFamily: 'Metropolis2',
+                            fontSize: Dimensions.heightCalc(context, 18)),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 5, left: 5),
+                    padding: const EdgeInsets.only(right: 5, left: 5),
                     child: Tab(
                       child: Text('Processing',
                           style: TextStyle(
-                              fontFamily: 'Metropolis2', fontSize: 18)),
+                              fontFamily: 'Metropolis2',
+                              fontSize: Dimensions.heightCalc(context, 18))),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 5, left: 5),
+                    padding: const EdgeInsets.only(right: 5, left: 5),
                     child: Tab(
                       child: Text('Cancelled',
                           style: TextStyle(
-                              fontFamily: 'Metropolis2', fontSize: 18)),
+                              fontFamily: 'Metropolis2',
+                              fontSize: Dimensions.heightCalc(context, 18))),
                     ),
                   ),
                 ]),

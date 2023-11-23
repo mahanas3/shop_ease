@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class MenNew extends StatefulWidget {
   const MenNew({super.key});
@@ -55,9 +56,9 @@ class _MenNewState extends State<MenNew> {
                   child: Card(
                     elevation: 5,
                     margin:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     child: Container(
-                      height: 160,
+                      height: Dimensions.heightCalc(context, 160),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
@@ -77,8 +78,10 @@ class _MenNewState extends State<MenNew> {
                             Column(
                               children: [
                                 Text(title[index],
-                                    style: const TextStyle(
-                                        fontFamily: 'salinaa', fontSize: 25)),
+                                    style: TextStyle(
+                                        fontFamily: 'salinaa',
+                                        fontSize: Dimensions.heightCalc(
+                                            context, 25))),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 30),
                                   child: Row(
@@ -95,12 +98,12 @@ class _MenNewState extends State<MenNew> {
                                 )
                               ],
                             ),
-                            const SizedBox(
-                              width: 40,
+                            SizedBox(
+                              width: Dimensions.widthCalc(context, 40),
                             ),
                             Container(
-                              width: 100,
-                              height: 100,
+                              width: Dimensions.widthCalc(context, 100),
+                              height: Dimensions.heightCalc(context, 100),
                               child: Image(image: NetworkImage(images[index])),
                             )
                           ],

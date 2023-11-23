@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class StreetCloths extends StatefulWidget {
   const StreetCloths({super.key});
@@ -30,20 +31,20 @@ class _StreetClothsState extends State<StreetCloths> {
         children: [
           Stack(children: [
             Container(
-              height: 230,
+              height: Dimensions.heightCalc(context, 230),
               decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage(
                           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS06DXAkO0H5b001O_lU64TaLnLFwE8ub7Wgg&usqp=CAU'),
                       fit: BoxFit.fill)),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 180, left: 20),
+            Padding(
+              padding: const EdgeInsets.only(top: 180, left: 20),
               child: Text(
                 'Street clothes',
                 style: TextStyle(
                     fontFamily: 'Metropolis',
-                    fontSize: 34,
+                    fontSize: Dimensions.heightCalc(context, 34),
                     color: Colors.white),
               ),
             )
@@ -76,8 +77,8 @@ class _StreetClothsState extends State<StreetCloths> {
                     ),
                     child: Stack(children: [
                       Container(
-                        width: 148,
-                        height: 390,
+                        width: Dimensions.widthCalc(context, 148),
+                        height: Dimensions.heightCalc(context, 390),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
@@ -167,8 +168,8 @@ class _StreetClothsState extends State<StreetCloths> {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 120, left: 130),
                           child: Container(
-                            width: 30,
-                            height: 30,
+                            width: Dimensions.widthCalc(context, 30),
+                            height: Dimensions.heightCalc(context, 30),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: Colors.white,
@@ -196,12 +197,13 @@ class _StreetClothsState extends State<StreetCloths> {
                           ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 40, left: 20),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 40, left: 20),
                         child: Text(
                           'Discounts',
-                          style:
-                              TextStyle(fontFamily: 'Metropolis', fontSize: 20),
+                          style: TextStyle(
+                              fontFamily: 'Metropolis',
+                              fontSize: Dimensions.heightCalc(context, 20)),
                         ),
                       )
                     ]));

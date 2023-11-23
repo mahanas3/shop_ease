@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_ease/provider/auth_provider.dart';
+import 'package:shop_ease/provider/home_provider.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
-import '../provider/home_provider.dart';
-
-class WomenScreen extends StatefulWidget {
-  const WomenScreen({super.key});
+class MensPage extends StatefulWidget {
+  const MensPage({super.key});
 
   @override
-  State<WomenScreen> createState() => _WomenScreenState();
+  State<MensPage> createState() => _MensPageState();
 }
 
-class _WomenScreenState extends State<WomenScreen> {
+class _MensPageState extends State<MensPage> {
   @override
   Widget build(BuildContext context) {
-    List names = ['Tops', 'Geans', 'Footwear', 'Accessories'];
+    List names = ['Shirt', 'Hoodies', 'Footwear', 'Watch'];
 
-    List salesImages = [
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRue4A2ArMsKVE9f2iL1VF-e28VNGI11IKXZA&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScDAAtLChrrns2Czzvr4qODx5NmR_fJFbA3w&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8y2mJlhaZouUJ4hYIgE4Z5QKd-f4zK0vK9w&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoIFBJR3IL4_CxyxrQMGg1vskbdR3eWRjYWw&usqp=CAU'
+    List mensImages = [
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbqTS_sjzrFCOfuZpjp7n4UksZC1Dybrhaxw&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoGW3SGvZ-23rL9KZvI2WZtJGakEiA2I5FDw&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-9falxasiXfO-jTTc0FwaESvUJ-tP7etB9Q&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbSPTvxKTL18uWYnbvV_-333ZLS8P6GFjNbw&usqp=CAU'
     ];
 
     return Scaffold(
@@ -39,37 +37,38 @@ class _WomenScreenState extends State<WomenScreen> {
                       color: Color(0xffDB3022),
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 30, left: 60),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30, left: 60),
                   child: Column(
                     children: [
                       Text(
                         'SUMMER SALES',
                         style: TextStyle(
-                            fontSize: 24,
+                            fontSize: Dimensions.heightCalc(context, 24),
                             fontFamily: 'Metropolis',
                             color: Colors.white),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
                         'Up to 50% off',
                         style: TextStyle(
                             fontFamily: 'Metropolis',
-                            fontSize: 14,
+                            fontSize: Dimensions.heightCalc(context, 24),
                             color: Colors.white),
                       )
                     ],
                   ),
                 ),
-                InkWell(onTap: (){
-                  context.read<ShopProvider>().womenNew(context);
-                },
-                  child: const Image(
-                    image: AssetImage('assets/images/neww.png'),
-                    height: 100,
-                    width: 100,
+                InkWell(
+                  onTap: () {
+                    context.read<ShopProvider>().mensNew(context);
+                  },
+                  child: Image(
+                    image: const AssetImage('assets/images/neww.png'),
+                    height: Dimensions.heightCalc(context, 100),
+                    width: Dimensions.widthCalc(context, 100),
                   ),
                 )
               ]),
@@ -97,14 +96,14 @@ class _WomenScreenState extends State<WomenScreen> {
                             children: [
                               Container(
                                 child: Image(
-                                  image: NetworkImage(salesImages[index]),
-                                  height: 120,
-                                  width: 120,
+                                  image: NetworkImage(mensImages[index]),
+                                  height: Dimensions.heightCalc(context, 120),
+                                  width: Dimensions.widthCalc(context, 120),
                                   fit: BoxFit.fill,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 40,
+                              SizedBox(
+                                width: Dimensions.widthCalc(context, 40),
                               ),
                               Container(
                                 padding: const EdgeInsets.only(bottom: 8),
@@ -114,9 +113,11 @@ class _WomenScreenState extends State<WomenScreen> {
                                   children: [
                                     Text(
                                       names[index],
-                                      style: const TextStyle(
-                                          fontFamily: 'Metropolis',
-                                          fontSize: 20),
+                                      style: TextStyle(
+                                        fontFamily: 'Metropolis',
+                                        fontSize:
+                                        Dimensions.heightCalc(context, 20),
+                                      ),
                                     )
                                   ],
                                 ),
@@ -127,10 +128,10 @@ class _WomenScreenState extends State<WomenScreen> {
                       ));
                 },
                 separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                itemCount: salesImages.length,
+                itemCount: mensImages.length,
               ),
             )
           ],

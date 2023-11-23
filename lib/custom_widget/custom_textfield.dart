@@ -21,8 +21,6 @@ class CustomTextfield extends StatelessWidget {
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
           color: Colors.grey.withOpacity(0.2),
-          // spreadRadius: 2,
-          // blurRadius: 5,
           offset: const Offset(0, 2), // changes position of shadow
         ),
       ]),
@@ -38,12 +36,12 @@ class CustomTextfield extends StatelessWidget {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
           labelText: text1,
           labelStyle: TextStyle(
-            fontFamily: 'Metroplis2',
+            fontFamily: 'Metropolis2',
             color: Colors.black87.withOpacity(0.4),
           ),
           hintText: text2,
           hintStyle:
-              const TextStyle(fontFamily: 'Metroplis2', color: Colors.black),
+              const TextStyle(fontFamily: 'Metropolis2', color: Colors.black),
         ),
         validator: validator,
       ),

@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/provider/home_provider.dart';
+import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
-class MensPage extends StatefulWidget {
-  const MensPage({super.key});
+class KidsPage extends StatefulWidget {
+  const KidsPage({super.key});
 
   @override
-  State<MensPage> createState() => _MensPageState();
+  State<KidsPage> createState() => _KidsPageState();
 }
 
-class _MensPageState extends State<MensPage> {
+class _KidsPageState extends State<KidsPage> {
   @override
   Widget build(BuildContext context) {
-    List names = ['Shirt', 'Hoodies', 'Footwear', 'Watch'];
+    List names = ['T-shirt', 'Gown', 'Footwear', 'Accessories'];
 
-    List mensImages = [
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbqTS_sjzrFCOfuZpjp7n4UksZC1Dybrhaxw&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoGW3SGvZ-23rL9KZvI2WZtJGakEiA2I5FDw&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-9falxasiXfO-jTTc0FwaESvUJ-tP7etB9Q&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbSPTvxKTL18uWYnbvV_-333ZLS8P6GFjNbw&usqp=CAU'
+    List kidsImages = [
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNdkA9YpSnuVOIn3WVmkxg04Vhv15RLiNBYw&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTstM9W7rqQxaJU8u1-Di34btjiKmjd98x0bw&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp96R0zKYKpV79KJv-D4hGkMtP_OGw237w2Q&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCF3AndIq6Objg5avOd_1436wX-6xiQzgsdw&usqp=CAU'
     ];
 
     return Scaffold(
@@ -37,25 +38,25 @@ class _MensPageState extends State<MensPage> {
                       color: Color(0xffDB3022),
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 30, left: 60),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30, left: 60),
                   child: Column(
                     children: [
                       Text(
                         'SUMMER SALES',
                         style: TextStyle(
-                            fontSize: 24,
+                            fontSize: Dimensions.heightCalc(context, 24),
                             fontFamily: 'Metropolis',
                             color: Colors.white),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
                         'Up to 50% off',
                         style: TextStyle(
                             fontFamily: 'Metropolis',
-                            fontSize: 14,
+                            fontSize: Dimensions.heightCalc(context, 14),
                             color: Colors.white),
                       )
                     ],
@@ -63,12 +64,12 @@ class _MensPageState extends State<MensPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    context.read<ShopProvider>().mensNew(context);
+                    context.read<ShopProvider>().kidsNew(context);
                   },
-                  child: const Image(
-                    image: AssetImage('assets/images/neww.png'),
-                    height: 100,
-                    width: 100,
+                  child: Image(
+                    image: const AssetImage('assets/images/neww.png'),
+                    height: Dimensions.heightCalc(context, 100),
+                    width: Dimensions.widthCalc(context, 100),
                   ),
                 )
               ]),
@@ -96,14 +97,14 @@ class _MensPageState extends State<MensPage> {
                             children: [
                               Container(
                                 child: Image(
-                                  image: NetworkImage(mensImages[index]),
-                                  height: 120,
-                                  width: 120,
+                                  image: NetworkImage(kidsImages[index]),
+                                  height: Dimensions.heightCalc(context, 120),
+                                  width: Dimensions.widthCalc(context, 120),
                                   fit: BoxFit.fill,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 40,
+                              SizedBox(
+                                width: Dimensions.widthCalc(context, 40),
                               ),
                               Container(
                                 padding: const EdgeInsets.only(bottom: 8),
@@ -113,9 +114,10 @@ class _MensPageState extends State<MensPage> {
                                   children: [
                                     Text(
                                       names[index],
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                           fontFamily: 'Metropolis',
-                                          fontSize: 20),
+                                          fontSize: Dimensions.heightCalc(
+                                              context, 20)),
                                     )
                                   ],
                                 ),
@@ -126,10 +128,10 @@ class _MensPageState extends State<MensPage> {
                       ));
                 },
                 separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                itemCount: mensImages.length,
+                itemCount: kidsImages.length,
               ),
             )
           ],

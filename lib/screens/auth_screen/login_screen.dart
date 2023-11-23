@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/custom_widget/custom_textfield.dart';
 import 'package:shop_ease/provider/auth_provider.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -33,8 +34,8 @@ class _LoginState extends State<Login> {
                   style: TextStyle(fontFamily: 'Metropolis', fontSize: 34),
                 ),
               ),
-              const SizedBox(
-                height: 60,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 60),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
@@ -51,8 +52,8 @@ class _LoginState extends State<Login> {
                   },
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 20),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
@@ -74,13 +75,11 @@ class _LoginState extends State<Login> {
                   children: [
                     const Text(
                       'Forgot your password?',
-                      style: TextStyle(fontFamily: 'Metroplis2', fontSize: 15),
+                      style: TextStyle(fontFamily: 'Metropolis2', fontSize: 15),
                     ),
                     TextButton(
                         onPressed: () {
-                          context
-                              .read<AuthProvider>()
-                              .forgotPassword(context);
+                          context.read<AuthProvider>().forgotPassword(context);
                         },
                         child: const Icon(
                           Icons.arrow_right_alt_rounded,
@@ -89,12 +88,12 @@ class _LoginState extends State<Login> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 30,
+               SizedBox(
+                height: Dimensions.heightCalc(context, 30),
               ),
               SizedBox(
-                  height: 48,
-                  width: 325,
+                  height: Dimensions.heightCalc(context, 48),
+                  width: Dimensions.widthCalc(context, 325),
                   child: CustomButton(
                       text: 'LOGIN',
                       onPressed: () {
@@ -102,23 +101,23 @@ class _LoginState extends State<Login> {
                           context.read<AuthProvider>().login(context);
                         }
                       })),
-              const SizedBox(
-                height: 90,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 90),
               ),
               const Text(
                 'Or login with social account',
                 style: TextStyle(fontFamily: 'Metroplis2', fontSize: 15),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 20),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 80),
                 child: Row(
                   children: [
                     Container(
-                      height: 90,
-                      width: 92,
+                      height: Dimensions.heightCalc(context, 90),
+                      width: Dimensions.widthCalc(context, 92),
                       decoration: BoxDecoration(
                         image: const DecorationImage(
                             image: AssetImage('assets/images/google.png')),
@@ -133,12 +132,12 @@ class _LoginState extends State<Login> {
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      width: 20,
+                     SizedBox(
+                      width: Dimensions.widthCalc(context, 20),
                     ),
                     Container(
-                      height: 90,
-                      width: 92,
+                      height: Dimensions.heightCalc(context, 90),
+                      width: Dimensions.widthCalc(context, 92),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         image: const DecorationImage(

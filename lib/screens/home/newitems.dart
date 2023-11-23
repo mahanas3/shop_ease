@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class NewItems extends StatefulWidget {
   const NewItems({super.key});
@@ -56,7 +57,7 @@ class _NewItemsState extends State<NewItems> {
                     margin:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     child: Container(
-                      height: 160,
+                      height: Dimensions.heightCalc(context, 160),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
@@ -74,14 +75,16 @@ class _NewItemsState extends State<NewItems> {
                         child: Row(
                           children: [
                             Text(title[index],
-                                style: const TextStyle(
-                                    fontFamily: 'salinaa', fontSize: 25)),
-                            const SizedBox(
-                              width: 40,
+                                style: TextStyle(
+                                    fontFamily: 'salinaa',
+                                    fontSize:
+                                        Dimensions.heightCalc(context, 25))),
+                            SizedBox(
+                              width: Dimensions.widthCalc(context, 40),
                             ),
                             Container(
-                              width: 100,
-                              height: 100,
+                              width: Dimensions.widthCalc(context, 100),
+                              height: Dimensions.heightCalc(context, 100),
                               child: Image(image: NetworkImage(images[index])),
                             )
                           ],

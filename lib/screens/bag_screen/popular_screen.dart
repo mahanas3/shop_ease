@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
-
-import '../../provider/auth_provider.dart';
-
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class PopularScreen extends StatefulWidget {
   const PopularScreen({super.key});
@@ -61,8 +59,8 @@ class _PopularScreenState extends State<PopularScreen> {
                         Image(
                           image: NetworkImage(bagImages[index]),
                           fit: BoxFit.fill,
-                          height: 150,
-                          width: 100,
+                          height: Dimensions.heightCalc(context, 150),
+                          width: Dimensions.widthCalc(context, 100),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 70, top: 10),
@@ -92,8 +90,9 @@ class _PopularScreenState extends State<PopularScreen> {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           name[index],
-                          style: const TextStyle(
-                              fontFamily: 'Metropolis', fontSize: 16),
+                          style: TextStyle(
+                              fontFamily: 'Metropolis',
+                              fontSize: Dimensions.heightCalc(context, 16)),
                         ),
                       ),
                     ),
@@ -104,8 +103,9 @@ class _PopularScreenState extends State<PopularScreen> {
                       padding: const EdgeInsets.only(right: 115),
                       child: Text(
                         price[index],
-                        style: const TextStyle(
-                            fontFamily: 'Metropolis', fontSize: 16),
+                        style: TextStyle(
+                            fontFamily: 'Metropolis',
+                            fontSize: Dimensions.heightCalc(context, 16)),
                       ),
                     )
                   ],
@@ -114,8 +114,8 @@ class _PopularScreenState extends State<PopularScreen> {
               Padding(
                 padding: const EdgeInsets.only(top: 210, left: 120),
                 child: Container(
-                  width: 100,
-                  height: 90,
+                  width: Dimensions.widthCalc(context, 100),
+                  height: Dimensions.heightCalc(context, 90),
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,

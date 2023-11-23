@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/custom_widget/custom_textfield.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
@@ -17,17 +18,17 @@ class ForgotPassword extends StatelessWidget {
             child: Text('Forgot password',
                 style: TextStyle(fontFamily: 'Metropolis', fontSize: 34)),
           ),
-          const SizedBox(
-            height: 100,
+           SizedBox(
+            height: Dimensions.heightCalc(context, 100),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20, right: 20),
+           Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
             child: Text(
                 'Please, enter your email address. You will receive a link to create a new password via email.',
-                style: TextStyle(fontFamily: 'Metroplis2', fontSize: 15)),
+                style: TextStyle(fontFamily: 'Metropolis2', fontSize: Dimensions.heightCalc(context, 15))),
           ),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: Dimensions.heightCalc(context, 20),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
@@ -45,12 +46,12 @@ class ForgotPassword extends StatelessWidget {
               },
             ),
           ),
-          const SizedBox(
-            height: 90,
+           SizedBox(
+            height: Dimensions.heightCalc(context, 90),
           ),
           SizedBox(
-              height: 48,
-              width: 325,
+              height: Dimensions.heightCalc(context, 48),
+              width: Dimensions.widthCalc(context, 325),
               child: CustomButton(
                   text: 'SEND',
                   onPressed: () {

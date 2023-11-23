@@ -2,33 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
-import '../provider/auth_provider.dart';
-
-class Kurthies extends StatefulWidget {
-  const Kurthies({super.key});
+class Tshirt extends StatefulWidget {
+  const Tshirt({super.key});
 
   @override
-  State<Kurthies> createState() => _KurthiesState();
+  State<Tshirt> createState() => _TshirtState();
 }
 
-class _KurthiesState extends State<Kurthies> {
+class _TshirtState extends State<Tshirt> {
   @override
   Widget build(BuildContext context) {
     List<String> tshirtImages = [
-      'assets/images/kurthi.png',
-      'assets/images/kurthi.png',
-      'assets/images/kurthi.png',
-      'assets/images/kurthi.png',
-      'assets/images/kurthi.png',
+      'assets/images/tshirtt.png',
+      'assets/images/tshirtt.png',
+      'assets/images/tshirtt.png',
+      'assets/images/tshirtt.png',
     ];
-    List name = [
-      'Mango',
-      'Dorothi Perkings',
-      'Mango',
-      'Dorothi Perkings',
-      'Kurthi'
-    ];
+    List name = ['Mango', 'Dorothi Perkings', 'Mango', 'Dorothi Perkings'];
 
     List price = ['9\$', '20\$', '50\$', '25\$'];
 
@@ -60,11 +52,11 @@ class _KurthiesState extends State<Kurthies> {
                         Image(
                           image: AssetImage(tshirtImages[index]),
                           fit: BoxFit.fill,
-                          height: 150,
-                          width: 130,
+                          height: Dimensions.heightCalc(context, 150),
+                          width: Dimensions.widthCalc(context, 100),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.only(right: 70, top: 10),
                           child: CustomButton(text: '-20%', onPressed: () {}),
                         ),
                       ]),
@@ -91,20 +83,22 @@ class _KurthiesState extends State<Kurthies> {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           name[index],
-                          style: const TextStyle(
-                              fontFamily: 'Metropolis', fontSize: 16),
+                          style: TextStyle(
+                              fontFamily: 'Metropolis',
+                              fontSize: Dimensions.heightCalc(context, 16)),
                         ),
                       ),
                     ),
                     const SizedBox(
                       height: 5,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(right: 115),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 115),
                       child: Text(
-                        '9' + '\$',
-                        style:
-                            TextStyle(fontFamily: 'Metropolis', fontSize: 16),
+                        price[index],
+                        style: TextStyle(
+                            fontFamily: 'Metropolis',
+                            fontSize: Dimensions.heightCalc(context, 16)),
                       ),
                     )
                   ],
@@ -113,8 +107,8 @@ class _KurthiesState extends State<Kurthies> {
               Padding(
                 padding: const EdgeInsets.only(top: 210, left: 120),
                 child: Container(
-                  width: 100,
-                  height: 90,
+                  width: Dimensions.widthCalc(context, 100),
+                  height: Dimensions.heightCalc(context, 90),
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,

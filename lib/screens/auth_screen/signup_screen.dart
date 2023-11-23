@@ -4,6 +4,8 @@ import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/custom_widget/custom_textfield.dart';
 import 'package:shop_ease/provider/auth_provider.dart';
 
+import '../../utilities/dimensions.dart';
+
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
@@ -28,18 +30,18 @@ class _SignUpState extends State<SignUp> {
           key: _formkey,
           child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 70, right: 190),
+              Padding(
+                padding: const EdgeInsets.only(top: 70, right: 190),
                 child: Text(
                   'Sign Up',
                   style: TextStyle(
                       fontFamily: 'Metropolis',
                       color: Colors.black87,
-                      fontSize: 34),
+                      fontSize: Dimensions.heightCalc(context, 34)),
                 ),
               ),
-              const SizedBox(
-                height: 35,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 35),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
@@ -54,8 +56,8 @@ class _SignUpState extends State<SignUp> {
                       return null;
                     }),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 20),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
@@ -73,8 +75,8 @@ class _SignUpState extends State<SignUp> {
                   },
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 20),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
@@ -87,7 +89,7 @@ class _SignUpState extends State<SignUp> {
                       return 'Enter an email address';
                     }
                     if (!RegExp(
-                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$")
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$")
                         .hasMatch(value)) {
                       return 'Enter a valid email address';
                     }
@@ -95,8 +97,8 @@ class _SignUpState extends State<SignUp> {
                   },
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 20),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
@@ -118,11 +120,11 @@ class _SignUpState extends State<SignUp> {
                 padding: const EdgeInsets.only(top: 15, left: 100),
                 child: Row(
                   children: [
-                    const Text(
+                    Text(
                       'Already have an account?',
                       style: TextStyle(
-                        fontFamily: 'Metroplis2',
-                        fontSize: 15,
+                        fontFamily: 'Metropolis2',
+                        fontSize: Dimensions.heightCalc(context, 15),
                       ),
                     ),
                     TextButton(
@@ -136,12 +138,12 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 20),
               ),
               SizedBox(
-                height: 48,
-                width: 325,
+                height: Dimensions.heightCalc(context, 48),
+                width: Dimensions.widthCalc(context, 325),
                 child: CustomButton(
                   text: 'SIGN UP',
                   onPressed: () {
@@ -156,8 +158,8 @@ class _SignUpState extends State<SignUp> {
                   },
                 ),
               ),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 30),
               ),
               const Align(
                 alignment: Alignment.center,
@@ -166,16 +168,16 @@ class _SignUpState extends State<SignUp> {
                   style: TextStyle(fontFamily: 'Metroplis2', fontSize: 15),
                 ),
               ),
-              const SizedBox(
-                height: 18,
+              SizedBox(
+                height: Dimensions.heightCalc(context, 18),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 80),
                 child: Row(
                   children: [
                     Container(
-                      height: 90,
-                      width: 92,
+                      height: Dimensions.heightCalc(context, 90),
+                      width: Dimensions.widthCalc(context, 92),
                       decoration: BoxDecoration(
                         image: const DecorationImage(
                             image: AssetImage('assets/images/google.png')),
@@ -190,12 +192,12 @@ class _SignUpState extends State<SignUp> {
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      width: 20,
+                    SizedBox(
+                      width: Dimensions.widthCalc(context, 20),
                     ),
                     Container(
-                      height: 90,
-                      width: 92,
+                      height: Dimensions.heightCalc(context, 90),
+                      width: Dimensions.widthCalc(context, 92),
                       decoration: BoxDecoration(
                         image: const DecorationImage(
                             image: AssetImage('assets/images/facebook.jpg')),

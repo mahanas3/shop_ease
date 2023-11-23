@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 import '../../provider/home_provider.dart';
 
 class NewCollection extends StatefulWidget {
@@ -24,7 +25,7 @@ class _NewCollectionState extends State<NewCollection> {
                     context.read<HomeProvider>().newItems(context);
                   },
                   child: Container(
-                    height: 384,
+                    height: Dimensions.heightCalc(context, 384),
                     width: double.infinity,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
@@ -36,13 +37,13 @@ class _NewCollectionState extends State<NewCollection> {
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 320, left: 60),
+                Padding(
+                  padding: const EdgeInsets.only(top: 320, left: 60),
                   child: Text(
                     'New collection',
                     style: TextStyle(
                       fontFamily: 'Metropolis',
-                      fontSize: 36,
+                      fontSize: Dimensions.heightCalc(context, 36),
                       color: Colors.white,
                     ),
                   ),
@@ -54,7 +55,7 @@ class _NewCollectionState extends State<NewCollection> {
                 Expanded(
                   child: Stack(children: [
                     Container(
-                      height: 410,
+                      height: Dimensions.heightCalc(context, 410),
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: NetworkImage(
@@ -71,22 +72,22 @@ class _NewCollectionState extends State<NewCollection> {
                           onTap: () {
                             context.read<HomeProvider>().mensHoodies(context);
                           },
-                          child: const Text(
+                          child: Text(
                             'Men’s',
                             style: TextStyle(
                                 fontFamily: 'Metropolis',
-                                fontSize: 34,
+                                fontSize: Dimensions.heightCalc(context, 34),
                                 color: Colors.white),
                           ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 20),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
                         child: Text(
                           'hoodies',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 34,
+                              fontSize: Dimensions.heightCalc(context, 34),
                               fontFamily: 'Metropolis'),
                         ),
                       )
@@ -102,29 +103,32 @@ class _NewCollectionState extends State<NewCollection> {
                           context.read<HomeProvider>().summerSale(context);
                         },
                         child: Container(
-                          height: 200,
+                          height: Dimensions.heightCalc(context, 200),
                           color: Colors.white,
-                          child: const Padding(
-                            padding: EdgeInsets.only(top: 60, left: 16),
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 60, left: 16),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   'Summer',
                                   style: TextStyle(
-                                    color: Color(0xffDB3022),
+                                    color: const Color(0xffDB3022),
                                     fontFamily: 'Metropolis',
-                                    fontSize: 34,
+                                    fontSize:
+                                        Dimensions.heightCalc(context, 34),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(top: 8, right: 70),
+                                  padding:
+                                      const EdgeInsets.only(top: 8, right: 70),
                                   child: Text(
                                     'sale',
                                     style: TextStyle(
-                                      color: Color(0xffDB3022),
+                                      color: const Color(0xffDB3022),
                                       fontFamily: 'Metropolis',
-                                      fontSize: 34,
+                                      fontSize:
+                                          Dimensions.heightCalc(context, 34),
                                     ),
                                   ),
                                 ),
@@ -139,7 +143,7 @@ class _NewCollectionState extends State<NewCollection> {
                             context.read<HomeProvider>().blackDress(context);
                           },
                           child: Container(
-                            height: 210,
+                            height: Dimensions.heightCalc(context, 210),
                             decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: NetworkImage(
@@ -150,13 +154,13 @@ class _NewCollectionState extends State<NewCollection> {
                             ),
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 80, left: 20),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 80, left: 20),
                           child: Text(
                             'Black',
                             style: TextStyle(
                               fontFamily: 'Metropolis',
-                              fontSize: 34,
+                              fontSize: Dimensions.heightCalc(context, 34),
                             ),
                           ),
                         )

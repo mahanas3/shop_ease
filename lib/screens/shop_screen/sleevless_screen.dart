@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
-import 'package:shop_ease/provider/auth_provider.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
-class Croptops extends StatefulWidget {
-  const Croptops({super.key});
+class Sleeveless extends StatefulWidget {
+  const Sleeveless({super.key});
 
   @override
-  State<Croptops> createState() => _CroptopsState();
+  State<Sleeveless> createState() => _SleevelessState();
 }
 
-class _CroptopsState extends State<Croptops> {
+class _SleevelessState extends State<Sleeveless> {
   @override
   Widget build(BuildContext context) {
     List<String> tshirtImages = [
-      'assets/images/croptop.png',
-      'assets/images/croptop.png',
-      'assets/images/croptop.png',
-      'assets/images/croptop.png',
+      'assets/images/sleeveless.png',
+      'assets/images/sleeveless.png',
+      'assets/images/sleeveless.png',
+      'assets/images/sleeveless.png',
     ];
     List name = ['Mango', 'Dorothi Perkings', 'Mango', 'Dorothi Perkings'];
 
@@ -52,8 +52,8 @@ class _CroptopsState extends State<Croptops> {
                         Image(
                           image: AssetImage(tshirtImages[index]),
                           fit: BoxFit.fill,
-                          height: 150,
-                          width: 180,
+                          height: Dimensions.heightCalc(context, 150),
+                          width: Dimensions.widthCalc(context, 130),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -83,21 +83,21 @@ class _CroptopsState extends State<Croptops> {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           name[index],
-                          style: const TextStyle(
-                              fontFamily: 'Metropolis', fontSize: 16),
+                          style:  TextStyle(
+                              fontFamily: 'Metropolis', fontSize: Dimensions.heightCalc(context, 16)),
                         ),
                       ),
                     ),
                     const SizedBox(
                       height: 5,
                     ),
-                     Padding(
-                      padding: const EdgeInsets.only(right: 115),
-                      child: Text(
-                        price[index],
-                        style:
-                        const TextStyle(fontFamily: 'Metropolis', fontSize: 16),
-                      ),
+                    Padding(
+                        padding: const EdgeInsets.only(right: 115),
+                        child: Text(
+                          '9' + '\$',
+                          style:
+                          TextStyle(fontFamily: 'Metropolis', fontSize: Dimensions.heightCalc(context, 16),
+                          ),)
                     )
                   ],
                 ),
@@ -105,8 +105,8 @@ class _CroptopsState extends State<Croptops> {
               Padding(
                 padding: const EdgeInsets.only(top: 210, left: 120),
                 child: Container(
-                  width: 100,
-                  height: 90,
+                  width: Dimensions.widthCalc(context, 100),
+                  height: Dimensions.heightCalc(context, 90),
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,

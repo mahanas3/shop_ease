@@ -2,26 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
-import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
-class Tshirt extends StatefulWidget {
-  const Tshirt({super.key});
+class Kurthies extends StatefulWidget {
+  const Kurthies({super.key});
 
   @override
-  State<Tshirt> createState() => _TshirtState();
+  State<Kurthies> createState() => _KurthiesState();
 }
 
-class _TshirtState extends State<Tshirt> {
+class _KurthiesState extends State<Kurthies> {
   @override
   Widget build(BuildContext context) {
     List<String> tshirtImages = [
-      'assets/images/tshirtt.png',
-      'assets/images/tshirtt.png',
-      'assets/images/tshirtt.png',
-      'assets/images/tshirtt.png',
+      'assets/images/kurthi.png',
+      'assets/images/kurthi.png',
+      'assets/images/kurthi.png',
+      'assets/images/kurthi.png',
+      'assets/images/kurthi.png',
     ];
-    List name = ['Mango', 'Dorothi Perkings', 'Mango', 'Dorothi Perkings'];
+    List name = [
+      'Mango',
+      'Dorothi Perkings',
+      'Mango',
+      'Dorothi Perkings',
+      'Kurthi'
+    ];
 
     List price = ['9\$', '20\$', '50\$', '25\$'];
 
@@ -54,10 +60,10 @@ class _TshirtState extends State<Tshirt> {
                           image: AssetImage(tshirtImages[index]),
                           fit: BoxFit.fill,
                           height: Dimensions.heightCalc(context, 150),
-                          width: Dimensions.widthCalc(context, 100),
+                          width: Dimensions.widthCalc(context, 130),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(right: 70, top: 10),
+                          padding: const EdgeInsets.all(8.0),
                           child: CustomButton(text: '-20%', onPressed: () {}),
                         ),
                       ]),
@@ -84,8 +90,9 @@ class _TshirtState extends State<Tshirt> {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           name[index],
-                          style: const TextStyle(
-                              fontFamily: 'Metropolis', fontSize: 16),
+                          style: TextStyle(
+                              fontFamily: 'Metropolis',
+                              fontSize: Dimensions.heightCalc(context, 16)),
                         ),
                       ),
                     ),
@@ -95,9 +102,10 @@ class _TshirtState extends State<Tshirt> {
                     Padding(
                       padding: const EdgeInsets.only(right: 115),
                       child: Text(
-                        price[index],
-                        style: const TextStyle(
-                            fontFamily: 'Metropolis', fontSize: 16),
+                        '9' + '\$',
+                        style: TextStyle(
+                            fontFamily: 'Metropolis',
+                            fontSize: Dimensions.heightCalc(context, 16)),
                       ),
                     )
                   ],

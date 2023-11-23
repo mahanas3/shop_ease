@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 
 import '../../provider/profile_provider.dart';
+import '../../utilities/dimensions.dart';
 
 class OrderDetails extends StatefulWidget {
   const OrderDetails({super.key});
@@ -24,14 +25,14 @@ class _OrderDetailsState extends State<OrderDetails> {
       appBar: AppBar(
           backgroundColor: const Color(0x000000ff),
           elevation: 0,
-          title: const Center(
+          title: Center(
             child: Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: Text(
                 'Order Details',
                 style: TextStyle(
                     fontFamily: 'Metropolis',
-                    fontSize: 25,
+                    fontSize: Dimensions.heightCalc(context, 25),
                     color: Colors.black87),
               ),
             ),
@@ -50,60 +51,63 @@ class _OrderDetailsState extends State<OrderDetails> {
         scrollDirection: Axis.vertical,
         physics: const AlwaysScrollableScrollPhysics(),
         child: Column(children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 20, top: 20),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, top: 20),
             child: Row(
               children: [
                 Text(
                   'Order №1947034',
-                  style: TextStyle(fontSize: 16, fontFamily: 'Metropolis'),
+                  style: TextStyle(
+                      fontSize: Dimensions.heightCalc(context, 16),
+                      fontFamily: 'Metropolis'),
                 ),
                 SizedBox(
-                  width: 90,
+                  width: Dimensions.widthCalc(context, 90),
                 ),
                 Text('05-12-2019',
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: Dimensions.heightCalc(context, 18),
                         fontFamily: 'Metropolis2',
                         color: Colors.grey))
               ],
             ),
           ),
-          const Row(
+          Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 20, left: 20),
+                padding: const EdgeInsets.only(top: 20, left: 20),
                 child: Text(
                   'Tracking number:',
                   style: TextStyle(
-                      color: Colors.grey,
-                      fontFamily: 'Metropolis2',
-                      fontSize: 18),
+                    color: Colors.grey,
+                    fontFamily: 'Metropolis2',
+                    fontSize: Dimensions.heightCalc(context, 18),
+                  ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 20),
                 child: Text(
                   'IW3475453455',
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: Dimensions.heightCalc(context, 18),
                       fontFamily: 'Metropolis',
                       color: Colors.black),
                 ),
               ),
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 15, left: 170),
+          Padding(
+            padding: const EdgeInsets.only(top: 15, left: 170),
             child: Text(
               'Delivered',
               style: TextStyle(
-                  fontSize: 18,
+                  fontSize: Dimensions.heightCalc(context, 18),
                   fontFamily: 'Metropolis',
-                  color: Color(0xff2AA952)),
+                  color: const Color(0xff2AA952)),
             ),
           ),
           const Padding(
@@ -113,8 +117,8 @@ class _OrderDetailsState extends State<OrderDetails> {
               style: TextStyle(fontFamily: 'Metropolis', fontSize: 18),
             ),
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: Dimensions.heightCalc(context, 20),
           ),
           ListView.separated(
             shrinkWrap: true,
@@ -123,8 +127,8 @@ class _OrderDetailsState extends State<OrderDetails> {
                 child: Row(
                   children: [
                     Container(
-                      height: 120,
-                      width: 150,
+                      height: Dimensions.heightCalc(context, 120),
+                      width: Dimensions.widthCalc(context, 150),
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: NetworkImage(images[index]),
@@ -132,23 +136,24 @@ class _OrderDetailsState extends State<OrderDetails> {
                         ),
                       ),
                     ),
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 20, bottom: 5),
+                          padding: const EdgeInsets.only(left: 20, bottom: 5),
                           child: Text(
                             'Pullover',
                             style: TextStyle(
-                                fontSize: 18, fontFamily: 'Metropolis'),
+                                fontSize: Dimensions.heightCalc(context, 18),
+                                fontFamily: 'Metropolis'),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: const EdgeInsets.only(left: 20),
                           child: Text(
                             'Mango',
                             style: TextStyle(
-                              fontSize: 15,
+                              fontSize: Dimensions.heightCalc(context, 15),
                               fontFamily: 'Metropolis2',
                               color: Colors.grey,
                             ),
@@ -157,23 +162,23 @@ class _OrderDetailsState extends State<OrderDetails> {
                         Row(
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(left: 20, top: 5),
+                              padding: const EdgeInsets.only(left: 20, top: 5),
                               child: Text(
                                 'Color:',
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontFamily: 'Metropolis2',
-                                  fontSize: 16,
+                                  fontSize: Dimensions.heightCalc(context, 16),
                                 ),
                               ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             Padding(
-                              padding: EdgeInsets.only(top: 5),
+                              padding: const EdgeInsets.only(top: 5),
                               child: Text(
                                 'Gray',
                                 style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: Dimensions.heightCalc(context, 15),
                                   fontFamily: 'Metropolis2',
                                   color: Colors.black87,
                                 ),
@@ -182,7 +187,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 20, top: 5),
+                          padding: const EdgeInsets.only(left: 20, top: 5),
                           child: Row(
                             children: [
                               Text(
@@ -190,50 +195,54 @@ class _OrderDetailsState extends State<OrderDetails> {
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontFamily: 'Metropolis2',
-                                  fontSize: 16,
+                                  fontSize: Dimensions.heightCalc(context, 16),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
                                 'L',
                                 style: TextStyle(
-                                    fontFamily: 'Metropolis2',
-                                    color: Colors.black87,
-                                    fontSize: 16),
+                                  fontFamily: 'Metropolis2',
+                                  color: Colors.black87,
+                                  fontSize: Dimensions.heightCalc(context, 16),
+                                ),
                               )
                             ],
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: const EdgeInsets.only(left: 20),
                           child: Row(
                             children: [
                               Text(
                                 'Unit:',
                                 style: TextStyle(
-                                    color: Colors.grey,
-                                    fontFamily: 'Metropolis2',
-                                    fontSize: 16),
+                                  color: Colors.grey,
+                                  fontFamily: 'Metropolis2',
+                                  fontSize: Dimensions.heightCalc(context, 16),
+                                ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
                                 '1',
                                 style: TextStyle(
-                                    fontFamily: 'Metropolis2',
-                                    color: Colors.black87,
-                                    fontSize: 16),
+                                  fontFamily: 'Metropolis2',
+                                  color: Colors.black87,
+                                  fontSize: Dimensions.heightCalc(context, 16),
+                                ),
                               ),
                               SizedBox(
-                                width: 80,
+                                width: Dimensions.widthCalc(context, 80),
                               ),
                               Text(
                                 '51\$',
                                 style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize:
+                                        Dimensions.heightCalc(context, 16),
                                     color: Colors.black87,
                                     fontFamily: 'Metropolis'),
                               )
@@ -253,30 +262,34 @@ class _OrderDetailsState extends State<OrderDetails> {
             },
             itemCount: images.length,
           ),
-          const Padding(
-            padding: EdgeInsets.only(right: 170, top: 20),
+          Padding(
+            padding: const EdgeInsets.only(right: 170, top: 20),
             child: Text(
               'Order information',
-              style: TextStyle(fontSize: 18, fontFamily: 'Metropolis'),
+              style: TextStyle(
+                  fontSize: Dimensions.heightCalc(context, 18),
+                  fontFamily: 'Metropolis'),
             ),
           ),
-          const Row(
+          Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 20, top: 10),
+                padding: const EdgeInsets.only(left: 20, top: 10),
                 child: Text(
                   'Shipping Address:',
                   style: TextStyle(
                       fontFamily: 'Metropolis2',
-                      fontSize: 16,
+                      fontSize: Dimensions.heightCalc(context, 16),
                       color: Colors.grey),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 15, left: 10),
+                padding: const EdgeInsets.only(top: 15, left: 10),
                 child: Text(
                   '3 Newbridge Court ,',
-                  style: TextStyle(fontSize: 16, fontFamily: 'Metropolis2'),
+                  style: TextStyle(
+                      fontSize: Dimensions.heightCalc(context, 16),
+                      fontFamily: 'Metropolis2'),
                 ),
               ),
             ],
@@ -288,120 +301,125 @@ class _OrderDetailsState extends State<OrderDetails> {
               style: TextStyle(fontSize: 16, fontFamily: 'Metropolis2'),
             ),
           ),
-          const Row(
+          Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 20, top: 10),
+                padding: const EdgeInsets.only(left: 20, top: 10),
                 child: Text(
                   'Payment method:',
                   style: TextStyle(
                       color: Colors.grey,
                       fontFamily: 'Metropolis2',
-                      fontSize: 16),
+                      fontSize: Dimensions.heightCalc(context, 16)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 10),
                 child: Text(
                   '**** **** **** 3947',
                   style: TextStyle(
                       fontFamily: 'Metropolis2',
                       color: Colors.black87,
-                      fontSize: 16),
+                      fontSize: Dimensions.heightCalc(context, 16)),
                 ),
               )
             ],
           ),
-          const Row(
+          Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 20, top: 10),
+                padding: const EdgeInsets.only(left: 20, top: 10),
                 child: Text(
                   'Delivery method:',
                   style: TextStyle(
-                      color: Colors.grey,
-                      fontFamily: 'Metropolis2',
-                      fontSize: 16),
+                    color: Colors.grey,
+                    fontFamily: 'Metropolis2',
+                    fontSize: Dimensions.heightCalc(context, 16),
+                  ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 10),
                 child: Text(
                   'FedEx, 3 days, 15\$',
                   style: TextStyle(
-                      fontFamily: 'Metropolis2',
-                      color: Colors.black87,
-                      fontSize: 16),
+                    fontFamily: 'Metropolis2',
+                    color: Colors.black87,
+                    fontSize: Dimensions.heightCalc(context, 16),
+                  ),
                 ),
               )
             ],
           ),
-          const Row(
+          Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 20, top: 10),
+                padding: const EdgeInsets.only(left: 20, top: 10),
                 child: Text(
                   'Discount:',
                   style: TextStyle(
-                      color: Colors.grey,
-                      fontFamily: 'Metropolis2',
-                      fontSize: 16),
+                    color: Colors.grey,
+                    fontFamily: 'Metropolis2',
+                    fontSize: Dimensions.heightCalc(context, 16),
+                  ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10, left: 50),
+                padding: const EdgeInsets.only(top: 10, left: 50),
                 child: Text(
                   '10%, Personal promo code',
                   style: TextStyle(
-                      fontFamily: 'Metropolis2',
-                      color: Colors.black87,
-                      fontSize: 16),
+                    fontFamily: 'Metropolis2',
+                    color: Colors.black87,
+                    fontSize: Dimensions.heightCalc(context, 16),
+                  ),
                 ),
               )
             ],
           ),
-          const Row(
+          Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 20, top: 10),
+                padding: const EdgeInsets.only(left: 20, top: 10),
                 child: Text(
                   'Total Amount:',
                   style: TextStyle(
-                      color: Colors.grey,
-                      fontFamily: 'Metropolis2',
-                      fontSize: 16),
+                    color: Colors.grey,
+                    fontFamily: 'Metropolis2',
+                    fontSize: Dimensions.heightCalc(context, 16),
+                  ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10, left: 20),
+                padding: const EdgeInsets.only(top: 10, left: 20),
                 child: Text(
                   '133\$',
                   style: TextStyle(
                       fontFamily: 'Metropolis2',
                       color: Colors.black87,
-                      fontSize: 16),
+                      fontSize: Dimensions.heightCalc(context, 16)),
                 ),
               )
             ],
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: Dimensions.heightCalc(context, 20),
           ),
           SizedBox(
-            height: 50,
-            width: 100,
+            height: Dimensions.heightCalc(context, 50),
+            width: Dimensions.widthCalc(context, 100),
             child: Padding(
               padding: const EdgeInsets.only(right: 50),
               child: ElevatedButton(
@@ -416,15 +434,17 @@ class _OrderDetailsState extends State<OrderDetails> {
                   },
                   child: Row(
                     children: [
-                      const Text(
+                      Text(
                         'Reorder',
-                        style: TextStyle(fontSize: 14, color: Colors.black87),
-                      ),
-                      const SizedBox(
-                        width: 30,
+                        style: TextStyle(
+                            fontSize: Dimensions.heightCalc(context, 14),
+                            color: Colors.black87),
                       ),
                       SizedBox(
-                          height: 50,
+                        width: Dimensions.widthCalc(context, 30),
+                      ),
+                      SizedBox(
+                          height: Dimensions.heightCalc(context, 50),
                           child: CustomButton(
                               text: 'Leave feedback', onPressed: () {}))
                     ],
