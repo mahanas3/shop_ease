@@ -6,7 +6,7 @@ class ApiServices {
   Future<Details> signUp(
       String UserName, String Password, String Email, String PhoneNo) async {
     final http.Response response = await http.post(
-        Uri.parse('https://cc89-59-93-46-47.ngrok.io/api/user-registration'),
+        Uri.parse('https://3d07-59-93-46-47.ngrok.io/api/user-registration'),
         headers: <String, String>{
           'Content-type': 'application/x-www-form-urlencoded'
         },
@@ -25,5 +25,7 @@ class ApiServices {
       throw Exception('Registration Failed');
     }
   }
-  
+  // Future login(){
+  //
+  // }
 }
