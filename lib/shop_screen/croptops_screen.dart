@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
-import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/provider/cart_provider.dart';
+import 'package:shop_ease/provider/auth_provider.dart';
 
 class Croptops extends StatefulWidget {
   const Croptops({super.key});
@@ -112,7 +113,7 @@ class _CroptopsState extends State<Croptops> {
                   ),
                   child: InkWell(
                     onTap: () {
-                      context.read<ScreenProvider>().cartFavourite(
+                      context.read<CartProvider>().cartFavourite(
                           tshirtImages[index], name[index], price[index],
                           context);
                     },

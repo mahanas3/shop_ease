@@ -2,7 +2,8 @@ import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/provider/cart_provider.dart';
+import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/shop_screen/kurthi_screen.dart';
 import 'package:shop_ease/shop_screen/croptops_screen.dart';
 import 'package:shop_ease/shop_screen/sleeveless_screen.dart';
@@ -53,7 +54,7 @@ class _WomensTopsState extends State<WomenTop>
                       width: 17,
                       child: Center(
                         child: Text(context
-                            .read<ScreenProvider>()
+                            .read<CartProvider>()
                             .cart
                             .length
                             .toString()),

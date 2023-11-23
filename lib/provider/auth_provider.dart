@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:shop_ease/model_class/user_model.dart';
 import 'package:shop_ease/services/api_function.dart';
 
-class ScreenProvider extends ChangeNotifier {
+class AuthProvider extends ChangeNotifier {
   Details? signUpPage;
 
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/provider/cart_provider.dart';
+import 'package:shop_ease/provider/auth_provider.dart';
 
 import '../../utilities/dimensions.dart';
 
@@ -16,7 +17,7 @@ class _FavouriteState extends State<Favourite> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.builder(
-          itemCount: context.watch<ScreenProvider>().cart.length,
+          itemCount: context.watch<CartProvider>().cart.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisSpacing: 10.0,
@@ -39,7 +40,7 @@ class _FavouriteState extends State<Favourite> {
                             child: Stack(children: [
                               Image(
                                 image: AssetImage(context
-                                    .read<ScreenProvider>()
+                                    .read<CartProvider>()
                                     .cart[index]['image']),
                                 fit: BoxFit.fill,
                                 height: Dimensions.heightCalc(context, 150),
@@ -54,7 +55,7 @@ class _FavouriteState extends State<Favourite> {
                           child: Padding(
                             padding: const EdgeInsets.only(left: 13),
                             child: Text(
-                              context.read<ScreenProvider>().cart[index]
+                              context.read<CartProvider>().cart[index]
                               ['name'],
                               style: const TextStyle(
                                   fontSize: 15, fontFamily: 'Metropolis'),
@@ -66,7 +67,7 @@ class _FavouriteState extends State<Favourite> {
                           child: Padding(
                             padding: const EdgeInsets.only(left: 13),
                             child: Text(
-                              context.read<ScreenProvider>().cart[index]
+                              context.read<CartProvider>().cart[index]
                               ['price'],
                               style: const TextStyle(
                                   fontSize: 15, fontFamily: 'Metropolis'),

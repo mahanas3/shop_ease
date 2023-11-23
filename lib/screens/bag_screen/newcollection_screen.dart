@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+import 'package:shop_ease/provider/cart_provider.dart';
 
-import '../../provider/screen_provider.dart';
+import '../../provider/auth_provider.dart';
 
 
 class NewCollection extends StatefulWidget {
@@ -121,7 +122,7 @@ class _NewCollectionState extends State<NewCollection> {
                   ),
                   child: InkWell(
                     onTap: () {
-                      context.read<ScreenProvider>().cartFavourite(
+                      context.read<CartProvider>().cartFavourite(
                           bagImages[index], name[index], price[index], context);
                     },
                     child: const Icon(

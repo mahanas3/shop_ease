@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
-import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
 import '../../provider/home_provider.dart';

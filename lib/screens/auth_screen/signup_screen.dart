@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/custom_widget/custom_textfield.dart';
-import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/provider/auth_provider.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -146,7 +146,7 @@ class _SignUpState extends State<SignUp> {
                   text: 'SIGN UP',
                   onPressed: () {
                     if (_formkey.currentState!.validate()) {
-                      context.read<ScreenProvider>().signUpScreen(
+                      context.read<AuthProvider>().signUpScreen(
                           context,
                           namecontroller.text,
                           passwordcontroller.text,

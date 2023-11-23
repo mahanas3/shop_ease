@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 

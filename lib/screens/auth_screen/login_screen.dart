@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/custom_widget/custom_textfield.dart';
-import 'package:shop_ease/provider/screen_provider.dart';
+import 'package:shop_ease/provider/auth_provider.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -79,7 +79,7 @@ class _LoginState extends State<Login> {
                     TextButton(
                         onPressed: () {
                           context
-                              .read<ScreenProvider>()
+                              .read<AuthProvider>()
                               .forgotPassword(context);
                         },
                         child: const Icon(
@@ -99,7 +99,7 @@ class _LoginState extends State<Login> {
                       text: 'LOGIN',
                       onPressed: () {
                         if (_formkey.currentState!.validate()) {
-                          context.read<ScreenProvider>().login(context);
+                          context.read<AuthProvider>().login(context);
                         }
                       })),
               const SizedBox(

@@ -1,3 +1,7 @@
+import 'dart:html';
+
+import 'package:flutter/cupertino.dart';
+
 class CartProvider extends ChangeNotifier{
 
   List<Map<String, dynamic>> cart = [];
