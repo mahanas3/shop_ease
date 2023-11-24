@@ -106,7 +106,8 @@ class _SettingsState extends State<Settings> {
                               borderRadius: BorderRadius.vertical(
                                   top: Radius.circular(25))),
                           builder: (BuildContext context) {
-                            return SingleChildScrollView(
+                            return SingleChildScrollView(scrollDirection: Axis.vertical,
+                              physics: const NeverScrollableScrollPhysics(),
                               child: Column(
                                 children: [
                                   Padding(
@@ -144,7 +145,7 @@ class _SettingsState extends State<Settings> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 10, right: 10, top: 20),
+                                        left: 10, right: 10, top: 10),
                                     child: CustomTextfield(
                                         text1: 'New Password',
                                         text2: 'New Password',
@@ -167,7 +168,7 @@ class _SettingsState extends State<Settings> {
                                   ),
                                   SizedBox(
                                     height: Dimensions.heightCalc(context, 50),
-                                    width: Dimensions.widthCalc(context, 320),
+                                    width: Dimensions.widthCalc(context, 330),
                                     child: CustomButton(
                                         text: 'SAVE PASSWORD',
                                         onPressed: () {}),

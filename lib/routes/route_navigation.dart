@@ -4,6 +4,7 @@ import 'package:shop_ease/screens/home/newcollections.dart';
 import 'package:shop_ease/screens/profile_screen/addshippingaddress.dart';
 import 'package:shop_ease/screens/profile_screen/order_screen.dart';
 import 'package:shop_ease/screens/profile_screen/orderdetails_screen.dart';
+import 'package:shop_ease/screens/profile_screen/paymentmethods_screen.dart';
 import 'package:shop_ease/screens/profile_screen/settings_screen.dart';
 import 'package:shop_ease/screens/profile_screen/shippingaddress_screen.dart';
 import '../screens/auth_screen/forgott_screen.dart';
@@ -82,6 +83,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const ShippingAddress());
       case RouteName.settings:
         return MaterialPageRoute(builder: (context) => const Settings());
+      case RouteName.paymentMethods:
+        return MaterialPageRoute(builder: (context) => const PaymentMethods());
       default:
         {
           return MaterialPageRoute(

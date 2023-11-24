@@ -158,37 +158,42 @@ class _ProfileState extends State<Profile> {
               ),
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.white.withOpacity(0.5),
-                  blurRadius: 4,
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(right: 130, top: 30),
-                  child: Text(
-                    'Payment methods',
-                    style: TextStyle(fontSize: 18, fontFamily: 'metropolis'),
+          InkWell(
+            onTap: () {
+              context.read<ProfileProvider>().paymentMethods(context);
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.white.withOpacity(0.5),
+                    blurRadius: 4,
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 225, top: 5),
-                  child: Text(
-                    'Visa  **34',
-                    style: TextStyle(
-                      fontFamily: 'Metropolis2',
-                      fontSize: Dimensions.heightCalc(context, 15),
-                      color: Colors.grey,
+                ],
+              ),
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(right: 130, top: 30),
+                    child: Text(
+                      'Payment methods',
+                      style: TextStyle(fontSize: 18, fontFamily: 'metropolis'),
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(right: 225, top: 5),
+                    child: Text(
+                      'Visa  **34',
+                      style: TextStyle(
+                        fontFamily: 'Metropolis2',
+                        fontSize: Dimensions.heightCalc(context, 15),
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Container(

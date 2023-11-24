@@ -20,4 +20,5 @@ class RouteName {
   static const String addShippingAddress = '/addShippingAddress';
   static const String saveAddressButton = '/saveAddressButton';
   static const String settings = '/settings';
+  static const String paymentMethods = '/paymentMethods';
 }
