@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomTextfield extends StatelessWidget {
+class CustomTextfield extends StatefulWidget {
   CustomTextfield(
       {super.key,
       required this.text1,
       required this.text2,
       required this.controller,
-      required this.validator});
+      this.validator});
 
   String text1;
   String text2;
@@ -15,6 +15,11 @@ class CustomTextfield extends StatelessWidget {
 
   final String? Function(String?)? validator;
 
+  @override
+  State<CustomTextfield> createState() => _CustomTextfieldState();
+}
+
+class _CustomTextfieldState extends State<CustomTextfield> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +30,7 @@ class CustomTextfield extends StatelessWidget {
         ),
       ]),
       child: TextFormField(
-        controller: controller,
+        controller: widget.controller,
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white)),
@@ -34,16 +39,16 @@ class CustomTextfield extends StatelessWidget {
               borderSide: BorderSide(color: Colors.white)),
           fillColor: Colors.white.withOpacity(0.9),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-          labelText: text1,
+          labelText: widget.text1,
           labelStyle: TextStyle(
             fontFamily: 'Metropolis2',
             color: Colors.black87.withOpacity(0.4),
           ),
-          hintText: text2,
+          hintText: widget.text2,
           hintStyle:
               const TextStyle(fontFamily: 'Metropolis2', color: Colors.black),
         ),
-        validator: validator,
+        validator: widget.validator,
       ),
     );
   }

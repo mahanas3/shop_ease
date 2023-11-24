@@ -257,37 +257,42 @@ class _ProfileState extends State<Profile> {
               ],
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.white.withOpacity(0.5),
-                  blurRadius: 4,
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(right: 220, top: 30),
-                  child: Text(
-                    'Settings',
-                    style: TextStyle(fontSize: 18, fontFamily: 'Metropolis'),
+          InkWell(
+            onTap: () {
+              context.read<ProfileProvider>().settings(context);
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.white.withOpacity(0.5),
+                    blurRadius: 4,
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 144, top: 5),
-                  child: Text(
-                    'Notifications, password',
-                    style: TextStyle(
-                      fontFamily: 'Metropolis2',
-                      fontSize: Dimensions.heightCalc(context, 15),
-                      color: Colors.grey,
+                ],
+              ),
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(right: 220, top: 30),
+                    child: Text(
+                      'Settings',
+                      style: TextStyle(fontSize: 18, fontFamily: 'Metropolis'),
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(right: 136, top: 5),
+                    child: Text(
+                      'Notifications, password',
+                      style: TextStyle(
+                        fontFamily: 'Metropolis2',
+                        fontSize: Dimensions.heightCalc(context, 15),
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

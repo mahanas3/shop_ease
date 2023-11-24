@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/screens/home/newcollections.dart';
+import 'package:shop_ease/screens/profile_screen/addshippingaddress.dart';
 import 'package:shop_ease/screens/profile_screen/order_screen.dart';
 import 'package:shop_ease/screens/profile_screen/orderdetails_screen.dart';
+import 'package:shop_ease/screens/profile_screen/settings_screen.dart';
 import 'package:shop_ease/screens/profile_screen/shippingaddress_screen.dart';
 import '../screens/auth_screen/forgott_screen.dart';
 import '../screens/auth_screen/login_screen.dart';
@@ -73,6 +75,13 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const OrderDetails());
       case RouteName.shippingAddress:
         return MaterialPageRoute(builder: (context) => const ShippingAddress());
+      case RouteName.addShippingAddress:
+        return MaterialPageRoute(
+            builder: (context) => const AddShippingAddress());
+      case RouteName.saveAddressButton:
+        return MaterialPageRoute(builder: (context) => const ShippingAddress());
+      case RouteName.settings:
+        return MaterialPageRoute(builder: (context) => const Settings());
       default:
         {
           return MaterialPageRoute(
