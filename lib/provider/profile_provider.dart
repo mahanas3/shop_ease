@@ -41,4 +41,7 @@ class ProfileProvider extends ChangeNotifier {
   void settings(BuildContext context) {
     Navigator.pushNamed(context, '/settings');
   }
+  void changePassword(BuildContext context) {
+    Navigator.pushNamed(context, '/changePassword');
+  }
 }
