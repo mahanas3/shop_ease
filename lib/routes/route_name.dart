@@ -21,4 +21,5 @@ class RouteName {
   static const String saveAddressButton = '/saveAddressButton';
   static const String settings = '/settings';
   static const String paymentMethods = '/paymentMethods';
+  static const String filter = '/filter';
 }

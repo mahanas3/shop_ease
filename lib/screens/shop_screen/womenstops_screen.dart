@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
 import 'package:badges/src/badge.dart' as badge;
+import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/screens/shop_screen/sleevless_screen.dart';
 import 'package:shop_ease/screens/shop_screen/tshirt_screen.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
@@ -32,16 +33,16 @@ class _WomensTopsState extends State<WomenTop>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.2,
+        backgroundColor: const Color(0x000000ff),
+        elevation: 0,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: Row(
               children: [
                 const Icon(
-                  Icons.search_off_outlined,
-                  size: 35,
+                  Icons.search,
+                  size: 30,
                   color: Colors.black87,
                 ),
                 Padding(
@@ -109,7 +110,7 @@ class _WomensTopsState extends State<WomenTop>
                     child: Text(
                       'T-Shirts',
                       style: TextStyle(
-                        fontFamily: 'POPINS',
+                        fontFamily: 'Metropolis',
                         fontSize: Dimensions.heightCalc(context, 18),
                       ),
                     ),
@@ -120,7 +121,7 @@ class _WomensTopsState extends State<WomenTop>
                   child: Tab(
                     child: Text('Crop tops',
                         style: TextStyle(
-                          fontFamily: 'POPINS',
+                          fontFamily: 'Metropolis',
                           fontSize: Dimensions.heightCalc(context, 18),
                         )),
                   ),
@@ -130,7 +131,7 @@ class _WomensTopsState extends State<WomenTop>
                   child: Tab(
                     child: Text('Sleeveless',
                         style: TextStyle(
-                          fontFamily: 'POPINS',
+                          fontFamily: 'Metropolis',
                           fontSize: Dimensions.heightCalc(context, 18),
                         )),
                   ),
@@ -140,7 +141,7 @@ class _WomensTopsState extends State<WomenTop>
                   child: Tab(
                     child: Text('Kurthies',
                         style: TextStyle(
-                          fontFamily: 'POPINS',
+                          fontFamily: 'Metropolis',
                           fontSize: Dimensions.heightCalc(context, 18),
                         )),
                   ),
@@ -161,9 +162,14 @@ class _WomensTopsState extends State<WomenTop>
                 const SizedBox(
                   width: 10,
                 ),
-                const Text(
-                  'Filters',
-                  style: TextStyle(fontFamily: 'Metropolis2'),
+                InkWell(
+                  onTap: () {
+                    context.read<ShopProvider>().filter(context);
+                  },
+                  child: const Text(
+                    'Filters',
+                    style: TextStyle(fontFamily: 'Metropolis2'),
+                  ),
                 ),
                 SizedBox(
                   width: Dimensions.widthCalc(context, 40),
