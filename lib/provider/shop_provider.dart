@@ -8,6 +8,8 @@ class ShopProvider extends ChangeNotifier {
 
   double get maxValue => _maxValue;
 
+  bool? isChecked = true;
+
   void womenNew(BuildContext context) {
     Navigator.pushNamed(context, '/womensnew');
     notifyListeners();
@@ -37,8 +39,14 @@ class ShopProvider extends ChangeNotifier {
     _maxValue = value;
     notifyListeners();
   }
+
   void brand(BuildContext context) {
     Navigator.pushNamed(context, '/brand');
+    notifyListeners();
+  }
+
+  void brandCheckbox(BuildContext context) {
+    isChecked = isChecked!;
     notifyListeners();
   }
 }
