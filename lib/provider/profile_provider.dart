@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 class ProfileProvider extends ChangeNotifier {
   List<bool> checkBoxValues = [false, false, false];
 
+  bool isChecked = false;
+
   List<Map<String, dynamic>> saveData = [];
 
   void myOrder(BuildContext context) {
@@ -41,10 +43,12 @@ class ProfileProvider extends ChangeNotifier {
   void settings(BuildContext context) {
     Navigator.pushNamed(context, '/settings');
   }
-  void changePassword(BuildContext context) {
-    Navigator.pushNamed(context, '/changePassword');
-  }
   void paymentMethods(BuildContext context) {
     Navigator.pushNamed(context, '/paymentMethods');
   }
+  void toggleCheckbox1() {
+    isChecked = !isChecked;
+    notifyListeners();
+  }
+
 }

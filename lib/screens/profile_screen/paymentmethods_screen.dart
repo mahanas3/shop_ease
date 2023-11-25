@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_ease/custom_widget/custom_textfield.dart';
+import 'package:shop_ease/provider/profile_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
 class PaymentMethods extends StatefulWidget {
@@ -9,6 +12,8 @@ class PaymentMethods extends StatefulWidget {
 }
 
 class _PaymentMethodsState extends State<PaymentMethods> {
+  final namecontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +32,7 @@ class _PaymentMethodsState extends State<PaymentMethods> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 20, right: 100),
+            padding: const EdgeInsets.only(top: 20, right: 150),
             child: Text(
               'Your payment cards',
               style: TextStyle(
@@ -118,6 +123,61 @@ class _PaymentMethodsState extends State<PaymentMethods> {
                 ),
               ),
             ]),
+          ),
+          Consumer<ProfileProvider>(
+              builder: (BuildContext context, profileProvider, Widget? child) {
+            return Row(
+              children: [
+                Checkbox(
+                  activeColor: Colors.black87,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                  value: profileProvider.isChecked,
+                  onChanged: (value) {
+                    profileProvider.toggleCheckbox1();
+                  },
+                ),
+                Text(
+                  'Use as default payment method',
+                  style: TextStyle(
+                      fontFamily: 'Metropolis2',
+                      fontSize: Dimensions.heightCalc(context, 16)),
+                )
+              ],
+            );
+          }),
+          Padding(
+            padding: const EdgeInsets.only(left: 290),
+            child: Container(
+              width: Dimensions.widthCalc(context, 50),
+              height: Dimensions.heightCalc(context, 50),
+              child: FloatingActionButton(
+                elevation: 3,
+                backgroundColor: Colors.black87,
+                onPressed: () {
+                  showBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Column(
+                        children: [
+                          Text(
+                            'Add new card',
+                            style: TextStyle(
+                                fontSize: Dimensions.heightCalc(context, 20),
+                                fontFamily: 'Metropolis'),
+                          ),
+                          CustomTextfield(
+                              text1: 'Name on card',
+                              text2: 'Name on card',
+                              controller: namecontroller)
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: const Icon(Icons.add),
+              ),
+            ),
           )
         ],
       ),
