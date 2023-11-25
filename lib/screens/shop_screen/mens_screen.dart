@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_ease/provider/home_provider.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
+import '../../provider/home_provider.dart';
 
 class MensPage extends StatefulWidget {
   const MensPage({super.key});
@@ -31,7 +31,7 @@ class _MensPageState extends State<MensPage> {
               padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
               child: Stack(children: [
                 Container(
-                  height: Dimensions.heightCalc(context, 100),
+                  height: Dimensions.heightCalc(context, 90),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Color(0xffDB3022),
@@ -55,7 +55,7 @@ class _MensPageState extends State<MensPage> {
                         'Up to 50% off',
                         style: TextStyle(
                             fontFamily: 'Metropolis',
-                            fontSize: Dimensions.heightCalc(context, 24),
+                            fontSize: Dimensions.heightCalc(context, 14),
                             color: Colors.white),
                       )
                     ],
@@ -63,18 +63,18 @@ class _MensPageState extends State<MensPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    context.read<ShopProvider>().mensNew(context);
+                    context.read<ShopProvider>().womenNew(context);
                   },
                   child: Image(
                     image: const AssetImage('assets/images/neww.png'),
-                    height: Dimensions.heightCalc(context, 100),
-                    width: Dimensions.widthCalc(context, 100),
+                    height: Dimensions.heightCalc(context, 80),
+                    width: Dimensions.widthCalc(context, 80),
                   ),
                 )
               ]),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
               child: ListView.separated(
                 scrollDirection: Axis.vertical,
                 physics: const NeverScrollableScrollPhysics(),
@@ -97,7 +97,7 @@ class _MensPageState extends State<MensPage> {
                               Container(
                                 child: Image(
                                   image: NetworkImage(mensImages[index]),
-                                  height: Dimensions.heightCalc(context, 120),
+                                  height: Dimensions.heightCalc(context, 90),
                                   width: Dimensions.widthCalc(context, 120),
                                   fit: BoxFit.fill,
                                 ),
@@ -114,10 +114,9 @@ class _MensPageState extends State<MensPage> {
                                     Text(
                                       names[index],
                                       style: TextStyle(
-                                        fontFamily: 'Metropolis',
-                                        fontSize:
-                                        Dimensions.heightCalc(context, 20),
-                                      ),
+                                          fontFamily: 'Metropolis',
+                                          fontSize: Dimensions.heightCalc(
+                                              context, 20)),
                                     )
                                   ],
                                 ),
@@ -128,7 +127,7 @@ class _MensPageState extends State<MensPage> {
                       ));
                 },
                 separatorBuilder: (BuildContext context, int index) =>
-                const SizedBox(
+                    const SizedBox(
                   height: 10,
                 ),
                 itemCount: mensImages.length,

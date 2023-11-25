@@ -31,7 +31,7 @@ class _WomenScreenState extends State<WomenScreen> {
               padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
               child: Stack(children: [
                 Container(
-                  height: Dimensions.heightCalc(context, 100),
+                  height: Dimensions.heightCalc(context, 90),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Color(0xffDB3022),
@@ -67,14 +67,14 @@ class _WomenScreenState extends State<WomenScreen> {
                   },
                   child: Image(
                     image: const AssetImage('assets/images/neww.png'),
-                    height: Dimensions.heightCalc(context, 100),
-                    width: Dimensions.widthCalc(context, 100),
+                    height: Dimensions.heightCalc(context, 80),
+                    width: Dimensions.widthCalc(context, 80),
                   ),
                 )
               ]),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
               child: ListView.separated(
                 scrollDirection: Axis.vertical,
                 physics: const NeverScrollableScrollPhysics(),
@@ -97,7 +97,7 @@ class _WomenScreenState extends State<WomenScreen> {
                               Container(
                                 child: Image(
                                   image: NetworkImage(salesImages[index]),
-                                  height: Dimensions.heightCalc(context, 120),
+                                  height: Dimensions.heightCalc(context, 90),
                                   width: Dimensions.widthCalc(context, 120),
                                   fit: BoxFit.fill,
                                 ),

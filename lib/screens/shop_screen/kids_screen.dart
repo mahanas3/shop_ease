@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_ease/provider/home_provider.dart';
-import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
+import '../../provider/home_provider.dart';
 
 class KidsPage extends StatefulWidget {
   const KidsPage({super.key});
@@ -32,7 +31,7 @@ class _KidsPageState extends State<KidsPage> {
               padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
               child: Stack(children: [
                 Container(
-                  height: Dimensions.heightCalc(context, 100),
+                  height: Dimensions.heightCalc(context, 90),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Color(0xffDB3022),
@@ -64,18 +63,18 @@ class _KidsPageState extends State<KidsPage> {
                 ),
                 InkWell(
                   onTap: () {
-                    context.read<ShopProvider>().kidsNew(context);
+                    context.read<ShopProvider>().womenNew(context);
                   },
                   child: Image(
                     image: const AssetImage('assets/images/neww.png'),
-                    height: Dimensions.heightCalc(context, 100),
-                    width: Dimensions.widthCalc(context, 100),
+                    height: Dimensions.heightCalc(context, 80),
+                    width: Dimensions.widthCalc(context, 80),
                   ),
                 )
               ]),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
               child: ListView.separated(
                 scrollDirection: Axis.vertical,
                 physics: const NeverScrollableScrollPhysics(),
@@ -98,7 +97,7 @@ class _KidsPageState extends State<KidsPage> {
                               Container(
                                 child: Image(
                                   image: NetworkImage(kidsImages[index]),
-                                  height: Dimensions.heightCalc(context, 120),
+                                  height: Dimensions.heightCalc(context, 90),
                                   width: Dimensions.widthCalc(context, 120),
                                   fit: BoxFit.fill,
                                 ),
@@ -128,7 +127,7 @@ class _KidsPageState extends State<KidsPage> {
                       ));
                 },
                 separatorBuilder: (BuildContext context, int index) =>
-                const SizedBox(
+                    const SizedBox(
                   height: 10,
                 ),
                 itemCount: kidsImages.length,

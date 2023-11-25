@@ -4,29 +4,27 @@ import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
-class NewBagCollection extends StatefulWidget {
-  const NewBagCollection({super.key});
+class NewHoodiesCollection extends StatefulWidget {
+  const NewHoodiesCollection({super.key});
 
   @override
-  State<NewBagCollection> createState() => _NewBagCollectionState();
+  State<NewHoodiesCollection> createState() => _NewHoodiesCollextionState();
 }
 
-class _NewBagCollectionState extends State<NewBagCollection> {
+class _NewHoodiesCollextionState extends State<NewHoodiesCollection> {
   @override
   Widget build(BuildContext context) {
     List<String> bagImages = [
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM0EfM-uksLFOXh47QOAFiLia9FfXz94f0mg&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQovxLOm-PFCbGhZaX_6DIcqaE2j1SuAkLjeg&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyubKnudLuuuBez79edqA32jWyFJxfSyuvng&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQubBzVRriiDWokNctCu1Pat3YEBGVIpRcAug&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-dtr-dxu3G6T-Jo1Qv_A-ZeWkUZDPK_QQNQ&usqp=CAU'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlzylCuysWZU1XSYYbpWKWsu2nDs8E6p2sw&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4tj3_Dx14aZbO4pZaW8TYumnVBmez6zYaZQ&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9YYaMn9EOQAd6H8sLHH6qYd05DA9akssgBCxgeaYRkBMz612QJ_e-BdlNc1npALGH8Cg&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpuamFu8iN9ZhnZRbBEYYx_aAoz7MedYlnzQ&usqp=CAU'
     ];
     List name = [
-      'College Bag',
-      'Side Bag',
-      'Back Bag',
-      'Leather Bag',
-      'Office Bag'
+      'cap hoodies',
+      'cap hoodies',
+      'cap hoodies',
+      'cap hoodies',
     ];
 
     List price = ['9\$', '20\$', '50\$', '25\$'];
@@ -99,12 +97,15 @@ class _NewBagCollectionState extends State<NewBagCollection> {
                     const SizedBox(
                       height: 5,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(right: 115),
-                      child: Text(
-                        '9' + '\$',
-                        style:
-                            TextStyle(fontFamily: 'Metropolis', fontSize: 16),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 13),
+                      child: Align(alignment: Alignment.topLeft,
+                        child: Text(
+                          price[index],
+                          style: TextStyle(
+                              fontFamily: 'Metropolis',
+                              fontSize: Dimensions.heightCalc(context, 16)),
+                        ),
                       ),
                     )
                   ],

@@ -27,12 +27,14 @@ class _CatergoriesState extends State<Catergories>
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.white,
-          title: const Padding(
-            padding: EdgeInsets.only(left: 55),
+          title: Padding(
+            padding: const EdgeInsets.only(left: 55),
             child: Text(
               'Categories',
               style: TextStyle(
-                  fontSize: 18, fontFamily: 'popins', color: Colors.black87),
+                  fontSize: Dimensions.heightCalc(context, 18),
+                  fontFamily: 'Metropolis',
+                  color: Colors.black87),
             ),
           ),
           actions: const [
@@ -54,7 +56,7 @@ class _CatergoriesState extends State<Catergories>
               unselectedLabelColor: const Color(0xff222222),
               controller: _tabController,
               isScrollable: true,
-              tabs:  [
+              tabs: [
                 Padding(
                   padding: const EdgeInsets.only(right: 30),
                   child: Tab(
