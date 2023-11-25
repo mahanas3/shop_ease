@@ -22,4 +22,5 @@ class RouteName {
   static const String settings = '/settings';
   static const String paymentMethods = '/paymentMethods';
   static const String filter = '/filter';
+  static const String brand = '/brand';
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_ease/custom_widget/customsizebox.dart';
+import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
@@ -150,70 +150,119 @@ class _FilterScreenState extends State<FilterScreen> {
                     fontSize: Dimensions.heightCalc(context, 20)),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
-              child: Stack(children: [
-                Container(
-                  color: Colors.white,
+            Stack(children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
+                child: Container(
                   width: double.infinity,
-                  height: Dimensions.heightCalc(context, 120),
+                  height: Dimensions.heightCalc(context, 100),
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 35),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: Dimensions.widthCalc(context, 50),
-                        height: Dimensions.heightCalc(context, 50),
-                        child: CustomBoxSize(
-                          text: 'XS',
-                        ),
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50, left: 20),
+                    child: Container(
+                      height: Dimensions.heightCalc(context, 40),
+                      width: Dimensions.widthCalc(context, 40),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black87),
                       ),
-                      SizedBox(
-                        width: Dimensions.widthCalc(context, 10),
+                      child: Center(
+                        child: Text('XS',
+                            style: TextStyle(
+                                fontSize: Dimensions.heightCalc(context, 20),
+                                fontFamily: 'Metropolis')),
                       ),
-                      Container(
-                        width: Dimensions.widthCalc(context, 50),
-                        height: Dimensions.heightCalc(context, 50),
-                        child: CustomBoxSize(
-                          text: 'S',
-                        ),
-                      ),
-                      SizedBox(
-                        width: Dimensions.widthCalc(context, 10),
-                      ),
-                      Container(
-                        width: Dimensions.widthCalc(context, 50),
-                        height: Dimensions.heightCalc(context, 50),
-                        child: CustomBoxSize(
-                          text: 'M',
-                        ),
-                      ),
-                      SizedBox(
-                        width: Dimensions.widthCalc(context, 10),
-                      ),
-                      Container(
-                        width: Dimensions.widthCalc(context, 50),
-                        height: Dimensions.heightCalc(context, 50),
-                        child: CustomBoxSize(
-                          text: 'L',
-                        ),
-                      ),
-                      SizedBox(
-                        width: Dimensions.widthCalc(context, 10),
-                      ),
-                      Container(
-                        width: Dimensions.widthCalc(context, 50),
-                        height: Dimensions.heightCalc(context, 50),
-                        child: CustomBoxSize(
-                          text: 'XL',
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                )
-              ]),
-            ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: Container(
+                      height: Dimensions.heightCalc(context, 40),
+                      width: Dimensions.widthCalc(context, 40),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black87),
+                      ),
+                      child: Center(
+                        child: Text('S',
+                            style: TextStyle(
+                                fontSize: Dimensions.heightCalc(context, 20),
+                                fontFamily: 'Metropolis')),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: Container(
+                      height: Dimensions.heightCalc(context, 40),
+                      width: Dimensions.widthCalc(context, 40),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black87),
+                      ),
+                      child: Center(
+                        child: Text('M',
+                            style: TextStyle(
+                                fontSize: Dimensions.heightCalc(context, 20),
+                                fontFamily: 'Metropolis')),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: Container(
+                      height: Dimensions.heightCalc(context, 40),
+                      width: Dimensions.widthCalc(context, 40),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black87),
+                      ),
+                      child: Center(
+                        child: Text('L',
+                            style: TextStyle(
+                                fontSize: Dimensions.heightCalc(context, 20),
+                                fontFamily: 'Metropolis')),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: Container(
+                      height: Dimensions.heightCalc(context, 40),
+                      width: Dimensions.widthCalc(context, 40),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black87),
+                      ),
+                      child: Center(
+                        child: Text('XL',
+                            style: TextStyle(
+                                fontSize: Dimensions.heightCalc(context, 20),
+                                fontFamily: 'Metropolis')),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ]),
             Padding(
               padding: const EdgeInsets.only(top: 20, right: 220),
               child: Text(
@@ -224,39 +273,174 @@ class _FilterScreenState extends State<FilterScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+              padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
               child: Stack(children: [
                 Container(
                   width: double.infinity,
-                  height: Dimensions.heightCalc(context, 200),
-                  color: Colors.white,
+                  height: Dimensions.heightCalc(context, 150),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20)),
                 ),
-                Row(
-                  children: [
-                    Container(
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 10),
+                  child: Row(
+                    children: [
+                      Container(
                         height: Dimensions.heightCalc(context, 40),
                         width: Dimensions.widthCalc(context, 100),
-                        child: CustomBoxSize(text: 'All')),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Container(
-                        height: Dimensions.heightCalc(context, 40),
-                        width: Dimensions.widthCalc(context, 100),
-                        child: CustomBoxSize(text: 'Women')),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Container(color: Colors.red,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black87)),
+                        child: Center(
+                          child: Text('All',
+                              style: TextStyle(
+                                  fontSize: Dimensions.heightCalc(context, 20),
+                                  fontFamily: 'Metropolis')),
                         ),
+                      ),
+                      SizedBox(
+                        width: Dimensions.widthCalc(context, 15),
+                      ),
+                      Container(
                         height: Dimensions.heightCalc(context, 40),
                         width: Dimensions.widthCalc(context, 100),
-                        child: const Text('All'))
-                  ],
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black87)),
+                        child: Center(
+                          child: Text('Women',
+                              style: TextStyle(
+                                  fontSize: Dimensions.heightCalc(context, 20),
+                                  fontFamily: 'Metropolis')),
+                        ),
+                      ),
+                      SizedBox(
+                        width: Dimensions.widthCalc(context, 15),
+                      ),
+                      Container(
+                        height: Dimensions.heightCalc(context, 40),
+                        width: Dimensions.widthCalc(context, 100),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black87)),
+                        child: Center(
+                          child: Text('Men',
+                              style: TextStyle(
+                                  fontSize: Dimensions.heightCalc(context, 20),
+                                  fontFamily: 'Metropolis')),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 90, left: 10),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: Dimensions.heightCalc(context, 40),
+                        width: Dimensions.widthCalc(context, 100),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black87)),
+                        child: Center(
+                          child: Text('Boys',
+                              style: TextStyle(
+                                  fontSize: Dimensions.heightCalc(context, 20),
+                                  fontFamily: 'Metropolis')),
+                        ),
+                      ),
+                      SizedBox(
+                        width: Dimensions.widthCalc(context, 15),
+                      ),
+                      Container(
+                        height: Dimensions.heightCalc(context, 40),
+                        width: Dimensions.widthCalc(context, 100),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black87)),
+                        child: Center(
+                          child: Text('Girls',
+                              style: TextStyle(
+                                  fontSize: Dimensions.heightCalc(context, 20),
+                                  fontFamily: 'Metropolis')),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ]),
+            ),
+            SizedBox(
+              height: Dimensions.heightCalc(context, 20),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Stack(children: [
+                Container(
+                  height: Dimensions.heightCalc(context, 100),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 10),
+                  child: Text(
+                    'Brand',
+                    style: TextStyle(
+                        fontFamily: 'Metropolis',
+                        fontSize: Dimensions.heightCalc(context, 20)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, top: 50),
+                  child: Text(
+                    'adidas Originals, Jack & Jones, s.Oliver',
+                    style: TextStyle(
+                        fontSize: Dimensions.heightCalc(context, 16),
+                        fontFamily: 'Metropolis2',
+                        color: Colors.grey),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 300, top: 5),
+                  child: IconButton(
+                      onPressed: () {
+                        context.read<ShopProvider>().brand(context);
+                      },
+                      icon: const Icon(Icons.arrow_forward_ios_outlined)),
                 )
               ]),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
+              child: Row(
+                children: [
+                  Container(
+                    width: Dimensions.widthCalc(context, 160),
+                    height: Dimensions.heightCalc(context, 36),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black87),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Center(
+                      child: Text('Discard',
+                          style: TextStyle(
+                              fontFamily: 'Metropolis',
+                              fontSize: Dimensions.heightCalc(context, 14))),
+                    ),
+                  ),
+                  SizedBox(
+                    width: Dimensions.widthCalc(context, 20),
+                  ),
+                  SizedBox(
+                      width: Dimensions.widthCalc(context, 160),
+                      height: Dimensions.heightCalc(context, 36),
+                      child: CustomButton(text: 'Apply', onPressed: () {}))
+                ],
+              ),
             )
           ],
         ),

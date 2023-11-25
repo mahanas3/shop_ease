@@ -7,6 +7,7 @@ import 'package:shop_ease/screens/profile_screen/orderdetails_screen.dart';
 import 'package:shop_ease/screens/profile_screen/paymentmethods_screen.dart';
 import 'package:shop_ease/screens/profile_screen/settings_screen.dart';
 import 'package:shop_ease/screens/profile_screen/shippingaddress_screen.dart';
+import 'package:shop_ease/screens/shop_screen/brand_screen.dart';
 import 'package:shop_ease/screens/shop_screen/filter_screen.dart';
 import '../screens/auth_screen/forgott_screen.dart';
 import '../screens/auth_screen/login_screen.dart';
@@ -88,6 +89,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const PaymentMethods());
       case RouteName.filter:
         return MaterialPageRoute(builder: (context) => const FilterScreen());
+      case RouteName.brand:
+        return MaterialPageRoute(builder: (context) => const Brand());
       default:
         {
           return MaterialPageRoute(
