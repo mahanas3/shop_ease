@@ -9,6 +9,7 @@ import 'package:shop_ease/screens/profile_screen/settings_screen.dart';
 import 'package:shop_ease/screens/profile_screen/shippingaddress_screen.dart';
 import 'package:shop_ease/screens/shop_screen/brand_screen.dart';
 import 'package:shop_ease/screens/shop_screen/filter_screen.dart';
+import 'package:shop_ease/screens/shop_screen/tshirtdetails_screen.dart';
 import '../screens/auth_screen/forgott_screen.dart';
 import '../screens/auth_screen/login_screen.dart';
 import '../screens/auth_screen/signup_screen.dart';
@@ -91,6 +92,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const FilterScreen());
       case RouteName.brand:
         return MaterialPageRoute(builder: (context) => const Brand());
+      case RouteName.tshirtDetails:
+        return MaterialPageRoute(builder: (context) => const TshirtDetails());
       default:
         {
           return MaterialPageRoute(

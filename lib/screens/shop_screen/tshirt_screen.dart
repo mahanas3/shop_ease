@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
+import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
 class Tshirt extends StatefulWidget {
@@ -49,11 +50,16 @@ class _TshirtState extends State<Tshirt> {
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25)),
                       child: Stack(children: [
-                        Image(
-                          image: AssetImage(tshirtImages[index]),
-                          fit: BoxFit.fill,
-                          height: Dimensions.heightCalc(context, 150),
-                          width: Dimensions.widthCalc(context, 100),
+                        InkWell(
+                          onTap: () {
+                            context.read<ShopProvider>().tshirtDetails(context);
+                          },
+                          child: Image(
+                            image: AssetImage(tshirtImages[index]),
+                            fit: BoxFit.fill,
+                            height: Dimensions.heightCalc(context, 150),
+                            width: Dimensions.widthCalc(context, 100),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 70, top: 10),

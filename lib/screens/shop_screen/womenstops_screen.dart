@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/cart_provider.dart';
 import 'package:badges/src/badge.dart' as badge;
 import 'package:shop_ease/provider/shop_provider.dart';
@@ -437,8 +438,7 @@ class _WomensTopsState extends State<WomenTop>
                                       borderRadius: BorderRadius.circular(10),
                                       color: Colors.white),
                                   child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 20),
+                                    padding: const EdgeInsets.only(left: 20),
                                     child: Row(
                                       children: [
                                         Text('Size info',
@@ -448,7 +448,7 @@ class _WomensTopsState extends State<WomenTop>
                                                 fontFamily: 'Metropolis2')),
                                         SizedBox(
                                           width: Dimensions.widthCalc(
-                                              context, 190),
+                                              context, 200),
                                         ),
                                         IconButton(
                                             onPressed: () {},
@@ -456,6 +456,15 @@ class _WomensTopsState extends State<WomenTop>
                                       ],
                                     ),
                                   ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 48,
+                                width: 343,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 10),
+                                  child: CustomButton(
+                                      text: 'ADD TO CART', onPressed: () {}),
                                 ),
                               )
                             ],
