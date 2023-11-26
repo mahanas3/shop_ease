@@ -4,6 +4,8 @@ import 'package:shop_ease/custom_widget/customsearchbutton.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
+import '../../custom_widget/custom_button.dart';
+
 class Brand extends StatefulWidget {
   const Brand({super.key});
 
@@ -90,6 +92,34 @@ class _BrandState extends State<Brand> {
                 );
               },
               itemCount: brandNames.length,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 30, left: 10, right: 10),
+              child: Row(
+                children: [
+                  Container(
+                    width: Dimensions.widthCalc(context, 160),
+                    height: Dimensions.heightCalc(context, 36),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black87),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Center(
+                      child: Text('Discard',
+                          style: TextStyle(
+                              fontFamily: 'Metropolis',
+                              fontSize: Dimensions.heightCalc(context, 14))),
+                    ),
+                  ),
+                  SizedBox(
+                    width: Dimensions.widthCalc(context, 20),
+                  ),
+                  SizedBox(
+                      width: Dimensions.widthCalc(context, 160),
+                      height: Dimensions.heightCalc(context, 36),
+                      child: CustomButton(text: 'Apply', onPressed: () {}))
+                ],
+              ),
             )
           ],
         ),

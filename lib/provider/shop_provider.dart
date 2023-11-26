@@ -49,4 +49,9 @@ class ShopProvider extends ChangeNotifier {
     isChecked = isChecked!;
     notifyListeners();
   }
+  void sizeScreen(BuildContext context) {
+    Navigator.pushNamed(context, '/sizeScreen');
+    notifyListeners();
+  }
+
 }

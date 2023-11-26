@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:shop_ease/utilities/dimensions.dart';
 
 class BlackDresses extends StatefulWidget {
   const BlackDresses({super.key});
@@ -21,16 +22,54 @@ class _BlackDressesState extends State<BlackDresses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: MasonryGridView.builder(
-      gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2),
-      itemBuilder: (BuildContext context, int index) => Padding(
-        padding: const EdgeInsets.all(4),
-        child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image(image: NetworkImage(blackDress[index]))),
-      ),
-      itemCount: blackDress.length,
-    ));
+        appBar: AppBar(
+          backgroundColor: const Color(0x000000ff),
+          elevation: 0,
+          title: Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Text('Black Dresses',
+                style: TextStyle(
+                    fontFamily: 'Metropolis',
+                    fontSize: Dimensions.heightCalc(context, 24),
+                    color: Colors.black87)),
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: MasonryGridView.builder(
+            gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2),
+            itemBuilder: (BuildContext context, int index) => Padding(
+              padding: const EdgeInsets.all(4),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Stack(children: [
+                    Image(image: NetworkImage(blackDress[index])),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 135,
+                      ),
+                      child: Container(
+                        width: Dimensions.widthCalc(context, 80),
+                        height: Dimensions.heightCalc(context, 40),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                        ),
+                        child: InkWell(
+                          onTap: () {},
+                          child: const Icon(
+                            Icons.favorite_border,
+                            size: 25,
+                            color: Color(0xffDB3022),
+                          ),
+                        ),
+                      ),
+                    )
+                  ])),
+            ),
+            itemCount: blackDress.length,
+          ),
+        ));
   }
 }

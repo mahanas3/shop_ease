@@ -42,7 +42,7 @@ class _WomensTopsState extends State<WomenTop>
               children: [
                 const Icon(
                   Icons.search,
-                  size: 30,
+                  size: 25,
                   color: Colors.black87,
                 ),
                 Padding(
@@ -50,8 +50,8 @@ class _WomensTopsState extends State<WomenTop>
                   child: badge.Badge(
                     position: BadgePosition.topEnd(),
                     badgeContent: SizedBox(
-                      height: Dimensions.heightCalc(context, 17),
-                      width: Dimensions.widthCalc(context, 17),
+                      height: Dimensions.heightCalc(context, 13),
+                      width: Dimensions.widthCalc(context, 13),
                       child: Center(
                         child: Text(context
                             .read<CartProvider>()
@@ -69,7 +69,7 @@ class _WomensTopsState extends State<WomenTop>
                         },
                         icon: const Icon(CupertinoIcons.cart),
                         color: Colors.black87,
-                        iconSize: 35),
+                        iconSize: 25),
                   ),
                 ),
               ],
@@ -79,11 +79,11 @@ class _WomensTopsState extends State<WomenTop>
       ),
       body: Column(children: [
         Padding(
-          padding: const EdgeInsets.only(left: 15, top: 20),
+          padding: const EdgeInsets.only(right: 120, top: 20),
           child: Text(
             'Women’s tops',
             style: TextStyle(
-                fontSize: Dimensions.heightCalc(context, 30),
+                fontSize: Dimensions.heightCalc(context, 28),
                 color: Colors.black87,
                 fontFamily: 'Metropolis'),
           ),
@@ -158,7 +158,10 @@ class _WomensTopsState extends State<WomenTop>
             color: Colors.white,
             child: Row(
               children: [
-                const Icon(Icons.filter, color: Colors.black),
+                const Padding(
+                  padding: EdgeInsets.only(left: 5),
+                  child: Icon(Icons.filter, color: Colors.black),
+                ),
                 const SizedBox(
                   width: 10,
                 ),
@@ -178,14 +181,289 @@ class _WomensTopsState extends State<WomenTop>
                 const SizedBox(
                   width: 10,
                 ),
-                const Text(
-                  'Price: lowest to high',
-                  style: TextStyle(fontFamily: 'Metropolis2'),
+                InkWell(
+                  onTap: () {
+                    showModalBottomSheet(
+                        context: context,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(25))),
+                        builder: (BuildContext context) {
+                          return Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 50, left: 10),
+                                child: Text(
+                                  'Sort by',
+                                  style: TextStyle(
+                                      fontSize:
+                                          Dimensions.heightCalc(context, 24),
+                                      fontFamily: 'Metropolis'),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 40, right: 220),
+                                child: Text(
+                                  'Popular',
+                                  style: TextStyle(
+                                      fontFamily: 'Metropolis2',
+                                      fontSize:
+                                          Dimensions.heightCalc(context, 20)),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 25, right: 220),
+                                child: Text(
+                                  'Newest',
+                                  style: TextStyle(
+                                      fontSize:
+                                          Dimensions.heightCalc(context, 20),
+                                      fontFamily: 'Metropolis2'),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 25, right: 140),
+                                child: Text(
+                                  'Customer review',
+                                  style: TextStyle(
+                                      fontSize:
+                                          Dimensions.heightCalc(context, 20),
+                                      fontFamily: 'Metropolis2'),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 25, right: 100),
+                                child: Text(
+                                  'Price: lowest to high',
+                                  style: TextStyle(
+                                      fontSize:
+                                          Dimensions.heightCalc(context, 20),
+                                      fontFamily: 'Metropolis2'),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 25, right: 100),
+                                child: Text(
+                                  'Price: highest to low',
+                                  style: TextStyle(
+                                      fontSize:
+                                          Dimensions.heightCalc(context, 20),
+                                      fontFamily: 'Metropolis2'),
+                                ),
+                              )
+                            ],
+                          );
+                        });
+                  },
+                  child: const Text(
+                    'Price: lowest to high',
+                    style: TextStyle(fontFamily: 'Metropolis2'),
+                  ),
                 ),
                 SizedBox(
                   width: Dimensions.widthCalc(context, 40),
                 ),
-                const Icon(Icons.view_list_outlined)
+                InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(25))),
+                        builder: (context) {
+                          return Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 50,
+                                ),
+                                child: Text(
+                                  'Select size',
+                                  style: TextStyle(
+                                      fontSize:
+                                          Dimensions.heightCalc(context, 24),
+                                      fontFamily: 'Metropolis'),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20, left: 10, right: 10),
+                                child: Stack(children: [
+                                  Container(
+                                    width: double.infinity,
+                                    height: Dimensions.heightCalc(context, 150),
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 20, left: 10),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          height: Dimensions.heightCalc(
+                                              context, 40),
+                                          width: Dimensions.widthCalc(
+                                              context, 100),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              border: Border.all(
+                                                  color: Colors.black87)),
+                                          child: Center(
+                                            child: Text('XS',
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        Dimensions.heightCalc(
+                                                            context, 20),
+                                                    fontFamily: 'Metropolis2')),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width:
+                                              Dimensions.widthCalc(context, 15),
+                                        ),
+                                        Container(
+                                          height: Dimensions.heightCalc(
+                                              context, 40),
+                                          width: Dimensions.widthCalc(
+                                              context, 100),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              border: Border.all(
+                                                  color: Colors.black87)),
+                                          child: Center(
+                                            child: Text('S',
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        Dimensions.heightCalc(
+                                                            context, 20),
+                                                    fontFamily: 'Metropolis2')),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width:
+                                              Dimensions.widthCalc(context, 15),
+                                        ),
+                                        Container(
+                                          height: Dimensions.heightCalc(
+                                              context, 40),
+                                          width: Dimensions.widthCalc(
+                                              context, 100),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              border: Border.all(
+                                                  color: Colors.black87)),
+                                          child: Center(
+                                            child: Text('M',
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        Dimensions.heightCalc(
+                                                            context, 20),
+                                                    fontFamily: 'Metropolis2')),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 90, left: 10),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          height: Dimensions.heightCalc(
+                                              context, 40),
+                                          width: Dimensions.widthCalc(
+                                              context, 100),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              border: Border.all(
+                                                  color: Colors.black87)),
+                                          child: Center(
+                                            child: Text('L',
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        Dimensions.heightCalc(
+                                                            context, 20),
+                                                    fontFamily: 'Metropolis2')),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width:
+                                              Dimensions.widthCalc(context, 15),
+                                        ),
+                                        Container(
+                                          height: Dimensions.heightCalc(
+                                              context, 40),
+                                          width: Dimensions.widthCalc(
+                                              context, 100),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              border: Border.all(
+                                                  color: Colors.black87)),
+                                          child: Center(
+                                            child: Text('XL',
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        Dimensions.heightCalc(
+                                                            context, 20),
+                                                    fontFamily: 'Metropolis2')),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ]),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20, left: 10, right: 10),
+                                child: Container(
+                                  height: 50,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.white),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 20),
+                                    child: Row(
+                                      children: [
+                                        Text('Size info',
+                                            style: TextStyle(
+                                                fontSize: Dimensions.heightCalc(
+                                                    context, 18),
+                                                fontFamily: 'Metropolis2')),
+                                        SizedBox(
+                                          width: Dimensions.widthCalc(
+                                              context, 190),
+                                        ),
+                                        IconButton(
+                                            onPressed: () {},
+                                            icon: const Icon(Icons.arrow_right))
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          );
+                        },
+                      );
+                    },
+                    child: const Icon(Icons.view_list_outlined))
               ],
             ),
           ),
