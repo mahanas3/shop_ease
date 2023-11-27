@@ -24,4 +24,5 @@ class RouteName {
   static const String filter = '/filter';
   static const String brand = '/brand';
   static const String tshirtDetails = '/tshirtDetails';
+  static const String myBag = '/myBag';
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_ease/routes/route_name.dart';
+import 'package:shop_ease/screens/bag_screen/mybag_screen.dart';
 import 'package:shop_ease/screens/home/newcollections.dart';
 import 'package:shop_ease/screens/profile_screen/addshippingaddress.dart';
 import 'package:shop_ease/screens/profile_screen/order_screen.dart';
@@ -94,6 +95,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const Brand());
       case RouteName.tshirtDetails:
         return MaterialPageRoute(builder: (context) => const TshirtDetails());
+      case RouteName.myBag:
+        return MaterialPageRoute(builder: (context) => const MyBag());
       default:
         {
           return MaterialPageRoute(

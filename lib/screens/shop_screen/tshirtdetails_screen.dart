@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+import 'package:shop_ease/provider/cart_provider.dart';
 import '../../utilities/dimensions.dart';
 
 class TshirtDetails extends StatefulWidget {
@@ -478,10 +480,15 @@ class _TshirtDetailsState extends State<TshirtDetails> {
                                                                           top:
                                                                               10),
                                                                   child: CustomButton(
-                                                                      text:
-                                                                          'ADD TO CART',
-                                                                      onPressed:
-                                                                          () {}),
+                                                                      text: 'ADD TO CART',
+                                                                      onPressed: () {
+                                                                        context.read<BagProvider>().cartPage(
+                                                                            images.toString(),
+                                                                            color,
+                                                                            size,
+                                                                            price,
+                                                                            context);
+                                                                      }),
                                                                 ),
                                                               )
                                                             ],
