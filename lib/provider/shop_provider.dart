@@ -53,5 +53,4 @@ class ShopProvider extends ChangeNotifier {
     Navigator.pushNamed(context, '/tshirtDetails');
     notifyListeners();
   }
-
 }

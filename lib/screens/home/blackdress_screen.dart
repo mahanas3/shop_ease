@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
+
+import '../../provider/favourite_provider.dart';
 
 class BlackDresses extends StatefulWidget {
   const BlackDresses({super.key});
@@ -57,7 +60,11 @@ class _BlackDressesState extends State<BlackDresses> {
                           color: Colors.white,
                         ),
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            // context
+                            //     .read<FavouriteProvider>()
+                            //     .blackFavourite(blackDress[index], context);
+                          },
                           child: const Icon(
                             Icons.favorite_border,
                             size: 25,

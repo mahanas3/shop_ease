@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
-import 'package:shop_ease/provider/cart_provider.dart';
+import 'package:shop_ease/provider/favourite_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
 class Kurthies extends StatefulWidget {
@@ -122,7 +122,7 @@ class _KurthiesState extends State<Kurthies> {
                   ),
                   child: InkWell(
                     onTap: () {
-                      context.read<CartProvider>().cartFavourite(
+                      context.read<FavouriteProvider>().favourite(
                           tshirtImages[index],
                           name[index],
                           price[index],

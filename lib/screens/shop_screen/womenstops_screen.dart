@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
-import 'package:shop_ease/provider/cart_provider.dart';
+import 'package:shop_ease/provider/favourite_provider.dart';
 import 'package:badges/src/badge.dart' as badge;
 import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/screens/shop_screen/sleevless_screen.dart';
@@ -55,8 +55,8 @@ class _WomensTopsState extends State<WomenTop>
                       width: Dimensions.widthCalc(context, 13),
                       child: Center(
                         child: Text(context
-                            .read<CartProvider>()
-                            .cart
+                            .read<FavouriteProvider>()
+                            .favourites
                             .length
                             .toString()),
                       ),
