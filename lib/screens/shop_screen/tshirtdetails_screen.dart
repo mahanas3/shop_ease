@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
-import 'package:shop_ease/provider/cart_provider.dart';
+import 'package:shop_ease/provider/bag_provider.dart';
 import '../../utilities/dimensions.dart';
 
 class TshirtDetails extends StatefulWidget {
@@ -12,14 +12,16 @@ class TshirtDetails extends StatefulWidget {
 }
 
 class _TshirtDetailsState extends State<TshirtDetails> {
-  List images = [
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVWVMbzEUzdHUfQv6MOSu5XBcduV9XNZsbLSJZpJ12fQyOPjERRXoljAx1Ar1vZtxe1G4&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3QF-axGlBALLyi2CtE-rFDohLinAPgUwKlN6voyCSX96_mVU74A2ph3vTR7V00GMn7iQ&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdcviXNMLRL8oY9Z-zZt5B7gP8ABm4MesIaSxc8wIwheCi_KFkV2_Wdh8NfLvQgbCNI5M&usqp=CAU'
-  ];
 
   @override
   Widget build(BuildContext context) {
+
+    List images = [
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVWVMbzEUzdHUfQv6MOSu5XBcduV9XNZsbLSJZpJ12fQyOPjERRXoljAx1Ar1vZtxe1G4&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3QF-axGlBALLyi2CtE-rFDohLinAPgUwKlN6voyCSX96_mVU74A2ph3vTR7V00GMn7iQ&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdcviXNMLRL8oY9Z-zZt5B7gP8ABm4MesIaSxc8wIwheCi_KFkV2_Wdh8NfLvQgbCNI5M&usqp=CAU'
+    ];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -482,12 +484,12 @@ class _TshirtDetailsState extends State<TshirtDetails> {
                                                                   child: CustomButton(
                                                                       text: 'ADD TO CART',
                                                                       onPressed: () {
-                                                                        context.read<BagProvider>().cartPage(
-                                                                            images.toString(),
-                                                                            color,
-                                                                            size,
-                                                                            price,
-                                                                            context);
+                                                                        // context.read<BagProvider>().cartPage(
+                                                                        //     images.toString(),
+                                                                        //     color,
+                                                                        //     size,
+                                                                        //     price,
+                                                                        //     context);
                                                                       }),
                                                                 ),
                                                               )

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
 class MyBag extends StatefulWidget {
@@ -32,66 +31,6 @@ class _MyBagState extends State<MyBag> {
               style: TextStyle(
                   fontFamily: 'Metropolis',
                   fontSize: Dimensions.heightCalc(context, 30)),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
-            child: ListView.separated(
-              scrollDirection: Axis.vertical,
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemBuilder: (BuildContext context, int index) {
-                return Card(
-                    elevation: 5,
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 6),
-                    child: InkWell(
-                      onTap: () {
-
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              child: Image(
-                                image: NetworkImage(''),
-                                height: Dimensions.heightCalc(context, 90),
-                                width: Dimensions.widthCalc(context, 120),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            SizedBox(
-                              width: Dimensions.widthCalc(context, 40),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.only(bottom: 8),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                   '',
-                                    style: TextStyle(
-                                        fontFamily: 'Metropolis',
-                                        fontSize: Dimensions.heightCalc(
-                                            context, 20)),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ));
-              },
-              separatorBuilder: (BuildContext context, int index) =>
-              const SizedBox(
-                height: 10,
-              ),
-              itemCount: salesImages.length,
             ),
           )
         ],
