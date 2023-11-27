@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shop_ease/provider/bag_provider.dart';
 import 'package:shop_ease/provider/favourite_provider.dart';
 import 'package:shop_ease/provider/home_provider.dart';
 import 'package:shop_ease/provider/profile_provider.dart';
@@ -20,6 +21,7 @@ void main() async {
       ChangeNotifierProvider(create: (context) => FavouriteProvider()),
       ChangeNotifierProvider(create: (context) => AuthProvider()),
       ChangeNotifierProvider(create: (context) => ShopProvider()),
+      ChangeNotifierProvider(create: (context) => BagProvider()),
     ],
     child: const Main(),
   ));

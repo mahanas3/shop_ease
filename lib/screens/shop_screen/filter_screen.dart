@@ -111,31 +111,48 @@ class _FilterScreenState extends State<FilterScreen> {
                   padding: const EdgeInsets.only(top: 30),
                   child: Row(
                     children: [
-                      FloatingActionButton(
-                          backgroundColor: Colors.black87, onPressed: () {}),
-                      SizedBox(
-                        width: Dimensions.widthCalc(context, 10),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: const BoxDecoration(
+                            color: Colors.black87, shape: BoxShape.circle),
                       ),
-                      FloatingActionButton(
-                          backgroundColor: Colors.grey, onPressed: () {}),
                       SizedBox(
-                        width: Dimensions.widthCalc(context, 10),
+                        width: Dimensions.widthCalc(context, 5),
                       ),
-                      FloatingActionButton(
-                          backgroundColor: const Color(0xffB82222),
-                          onPressed: () {}),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: const BoxDecoration(
+                            color: Color(0xffB82222), shape: BoxShape.circle),
+                      ),
                       SizedBox(
-                        width: Dimensions.widthCalc(context, 10),
+                        width: Dimensions.widthCalc(context, 5),
                       ),
-                      FloatingActionButton(
-                          backgroundColor: const Color(0xffBEA9A9),
-                          onPressed: () {}),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: const BoxDecoration(
+                            color: Color(0xffBEA9A9), shape: BoxShape.circle),
+                      ),
                       SizedBox(
-                        width: Dimensions.widthCalc(context, 10),
+                        width: Dimensions.widthCalc(context, 5),
                       ),
-                      FloatingActionButton(
-                          backgroundColor: const Color(0xff151867),
-                          onPressed: () {}),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: const BoxDecoration(
+                            color: Color(0xffE2BB8D), shape: BoxShape.circle),
+                      ),
+                      SizedBox(
+                        width: Dimensions.widthCalc(context, 5),
+                      ),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: const BoxDecoration(
+                            color: Color(0xff151867), shape: BoxShape.circle),
+                      )
                     ],
                   ),
                 ),

@@ -4,12 +4,12 @@ class CustomTextfield extends StatefulWidget {
   CustomTextfield(
       {super.key,
       required this.text1,
-      required this.text2,
+      this.text2,
       required this.controller,
       this.validator});
 
   String text1;
-  String text2;
+  String? text2;
 
   final TextEditingController controller;
 
