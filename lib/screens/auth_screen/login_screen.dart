@@ -106,7 +106,7 @@ class _LoginState extends State<Login> {
               ),
               const Text(
                 'Or login with social account',
-                style: TextStyle(fontFamily: 'Metroplis2', fontSize: 15),
+                style: TextStyle(fontFamily: 'Metropolis2', fontSize: 15),
               ),
               SizedBox(
                 height: Dimensions.heightCalc(context, 20),

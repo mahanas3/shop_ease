@@ -8,7 +8,9 @@ class ShopProvider extends ChangeNotifier {
 
   double get maxValue => _maxValue;
 
-  bool? isChecked = true;
+  bool isChecked = false;
+
+  bool isCheckedd = false;
 
   void womenNew(BuildContext context) {
     Navigator.pushNamed(context, '/womensnew');
@@ -49,8 +51,29 @@ class ShopProvider extends ChangeNotifier {
     isChecked = isChecked!;
     notifyListeners();
   }
+
   void tshirtDetails(BuildContext context) {
     Navigator.pushNamed(context, '/tshirtDetails');
+    notifyListeners();
+  }
+
+  void reviewScreen(BuildContext context) {
+    Navigator.pushNamed(context, '/review');
+    notifyListeners();
+  }
+
+  void ratingCheckbox(bool value) {
+    isChecked = value;
+    notifyListeners();
+  }
+
+  void writeReviewButton(BuildContext context) {
+    Navigator.pushNamed(context, '/writeReview');
+    notifyListeners();
+  }
+
+  void writeReviews(bool values) {
+    isCheckedd = values;
     notifyListeners();
   }
 }

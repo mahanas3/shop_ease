@@ -2,17 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:shop_ease/model_class/user_model.dart';
 import 'package:shop_ease/services/api_function.dart';
 
+import '../routes/route_name.dart';
+
 class AuthProvider extends ChangeNotifier {
   Details? signUpPage;
 
 
-  void signUpScreen(BuildContext context, String UserName, String Password,
-      String Name, String PhoneNo) async {
+  void signUpScreen(BuildContext context, String UserName, String Password, String Name, String PhoneNo) async {
     try {
-      signUpPage =
-          await ApiServices().signUp(UserName, Password, Name, PhoneNo);
+      signUpPage = await ApiServices().signUp(UserName, Password, Name, PhoneNo);
       print(signUpPage);
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, RouteName.homescreen); // Use pushReplacementNamed with the route name
       notifyListeners();
     } catch (e) {
       print(e);

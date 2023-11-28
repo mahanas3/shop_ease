@@ -25,4 +25,6 @@ class RouteName {
   static const String brand = '/brand';
   static const String tshirtDetails = '/tshirtDetails';
   static const String myBag = '/myBag';
+  static const String review = '/review';
+  static const String writeReview = '/writeReview';
 }

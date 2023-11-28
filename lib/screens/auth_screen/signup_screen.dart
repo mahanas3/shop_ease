@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/custom_widget/custom_textfield.dart';
 import 'package:shop_ease/provider/auth_provider.dart';
-
 import '../../utilities/dimensions.dart';
 
 class SignUp extends StatefulWidget {
@@ -165,7 +164,7 @@ class _SignUpState extends State<SignUp> {
                 alignment: Alignment.center,
                 child: Text(
                   'Or sign up with social account',
-                  style: TextStyle(fontFamily: 'Metroplis2', fontSize: 15),
+                  style: TextStyle(fontFamily: 'Metropolis2', fontSize: 15),
                 ),
               ),
               SizedBox(

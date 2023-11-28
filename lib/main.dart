@@ -7,6 +7,7 @@ import 'package:shop_ease/provider/home_provider.dart';
 import 'package:shop_ease/provider/profile_provider.dart';
 import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
+import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/routes/route_navigation.dart';
 
 bool? email;
@@ -34,7 +35,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: email == false ? '/' : '/home',
+      initialRoute: email == false ? RouteName.loginscreen : RouteName.homescreen,
       onGenerateRoute: AppRoute.routesetting,
     );
   }

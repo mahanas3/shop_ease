@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/provider/bag_provider.dart';
+import 'package:shop_ease/provider/shop_provider.dart';
 import '../../utilities/dimensions.dart';
 
 class TshirtDetails extends StatefulWidget {
@@ -12,10 +13,8 @@ class TshirtDetails extends StatefulWidget {
 }
 
 class _TshirtDetailsState extends State<TshirtDetails> {
-
   @override
   Widget build(BuildContext context) {
-
     List images = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVWVMbzEUzdHUfQv6MOSu5XBcduV9XNZsbLSJZpJ12fQyOPjERRXoljAx1Ar1vZtxe1G4&usqp=CAU',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3QF-axGlBALLyi2CtE-rFDohLinAPgUwKlN6voyCSX96_mVU74A2ph3vTR7V00GMn7iQ&usqp=CAU',
@@ -619,30 +618,35 @@ class _TshirtDetailsState extends State<TshirtDetails> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 22, top: 5),
-              child: Row(
-                children: [
-                  Icon(Icons.star,
-                      color: const Color(0xffFFBA49),
-                      size: Dimensions.heightCalc(context, 18)),
-                  Icon(Icons.star,
-                      color: const Color(0xffFFBA49),
-                      size: Dimensions.heightCalc(context, 18)),
-                  Icon(Icons.star,
-                      color: const Color(0xffFFBA49),
-                      size: Dimensions.heightCalc(context, 18)),
-                  Icon(Icons.star,
-                      color: const Color(0xffFFBA49),
-                      size: Dimensions.heightCalc(context, 18)),
-                  Icon(Icons.star,
-                      color: const Color(0xffFFBA49),
-                      size: Dimensions.heightCalc(context, 18)),
-                  Text(
-                    '(10)',
-                    style: TextStyle(
-                        fontFamily: 'Metropolis2',
-                        fontSize: Dimensions.heightCalc(context, 12)),
-                  )
-                ],
+              child: InkWell(
+                onTap: () {
+                  context.read<ShopProvider>().reviewScreen(context);
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.star,
+                        color: const Color(0xffFFBA49),
+                        size: Dimensions.heightCalc(context, 18)),
+                    Icon(Icons.star,
+                        color: const Color(0xffFFBA49),
+                        size: Dimensions.heightCalc(context, 18)),
+                    Icon(Icons.star,
+                        color: const Color(0xffFFBA49),
+                        size: Dimensions.heightCalc(context, 18)),
+                    Icon(Icons.star,
+                        color: const Color(0xffFFBA49),
+                        size: Dimensions.heightCalc(context, 18)),
+                    Icon(Icons.star,
+                        color: const Color(0xffFFBA49),
+                        size: Dimensions.heightCalc(context, 18)),
+                    Text(
+                      '(10)',
+                      style: TextStyle(
+                          fontFamily: 'Metropolis2',
+                          fontSize: Dimensions.heightCalc(context, 12)),
+                    )
+                  ],
+                ),
               ),
             ),
             Padding(
