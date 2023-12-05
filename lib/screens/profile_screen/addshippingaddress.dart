@@ -86,14 +86,7 @@ class _AddShippingAddressState extends State<AddShippingAddress> {
                   child: CustomButton(
                       text: 'SAVE ADDRESS',
                       onPressed: () {
-                        context.read<ProfileProvider>().saveAddressButton(
-                            context,
-                            namecontroller.text,
-                            addresscontroller.text,
-                            citycontroller.text,
-                            statecontroller.text,
-                            zipcodecontroller.text,
-                            countrycontroller.text);
+
                       }))
             ],
           ),

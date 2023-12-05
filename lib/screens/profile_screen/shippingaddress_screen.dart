@@ -3,6 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:shop_ease/provider/profile_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
+import '../../custom_widget/custom_button.dart';
+import '../../custom_widget/custom_textfield.dart';
+
 class ShippingAddress extends StatefulWidget {
   const ShippingAddress({super.key});
 
@@ -13,7 +16,19 @@ class ShippingAddress extends StatefulWidget {
 class _ShippingAddressState extends State<ShippingAddress> {
   @override
   Widget build(BuildContext context) {
-    List name = ['Jane Doe', 'Jane Doe', 'Jane Doe'];
+    final namecontroller = TextEditingController();
+
+    final addresscontroller = TextEditingController();
+
+    final citycontroller = TextEditingController();
+
+    final statecontroller = TextEditingController();
+
+    final zipcodecontroller = TextEditingController();
+
+    final countrycontroller = TextEditingController();
+
+    List name = ['Jane Doe'];
 
     return Scaffold(
       appBar: AppBar(
@@ -22,131 +37,214 @@ class _ShippingAddressState extends State<ShippingAddress> {
         title: const Text('Shipping Addresses',
             style: TextStyle(fontFamily: 'Metropolis', color: Colors.black87)),
       ),
-      body: Consumer<ProfileProvider>(builder:
-          (BuildContext context, ProfileProvider value, Widget? child) {
-        return SingleChildScrollView(
-          child: Column(
-            children: [
-              ListView.separated(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    children: [
+      body: Column(
+        children: [
+          ListView.separated(
+            shrinkWrap: true,
+            itemBuilder: (BuildContext context, int index) {
+              return Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Stack(children: [
+                      Container(
+                        width: double.infinity,
+                        height: Dimensions.heightCalc(context, 160),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white),
+                      ),
                       Padding(
-                        padding:
-                            const EdgeInsets.only(left: 10, right: 10, top: 10),
-                        child: Stack(children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 6),
-                            child: Card(
-                              child: Container(
-                                  color: const Color(0xffFFFFFF),
-                                  height: Dimensions.heightCalc(context, 230),
-                                  width: Dimensions.widthCalc(context, 320),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        bottom: 120, left: 20),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Text(name[index],
-                                                style: TextStyle(
-                                                    fontFamily: 'Metropolis',
-                                                    fontSize:
-                                                        Dimensions.heightCalc(
-                                                            context, 18))),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 140),
-                                              child: TextButton(
-                                                  onPressed: () {},
-                                                  child: Text(
-                                                    'Edit',
-                                                    style: TextStyle(
-                                                        color: const Color(
-                                                            0xffDB3022),
-                                                        fontFamily:
-                                                            'Metropolis',
-                                                        fontSize: Dimensions
-                                                            .heightCalc(
-                                                                context, 18)),
-                                                  )),
-                                            ),
-                                          ],
-                                        ),
-                                        Text(
-                                          '3 NewBridge CourtChino Hills, CA 91709, United States',
-                                          style: TextStyle(
-                                              fontSize: Dimensions.heightCalc(
-                                                  context, 17),
-                                              fontFamily: 'Metropolis2'),
-                                        ),
-                                      ],
-                                    ),
-                                  )),
+                        padding: const EdgeInsets.only(top: 20, left: 16),
+                        child: Text(
+                          name[index],
+                          style: TextStyle(
+                              fontFamily: 'Metropolis',
+                              fontSize: Dimensions.heightCalc(context, 18)),
+                        ),
+                      ),
+                      SizedBox(
+                          width: Dimensions.widthCalc(context, 240),
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 55, left: 16),
+                            child: Text(
+                              '3 NewBridge Court Chino Hills, CA 91709, United States',
+                              style: TextStyle(
+                                  fontSize: Dimensions.heightCalc(context, 15)),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 100, left: 26),
+                          )),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10, left: 280),
+                        child: TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Edit',
+                              style: TextStyle(
+                                  fontSize: Dimensions.heightCalc(context, 18),
+                                  fontFamily: 'Metropolis',
+                                  color: const Color(0xffDB3022)),
+                            )),
+                      ),
+                      Consumer<ProfileProvider>(
+                        builder: (BuildContext context, shippingData,
+                            Widget? child) {
+                          return Padding(
+                            padding: const EdgeInsets.only(
+                              top: 90,
+                            ),
                             child: Row(
                               children: [
                                 Checkbox(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5)),
-                                  activeColor: Colors.black87,
-                                  value: value.checkBoxValues[index],
-                                  onChanged: (bool_) {
-                                    value.toggleCheckbox(index);
-                                  },
-                                ),
-                                const Text(
+                                    value: shippingData.checkBoxValues,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5)),
+                                    activeColor: Colors.black87,
+                                    onChanged: (shippingValues) {
+                                      shippingData.shippingCheckbox();
+                                    }),
+                                Text(
                                   'Use as the shipping address',
                                   style: TextStyle(
-                                      fontFamily: 'Metropolis2', fontSize: 17),
+                                      fontFamily: 'Metropolis',
+                                      fontSize:
+                                          Dimensions.heightCalc(context, 15)),
                                 )
                               ],
                             ),
-                          ),
-                        ]),
-                      ),
-                    ],
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const SizedBox(
-                    height: 5,
-                  );
-                },
-                itemCount: name.length,
-              ),
-              SizedBox(
-                height: Dimensions.heightCalc(context, 15),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 240),
-                child: Container(
-                  height: Dimensions.heightCalc(context, 40),
-                  width: Dimensions.widthCalc(context, 40),
-                  child: FloatingActionButton(
-                    backgroundColor: Colors.black87,
-                    onPressed: () {
-                      context
-                          .read<ProfileProvider>()
-                          .addShippingAddress(context);
-                    },
-                    child: const Icon(Icons.add),
-                  ),
-                ),
-              ),
-            ],
+                          );
+                        },
+                      )
+                    ]),
+                  )
+                ],
+              );
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return SizedBox(
+                height: Dimensions.heightCalc(context, 10),
+              );
+            },
+            itemCount: name.length,
           ),
-        );
-      }),
+          Padding(
+            padding: const EdgeInsets.only(left: 290),
+            child: InkWell(
+              onTap: () {
+                showModalBottomSheet(
+                    context: context,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(25))),
+                    builder: (context) {
+                      return SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 30),
+                              child: Text(
+                                'Adding Shipping Address',
+                                style: TextStyle(
+                                    fontSize:
+                                        Dimensions.heightCalc(context, 20),
+                                    fontFamily: 'Metropolis'),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 40, left: 10, right: 10),
+                              child: CustomTextfield(
+                                text1: 'Full Name',
+                                text2: 'Full Name',
+                                controller: namecontroller,
+                              ),
+                            ),
+                            SizedBox(
+                              height: Dimensions.heightCalc(context, 15),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 10, left: 10),
+                              child: CustomTextfield(
+                                  text1: 'Address',
+                                  text2: 'Address',
+                                  controller: addresscontroller),
+                            ),
+                            SizedBox(
+                              height: Dimensions.heightCalc(context, 15),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 10, left: 10),
+                              child: CustomTextfield(
+                                  text1: 'City',
+                                  text2: 'City',
+                                  controller: citycontroller),
+                            ),
+                            SizedBox(
+                              height: Dimensions.heightCalc(context, 15),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 10, left: 10),
+                              child: CustomTextfield(
+                                  text1: 'State/Province/Region',
+                                  text2: 'State/Province/Region',
+                                  controller: statecontroller),
+                            ),
+                            SizedBox(
+                              height: Dimensions.heightCalc(context, 15),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 10, left: 10),
+                              child: CustomTextfield(
+                                  text1: 'Zip Code (Postal Code)',
+                                  text2: 'Zip Code (Postal Code)',
+                                  controller: zipcodecontroller),
+                            ),
+                            SizedBox(
+                              height: Dimensions.heightCalc(context, 15),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 10, left: 10),
+                              child: Stack(children: [
+                                CustomTextfield(
+                                    text1: 'Country',
+                                    text2: 'Country',
+                                    controller: countrycontroller),
+                                const Padding(
+                                  padding: EdgeInsets.only(top: 20,left: 310),
+                                  child: Icon(Icons.arrow_forward_ios_rounded,size: 20),
+                                )
+                              ]),
+                            ),
+                            SizedBox(
+                              height: Dimensions.heightCalc(context, 50),
+                            ),
+                            SizedBox(
+                                height: Dimensions.heightCalc(context, 50),
+                                width: Dimensions.widthCalc(context, 343),
+                                child: CustomButton(
+                                    text: 'SAVE ADDRESS', onPressed: () {}))
+                          ],
+                        ),
+                      );
+                    });
+              },
+              child: Container(
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.black87),
+                height: Dimensions.heightCalc(context, 40),
+                width: Dimensions.widthCalc(context, 40),
+                child: const Icon(Icons.add, color: Colors.white),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

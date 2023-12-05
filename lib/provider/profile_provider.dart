@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
 class ProfileProvider extends ChangeNotifier {
-  List<bool> checkBoxValues = [false, false, false];
+  bool checkBoxValues = false;
 
   bool isChecked = false;
 
   List<Map<String, dynamic>> saveData = [];
+
+  bool isChecking = false;
 
   void myOrder(BuildContext context) {
     Navigator.pushNamed(context, '/myOrder');
@@ -19,8 +21,8 @@ class ProfileProvider extends ChangeNotifier {
     Navigator.pushNamed(context, '/shippingAddress');
   }
 
-  void toggleCheckbox(int index) {
-    checkBoxValues[index] = !checkBoxValues[index];
+  void shippingCheckbox() {
+    checkBoxValues = !checkBoxValues;
     notifyListeners();
   }
 
@@ -40,15 +42,22 @@ class ProfileProvider extends ChangeNotifier {
     });
     Navigator.pushNamed(context, '/saveAddressButton');
   }
+
   void settings(BuildContext context) {
     Navigator.pushNamed(context, '/settings');
   }
+
   void paymentMethods(BuildContext context) {
     Navigator.pushNamed(context, '/paymentMethods');
   }
+
   void toggleCheckbox1() {
     isChecked = !isChecked;
     notifyListeners();
   }
 
+  void paymentCheckbox() {
+    isChecking = !isChecking;
+    notifyListeners();
+  }
 }

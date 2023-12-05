@@ -238,8 +238,6 @@ class _WriteReviewState extends State<WriteReview> {
                                                 width:
                                                     2.0, // Set the border width
                                               ),
-                                              borderRadius: BorderRadius.circular(
-                                                  8.0), // Set the border radius if you want rounded corners
                                             ),
                                             child: const Icon(
                                               Icons.star,
