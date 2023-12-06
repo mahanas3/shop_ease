@@ -254,7 +254,6 @@ class _MyBagState extends State<MyBag> {
               );
             },
             itemCount: image.length,
-            //itemCount: context.watch<BagProvider>().cartData.length,
           ),
           SizedBox(
             height: Dimensions.heightCalc(context, 20),
@@ -269,8 +268,153 @@ class _MyBagState extends State<MyBag> {
                 width: Dimensions.widthCalc(context, 40),
                 decoration: const BoxDecoration(
                     shape: BoxShape.circle, color: Colors.black87),
-                child:
-                    const Icon(CupertinoIcons.arrow_right, color: Colors.white),
+                child: InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(25))),
+                        context: context,
+                        builder: (context) {
+                          return Column(children: [
+                            Stack(children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 50, right: 20, left: 20),
+                                child: CustomTextfield(
+                                    text1: 'Enter your promo code',
+                                    controller: promeodeController),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 300, top: 60),
+                                child: Container(
+                                    height: Dimensions.heightCalc(context, 40),
+                                    width: Dimensions.widthCalc(context, 40),
+                                    decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.black87),
+                                    child: const Icon(
+                                        CupertinoIcons.arrow_right,
+                                        color: Colors.white)),
+                              ),
+                            ]),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 120, top: 50),
+                              child: Text(
+                                'Your Promo Codes',
+                                style: TextStyle(
+                                    fontSize:
+                                        Dimensions.heightCalc(context, 20),
+                                    fontFamily: 'Metropolis'),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 20, left: 10, right: 10),
+                              child: Stack(children: [
+                                Container(
+                                  height: Dimensions.heightCalc(context, 100),
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.white),
+                                ),
+                                Container(
+                                  height: Dimensions.heightCalc(context, 100),
+                                  width: Dimensions.widthCalc(context, 85),
+                                  decoration:
+                                      const BoxDecoration(color: Colors.black),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 15, top: 35),
+                                  child: Text(
+                                    '10',
+                                    style: TextStyle(
+                                        fontSize:
+                                            Dimensions.heightCalc(context, 34),
+                                        fontFamily: 'Metropolis',
+                                        color: Colors.white),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 55, top: 40),
+                                  child: Text(
+                                    '%',
+                                    style: TextStyle(
+                                        fontFamily: 'Metropolis',
+                                        fontSize:
+                                            Dimensions.heightCalc(context, 15),
+                                        color: Colors.white),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(top: 55, left: 55),
+                                  child: Text(
+                                    'off',
+                                    style: TextStyle(
+                                        fontSize:
+                                            Dimensions.heightCalc(context, 15),
+                                        color: Colors.white,
+                                        fontFamily: 'Metropolis'),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(top: 30, left: 100),
+                                  child: Text(
+                                    'Personal offer',
+                                    style: TextStyle(
+                                        fontFamily: 'Metropolis',
+                                        fontSize:
+                                            Dimensions.heightCalc(context, 18)),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 100, top: 50),
+                                  child: Text(
+                                    'mypromocode2020',
+                                    style: TextStyle(
+                                        fontSize:
+                                            Dimensions.heightCalc(context, 16),
+                                        fontFamily: 'Metropolis2'),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 190, top: 10),
+                                  child: Text(
+                                    '6 days remaining',
+                                    style: TextStyle(
+                                        fontFamily: 'Metropolis',
+                                        fontSize:
+                                            Dimensions.heightCalc(context, 13),
+                                        color: Colors.grey),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 230, top: 30),
+                                  child: SizedBox(
+                                      width: Dimensions.widthCalc(context, 100),
+                                      height:
+                                          Dimensions.heightCalc(context, 45),
+                                      child: CustomButton(
+                                          text: 'Apply', onPressed: () {})),
+                                )
+                              ]),
+                            )
+                          ]);
+                        },
+                      );
+                    },
+                    child: const Icon(CupertinoIcons.arrow_right,
+                        color: Colors.white)),
               ),
             )
           ]),

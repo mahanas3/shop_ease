@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_ease/custom_widget/custom_reviewtextfield.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 import '../../custom_widget/custom_button.dart';
 import '../../provider/shop_provider.dart';
@@ -13,6 +14,8 @@ class WriteReview extends StatefulWidget {
 }
 
 class _WriteReviewState extends State<WriteReview> {
+  final reviewcontroller = TextEditingController();
+
   List images = [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc22kzfOq_lSxgd84tOxqCHJv11JIGeI954A&usqp=CAU',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc22kzfOq_lSxgd84tOxqCHJv11JIGeI954A&usqp=CAU',
@@ -211,42 +214,106 @@ class _WriteReviewState extends State<WriteReview> {
                                     borderRadius: BorderRadius.vertical(
                                         top: Radius.circular(25))),
                                 builder: (BuildContext context) {
-                                  return Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 30),
-                                        child: Text(
-                                          'What is you rate?',
-                                          style: TextStyle(
-                                              fontFamily: 'Metropolis',
-                                              fontSize: Dimensions.heightCalc(
-                                                  context, 20)),
+                                  return SingleChildScrollView(
+                                    scrollDirection: Axis.vertical,
+                                    physics:
+                                        const AlwaysScrollableScrollPhysics(),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 30),
+                                          child: Text(
+                                            'What is you rate?',
+                                            style: TextStyle(
+                                                fontFamily: 'Metropolis',
+                                                fontSize: Dimensions.heightCalc(
+                                                    context, 20)),
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 30),
-                                        child: RatingBarIndicator(
-                                          rating: 0,
-                                          itemCount: 5,
-                                          itemSize: 35,
-                                          itemBuilder: (context, _) =>
-                                              Container(
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                color: Colors.black,
-                                                // Set the border color
-                                                width:
-                                                    2.0, // Set the border width
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 30),
+                                          child: RatingBarIndicator(
+                                            rating: 0,
+                                            itemCount: 5,
+                                            itemSize: 35,
+                                            itemBuilder: (context, _) =>
+                                                Container(
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                  color: Colors.black,
+                                                  // Set the border color
+                                                  width:
+                                                      2.0, // Set the border width
+                                                ),
                                               ),
-                                            ),
-                                            child: const Icon(
-                                              Icons.star,
-                                              color: Color(0x000000ff),
+                                              child: const Icon(
+                                                Icons.star,
+                                                color: Colors.red,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 40, left: 40, right: 40),
+                                          child: Text(
+                                            'Please share your opinion the product',
+                                            style: TextStyle(
+                                                fontSize: Dimensions.heightCalc(
+                                                    context, 20),
+                                                fontFamily: 'Metropolis'),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 20, right: 20, top: 20),
+                                          child: CustomReviewTextField(
+                                              labelText: 'Your Review',
+                                              controller: reviewcontroller),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 20, right: 220),
+                                          child: Container(
+                                            width: Dimensions.widthCalc(
+                                                context, 60),
+                                            height: Dimensions.heightCalc(
+                                                context, 60),
+                                            decoration: const BoxDecoration(
+                                                color: Color(0xffDB3022),
+                                                shape: BoxShape.circle),
+                                            child: const Icon(Icons.camera_alt,
+                                                color: Colors.white),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              right: 200, top: 10),
+                                          child: Text(
+                                            'Add your photos',
+                                            style: TextStyle(
+                                                fontFamily: 'Metropolis',
+                                                fontSize: Dimensions.heightCalc(
+                                                    context, 14)),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 30),
+                                          child: SizedBox(
+                                            width: Dimensions.widthCalc(
+                                                context, 320),
+                                            height: Dimensions.heightCalc(
+                                                context, 50),
+                                            child: CustomButton(
+                                                text: 'SEND REVIEW',
+                                                onPressed: () {}),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   );
                                 });
                           })),

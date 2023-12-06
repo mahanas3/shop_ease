@@ -17,6 +17,9 @@ class _ReviewScreenState extends State<ReviewScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    double userRating = 4.5;
+
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -134,7 +137,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                       child: Row(
                         children: [
                           RatingBarIndicator(
-                              rating: 4,
+                              rating: userRating,
                               itemCount: 5,
                               itemSize: 25,
                               itemBuilder: (context, _) => const Icon(
