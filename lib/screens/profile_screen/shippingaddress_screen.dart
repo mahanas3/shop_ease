@@ -216,8 +216,9 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                     text2: 'Country',
                                     controller: countrycontroller),
                                 const Padding(
-                                  padding: EdgeInsets.only(top: 20,left: 310),
-                                  child: Icon(Icons.arrow_forward_ios_rounded,size: 20),
+                                  padding: EdgeInsets.only(top: 20, left: 310),
+                                  child: Icon(Icons.arrow_forward_ios_rounded,
+                                      size: 20),
                                 )
                               ]),
                             ),

@@ -53,7 +53,7 @@ class _SleevelessState extends State<Sleeveless> {
                           image: AssetImage(tshirtImages[index]),
                           fit: BoxFit.fill,
                           height: Dimensions.heightCalc(context, 150),
-                          width: Dimensions.widthCalc(context, 130),
+                          width: Dimensions.widthCalc(context, 150),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),

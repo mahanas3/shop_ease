@@ -58,7 +58,7 @@ class _TshirtState extends State<Tshirt> {
                             image: AssetImage(tshirtImages[index]),
                             fit: BoxFit.fill,
                             height: Dimensions.heightCalc(context, 150),
-                            width: Dimensions.widthCalc(context, 100),
+                            width: Dimensions.widthCalc(context, 150),
                           ),
                         ),
                         Padding(

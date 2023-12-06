@@ -28,14 +28,14 @@ class _KidsPageState extends State<KidsPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+              padding: const EdgeInsets.only(top: 20, left: 29, right: 29),
               child: Stack(children: [
                 Container(
                   height: Dimensions.heightCalc(context, 90),
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Color(0xffDB3022),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 30, left: 60),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
-import 'package:shop_ease/provider/bag_provider.dart';
+import 'package:shop_ease/provider/favourite_provider.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
 import '../../utilities/dimensions.dart';
 
@@ -572,7 +572,10 @@ class _TshirtDetailsState extends State<TshirtDetails> {
                         ],
                       ),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          context.read<FavouriteProvider>().favourite(
+                              images[0], '', '', context);
+                        },
                         child: const Icon(
                           Icons.favorite_border,
                           size: 20,

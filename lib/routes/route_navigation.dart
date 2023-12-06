@@ -70,7 +70,7 @@ class AppRoute {
       case RouteName.kidsnew:
         return MaterialPageRoute(builder: (context) => const KidsNew());
       case RouteName.blackdress:
-        return MaterialPageRoute(builder: (context) => const BlackDresses());
+        return MaterialPageRoute(builder: (context) => const BlackDress());
       case RouteName.menshoodies:
         return MaterialPageRoute(builder: (context) => const MensHoodies());
       case RouteName.favourite:

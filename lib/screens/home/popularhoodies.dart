@@ -58,7 +58,7 @@ class _PopularHoodiesState extends State<PopularHoodies> {
                           image: NetworkImage(bagImages[index]),
                           fit: BoxFit.fill,
                           height: Dimensions.heightCalc(context, 150),
-                          width: Dimensions.widthCalc(context, 100),
+                          width: Dimensions.widthCalc(context, 150),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 70, top: 10),
