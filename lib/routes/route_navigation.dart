@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_ease/routes/route_name.dart';
+import 'package:shop_ease/screens/bag_screen/checkout_screen.dart';
 import 'package:shop_ease/screens/bag_screen/mybag_screen.dart';
 import 'package:shop_ease/screens/home/newcollections.dart';
 import 'package:shop_ease/screens/profile_screen/addshippingaddress.dart';
@@ -102,6 +103,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const ReviewScreen());
       case RouteName.writeReview:
         return MaterialPageRoute(builder: (context) => const WriteReview());
+      case RouteName.checkout:
+        return MaterialPageRoute(builder: (context) => const CheckOut());
       default:
         {
           return MaterialPageRoute(

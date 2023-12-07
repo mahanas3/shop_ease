@@ -10,4 +10,9 @@ class BagProvider extends ChangeNotifier {
     Navigator.pushNamed(context, '/myBag');
     notifyListeners();
   }
+
+  void checkOut(BuildContext context) {
+    Navigator.pushNamed(context, '/checkout');
+    notifyListeners();
+  }
 }

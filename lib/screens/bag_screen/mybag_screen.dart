@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/custom_widget/custom_textfield.dart';
+import 'package:shop_ease/provider/bag_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
 class MyBag extends StatefulWidget {
@@ -27,7 +29,7 @@ class _MyBagState extends State<MyBag> {
           Padding(
             padding: EdgeInsets.only(right: 20),
             child: Icon(Icons.search, color: Colors.black87),
-          )
+          ),
         ],
       ),
       body: Column(
@@ -91,12 +93,21 @@ class _MyBagState extends State<MyBag> {
                                                     fontFamily: 'Metropolis'),
                                               ),
                                             ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  top: 10, left: 120),
-                                              child: Icon(
-                                                Icons.more_vert_outlined,
-                                                color: Colors.grey,
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 90),
+                                              child: PopupMenuButton(
+                                                itemBuilder:
+                                                    (BuildContext context) => [
+                                                  const PopupMenuItem(
+                                                    child: Text(
+                                                        'Add to favorites'),
+                                                  ),
+                                                  const PopupMenuItem(
+                                                    child: Text(
+                                                        'Delete from the list'),
+                                                  )
+                                                ],
                                               ),
                                             )
                                           ],
@@ -259,10 +270,14 @@ class _MyBagState extends State<MyBag> {
             height: Dimensions.heightCalc(context, 20),
           ),
           Stack(children: [
-            CustomTextfield(
-                text1: 'Enter your promo code', controller: promeodeController),
             Padding(
-              padding: const EdgeInsets.only(left: 300, top: 10),
+              padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+              child: CustomTextfield(
+                  text1: 'Enter your promo code',
+                  controller: promeodeController),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 300, top: 30),
               child: Container(
                 height: Dimensions.heightCalc(context, 40),
                 width: Dimensions.widthCalc(context, 40),
@@ -301,7 +316,7 @@ class _MyBagState extends State<MyBag> {
                             ]),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(right: 120, top: 50),
+                                  const EdgeInsets.only(right: 140, top: 50),
                               child: Text(
                                 'Your Promo Codes',
                                 style: TextStyle(
@@ -387,7 +402,7 @@ class _MyBagState extends State<MyBag> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(left: 190, top: 10),
+                                      const EdgeInsets.only(left: 220, top: 10),
                                   child: Text(
                                     '6 days remaining',
                                     style: TextStyle(
@@ -399,9 +414,9 @@ class _MyBagState extends State<MyBag> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(left: 230, top: 30),
+                                      const EdgeInsets.only(left: 255, top: 35),
                                   child: SizedBox(
-                                      width: Dimensions.widthCalc(context, 100),
+                                      width: Dimensions.widthCalc(context, 80),
                                       height:
                                           Dimensions.heightCalc(context, 45),
                                       child: CustomButton(
@@ -427,7 +442,7 @@ class _MyBagState extends State<MyBag> {
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 20),
                   child: Text('Total amount:',
                       style: TextStyle(
                           color: Colors.grey,
@@ -435,7 +450,7 @@ class _MyBagState extends State<MyBag> {
                           fontFamily: 'Metropolis2')),
                 ),
                 SizedBox(
-                  width: Dimensions.widthCalc(context, 190),
+                  width: Dimensions.widthCalc(context, 180),
                 ),
                 Text(
                   '120\$',
@@ -452,7 +467,11 @@ class _MyBagState extends State<MyBag> {
           SizedBox(
               width: Dimensions.widthCalc(context, 340),
               height: Dimensions.heightCalc(context, 55),
-              child: CustomButton(text: 'CHECK OUT', onPressed: () {}))
+              child: CustomButton(
+                  text: 'CHECK OUT',
+                  onPressed: () {
+                    context.read<BagProvider>().checkOut(context);
+                  }))
         ],
       ),
     );

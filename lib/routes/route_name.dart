@@ -27,4 +27,5 @@ class RouteName {
   static const String myBag = '/myBag';
   static const String review = '/review';
   static const String writeReview = '/writeReview';
+  static const String checkout = '/checkout';
 }
