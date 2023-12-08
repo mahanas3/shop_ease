@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
+import 'package:shop_ease/provider/bag_provider.dart';
 import 'package:shop_ease/provider/favourite_provider.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
 import '../../utilities/dimensions.dart';
@@ -21,6 +22,9 @@ class _TshirtDetailsState extends State<TshirtDetails> {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdcviXNMLRL8oY9Z-zZt5B7gP8ABm4MesIaSxc8wIwheCi_KFkV2_Wdh8NfLvQgbCNI5M&usqp=CAU'
     ];
 
+    void image(){
+
+    }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -573,8 +577,9 @@ class _TshirtDetailsState extends State<TshirtDetails> {
                       ),
                       child: InkWell(
                         onTap: () {
-                          context.read<FavouriteProvider>().favourite(
-                              images[0], '', '', context);
+                          context
+                              .read<FavouriteProvider>()
+                              .favourite(images[0], '', '', context);
                         },
                         child: const Icon(
                           Icons.favorite_border,
@@ -666,7 +671,12 @@ class _TshirtDetailsState extends State<TshirtDetails> {
                 height: Dimensions.heightCalc(context, 70),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 20),
-                  child: CustomButton(text: 'ADD TO CART', onPressed: () {}),
+                  child: CustomButton(
+                      text: 'ADD TO CART',
+                      onPressed: () {
+                        context.read<BagProvider>().cartPage(images[0], 'color',
+                            'size', 'price', 'title', context);
+                      }),
                 ))
           ],
         ),

@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:shop_ease/model_class/fasionsale_model.dart';
+import 'package:shop_ease/model_class/singleuser_model.dart';
 import 'package:shop_ease/model_class/user_model.dart';
 
 class ApiServices {
@@ -25,7 +27,28 @@ class ApiServices {
       throw Exception('Registration Failed');
     }
   }
-  // Future login(){
-  //
-  // }
+
+  Future<SingleUserModel?> getProfile(int id) async {
+    final profileResponse = await http.get(Uri.parse('uri'));
+    if (profileResponse.statusCode == 200) {
+      final jsonData = jsonDecode(profileResponse.body);
+      return SingleUserModel.fromJson(jsonData['data']);
+    }
+    return null;
+  }
+
+// Future<Data?> getFasionSale() async {
+//   try {
+//     final response = await http.get(Uri.parse(
+//         'https://res.cloudinary.com/dlxjbz0xt/image/upload/v1702010173/shopease/skgetu8bggi2qabbghjs.png'));
+//     if (response.statusCode == 200) {
+//       final jsonData = jsonDecode(response.body);
+//       return Data.fromJson(jsonData);
+//     } else {
+//       return null;
+//     }
+//   } catch (e) {
+//     return null;
+//   }
+// }
 }

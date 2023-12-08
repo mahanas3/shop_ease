@@ -71,7 +71,9 @@ class _MyBagState extends State<MyBag> {
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
                                             fit: BoxFit.fill,
-                                            image: NetworkImage(image[index]))),
+                                            image: NetworkImage(context
+                                                .read<BagProvider>()
+                                                .cartData[index]['image']))),
                                   ),
                                   Stack(children: [
                                     Container(
@@ -88,7 +90,9 @@ class _MyBagState extends State<MyBag> {
                                                 padding: const EdgeInsets.only(
                                                     left: 20, top: 10),
                                                 child: Text(
-                                                  'Pullover',
+                                                  context
+                                                      .read<BagProvider>()
+                                                      .cartData[index]['title'],
                                                   style: TextStyle(
                                                       fontSize:
                                                           Dimensions.heightCalc(
