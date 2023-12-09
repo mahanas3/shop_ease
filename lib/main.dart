@@ -14,7 +14,9 @@ bool? email;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
+  // SharedPreferences prefs = await SharedPreferences.getInstance();
+  // prefs.setString('intValue', "6558dd199ca38827ad0a5d84");
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => HomeProvider()),
@@ -35,7 +37,8 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: email == false ? RouteName.loginscreen : RouteName.homescreen,
+      initialRoute:
+          email == false ? RouteName.loginscreen : RouteName.homescreen,
       onGenerateRoute: AppRoute.routesetting,
     );
   }

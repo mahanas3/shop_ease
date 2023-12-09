@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
+import '../model_class/singleuser_model.dart';
+import '../services/api_function.dart';
+
 class ProfileProvider extends ChangeNotifier {
   bool checkBoxValues = false;
 
@@ -8,6 +11,9 @@ class ProfileProvider extends ChangeNotifier {
   List<Map<String, dynamic>> saveData = [];
 
   bool isChecking = false;
+
+  SingleUserModel? getuser;
+
 
   void myOrder(BuildContext context) {
     Navigator.pushNamed(context, '/myOrder');
@@ -58,6 +64,11 @@ class ProfileProvider extends ChangeNotifier {
 
   void paymentCheckbox() {
     isChecking = !isChecking;
+    notifyListeners();
+  }
+
+  void getUser(int id) async {
+    getuser = await ApiServices().getProfile(id);
     notifyListeners();
   }
 }

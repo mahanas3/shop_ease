@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:shop_ease/model_class/fasionsale_model.dart';
 import 'package:shop_ease/model_class/singleuser_model.dart';
 import 'package:shop_ease/model_class/user_model.dart';
 

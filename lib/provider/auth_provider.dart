@@ -1,13 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:shop_ease/model_class/singleuser_model.dart';
 import 'package:shop_ease/model_class/user_model.dart';
 import 'package:shop_ease/services/api_function.dart';
 import '../routes/route_name.dart';
 
 class AuthProvider extends ChangeNotifier {
   Details? signUpPage;
-
-  SingleUserModel? getuser;
 
   void signUpScreen(BuildContext context, String UserName, String Password,
       String Name, String PhoneNo) async {
@@ -30,11 +27,6 @@ class AuthProvider extends ChangeNotifier {
 
   void forgotPassword(BuildContext context) {
     Navigator.pushNamed(context, '/forgot');
-    notifyListeners();
-  }
-
-  void getUser(int id) async {
-    getuser = await ApiServices().getProfile(id);
     notifyListeners();
   }
 }
