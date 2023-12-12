@@ -23,9 +23,9 @@ class _KurthiesState extends State<Kurthies> {
     ];
     List name = [
       'Mango',
-      'Dorothi Perkings',
+      'Dorothy Perking',
       'Mango',
-      'Dorothi Perkings',
+      'Dorothy Perking',
       'Kurthi'
     ];
 
