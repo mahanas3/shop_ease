@@ -39,7 +39,7 @@ class Main extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute:
           email == false ? RouteName.loginscreen : RouteName.homescreen,
-      onGenerateRoute: AppRoute.routesetting,
+      onGenerateRoute: AppRoute.routeSetting,
     );
   }
 }

@@ -30,7 +30,7 @@ import '../screens/shop_screen/newwomens_screen.dart';
 import '../screens/shop_screen/womenstops_screen.dart';
 
 class AppRoute {
-  static Route<dynamic> routesetting(RouteSettings setting) {
+  static Route<dynamic> routeSetting(RouteSettings setting) {
     switch (setting.name) {
       case RouteName.loginscreen:
         return MaterialPageRoute(

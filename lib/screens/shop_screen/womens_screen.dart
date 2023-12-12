@@ -28,7 +28,7 @@ class _WomenScreenState extends State<WomenScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20, left: 29, right: 29),
+              padding: const EdgeInsets.only(top: 20, left: 29, right: 20),
               child: Stack(children: [
                 Container(
                   height: Dimensions.heightCalc(context, 90),
@@ -74,7 +74,7 @@ class _WomenScreenState extends State<WomenScreen> {
               ]),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+              padding: const EdgeInsets.only(left: 20, right: 10, top: 10),
               child: ListView.separated(
                 scrollDirection: Axis.vertical,
                 physics: const NeverScrollableScrollPhysics(),
@@ -97,8 +97,8 @@ class _WomenScreenState extends State<WomenScreen> {
                               Container(
                                 child: Image(
                                   image: NetworkImage(salesImages[index]),
-                                  height: Dimensions.heightCalc(context, 90),
-                                  width: Dimensions.widthCalc(context, 120),
+                                  height: Dimensions.heightCalc(context, 110),
+                                  width: Dimensions.widthCalc(context, 130),
                                   fit: BoxFit.fill,
                                 ),
                               ),

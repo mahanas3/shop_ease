@@ -13,7 +13,7 @@ class AuthProvider extends ChangeNotifier {
           await ApiServices().signUp(UserName, Password, Name, PhoneNo);
       print(signUpPage);
       Navigator.pushReplacementNamed(context,
-          RouteName.homescreen); // Use pushReplacementNamed with the route name
+          RouteName.homescreen);
       notifyListeners();
     } catch (e) {
       print(e);

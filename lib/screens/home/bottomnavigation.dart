@@ -20,7 +20,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     const Catergories(),
     const MyBag(),
     const Favourite(),
-     Profile(id: 1,),
+    Profile(),
   ];
 
   void onitemTapped(int num) {

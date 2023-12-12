@@ -4,9 +4,9 @@ import 'package:shop_ease/provider/profile_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
 class Profile extends StatefulWidget {
-  Profile({super.key, required this.id});
+  Profile({super.key,});
 
-  int? id;
+  //int? id;
 
   @override
   State<Profile> createState() => _ProfileState();
