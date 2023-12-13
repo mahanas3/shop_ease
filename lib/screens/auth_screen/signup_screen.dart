@@ -156,7 +156,7 @@ class _SignUpState extends State<SignUp> {
                           phoneNoController.text);
                       SharedPreferences prefs =
                           await SharedPreferences.getInstance();
-                      prefs.setString('isloggedIn', '6558dd199ca38827ad0a5d84');
+                      prefs.setBool('isLogin', true);
                     }
                   },
                 ),

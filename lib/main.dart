@@ -10,12 +10,12 @@ import 'package:shop_ease/provider/shop_provider.dart';
 import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/routes/route_navigation.dart';
 
-bool? email;
+bool email = false;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setString('intValue', "6558dd199ca38827ad0a5d84");
+  email = prefs?.getBool('isLogin') ?? false;
 
   runApp(MultiProvider(
     providers: [
@@ -37,8 +37,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute:
-          email == false ? RouteName.loginscreen : RouteName.homescreen,
+      initialRoute: email ? RouteName.loginscreen : RouteName.homescreen,
       onGenerateRoute: AppRoute.routeSetting,
     );
   }
