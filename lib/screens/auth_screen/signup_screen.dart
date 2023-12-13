@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shop_ease/custom_widget/custom_button.dart';
 import 'package:shop_ease/custom_widget/custom_textfield.dart';
 import 'package:shop_ease/provider/auth_provider.dart';
@@ -15,18 +16,18 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
-    final namecontroller = TextEditingController();
-    final emailcontroller = TextEditingController();
-    final passwordcontroller = TextEditingController();
-    final phonenocontroller = TextEditingController();
+    final nameController = TextEditingController();
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+    final phoneNoController = TextEditingController();
 
-    var _formkey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Form(
-          key: _formkey,
+          key: formKey,
           child: Column(
             children: [
               Padding(
@@ -47,7 +48,7 @@ class _SignUpState extends State<SignUp> {
                 child: CustomTextfield(
                     text1: 'UserName',
                     text2: 'UserName',
-                    controller: namecontroller,
+                    controller: nameController,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'Enter valid name';
@@ -63,7 +64,7 @@ class _SignUpState extends State<SignUp> {
                 child: CustomTextfield(
                   text1: 'Password',
                   text2: 'Password',
-                  controller: passwordcontroller,
+                  controller: passwordController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Enter a valid password!';
@@ -82,7 +83,7 @@ class _SignUpState extends State<SignUp> {
                 child: CustomTextfield(
                   text1: 'Email',
                   text2: 'Email',
-                  controller: emailcontroller,
+                  controller: emailController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Enter an email address';
@@ -104,7 +105,7 @@ class _SignUpState extends State<SignUp> {
                 child: CustomTextfield(
                   text1: 'PhoneNo',
                   text2: 'PhoneNo',
-                  controller: phonenocontroller,
+                  controller: phoneNoController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Enter a valid Number!';
@@ -145,14 +146,17 @@ class _SignUpState extends State<SignUp> {
                 width: Dimensions.widthCalc(context, 325),
                 child: CustomButton(
                   text: 'SIGN UP',
-                  onPressed: () {
-                    if (_formkey.currentState!.validate()) {
+                  onPressed: () async {
+                    if (formKey.currentState!.validate()) {
                       context.read<AuthProvider>().signUpScreen(
                           context,
-                          namecontroller.text,
-                          passwordcontroller.text,
-                          emailcontroller.text,
-                          phonenocontroller.text);
+                          nameController.text,
+                          passwordController.text,
+                          emailController.text,
+                          phoneNoController.text);
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      prefs.setString('isloggedIn', '6558dd199ca38827ad0a5d84');
                     }
                   },
                 ),

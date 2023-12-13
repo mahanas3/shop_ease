@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 import 'package:shop_ease/model_class/singleuser_model.dart';
 import 'package:shop_ease/model_class/user_model.dart';
 
@@ -7,7 +8,7 @@ class ApiServices {
   Future<Details> signUp(
       String UserName, String Password, String Email, String PhoneNo) async {
     final http.Response response = await http.post(
-        Uri.parse('https://3d07-59-93-46-47.ngrok.io/api/user-registration'),
+        Uri.parse('https://2903-117-196-24-78.ngrok.io/api/user-registration'),
         headers: <String, String>{
           'Content-type': 'application/x-www-form-urlencoded'
         },
@@ -24,6 +25,27 @@ class ApiServices {
     } else {
       print(jsonDecode(response.body));
       throw Exception('Registration Failed');
+    }
+  }
+
+  Future<Details?> signIn(String Email, String Password) async {
+    try {
+      Response response = await post(
+          Uri.parse('https://2903-117-196-24-78.ngrok.io/api/user-login'),
+          headers: <String, String>{
+            'Content-type': 'application/x-www-form-urlencoded'
+          },
+          body: {
+            'email': Email,
+            'password': Password
+          });
+      if (response.statusCode == 200) {
+        return Details.fromJson(jsonDecode(response.body));
+      } else {
+        throw Exception('Login failed');
+      }
+    } catch (e) {
+      print(e);
     }
   }
 

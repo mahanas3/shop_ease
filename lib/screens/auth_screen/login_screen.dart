@@ -13,16 +13,16 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final emailcontroller1 = TextEditingController();
-  final passwordcontroller1 = TextEditingController();
+  final emailController1 = TextEditingController();
+  final passwordController1 = TextEditingController();
 
-  final _formkey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        key: _formkey,
+        key: formKey,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -42,7 +42,7 @@ class _LoginState extends State<Login> {
                 child: CustomTextfield(
                   text1: 'Email',
                   text2: 'Email',
-                  controller: emailcontroller1,
+                  controller: emailController1,
                   validator: (value) {
                     if (value == null ||
                         value.isEmpty ||
@@ -60,7 +60,7 @@ class _LoginState extends State<Login> {
                 child: CustomTextfield(
                   text1: 'Password',
                   text2: 'Password',
-                  controller: passwordcontroller1,
+                  controller: passwordController1,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Enter a valid password!';
@@ -88,7 +88,7 @@ class _LoginState extends State<Login> {
                   ],
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: Dimensions.heightCalc(context, 30),
               ),
               SizedBox(
@@ -97,8 +97,9 @@ class _LoginState extends State<Login> {
                   child: CustomButton(
                       text: 'LOGIN',
                       onPressed: () {
-                        if (_formkey.currentState!.validate()) {
-                          context.read<AuthProvider>().login(context);
+                        if (formKey.currentState!.validate()) {
+                          context.read<AuthProvider>().login(context,
+                              emailController1.text, passwordController1.text);
                         }
                       })),
               SizedBox(
@@ -132,7 +133,7 @@ class _LoginState extends State<Login> {
                         ],
                       ),
                     ),
-                     SizedBox(
+                    SizedBox(
                       width: Dimensions.widthCalc(context, 20),
                     ),
                     Container(

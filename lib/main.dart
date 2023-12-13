@@ -14,8 +14,8 @@ bool? email;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // SharedPreferences prefs = await SharedPreferences.getInstance();
-  // prefs.setString('intValue', "6558dd199ca38827ad0a5d84");
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString('intValue', "6558dd199ca38827ad0a5d84");
 
   runApp(MultiProvider(
     providers: [
