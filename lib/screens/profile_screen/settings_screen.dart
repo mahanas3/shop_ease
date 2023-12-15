@@ -27,7 +27,6 @@ class _SettingsState extends State<Settings> {
     final repeatnewpasswordcontroller = TextEditingController();
 
     bool status = false;
-    bool isSwitchOn = false;
 
     return Scaffold(
       appBar: AppBar(
