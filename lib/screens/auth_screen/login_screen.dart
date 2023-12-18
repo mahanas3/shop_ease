@@ -98,7 +98,7 @@ class _LoginState extends State<Login> {
                       text: 'LOGIN',
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          context.read<AuthProvider>().login(context,
+                          context.read<AuthProvider>().loginScreen(context,
                               emailController1.text, passwordController1.text);
                         }
                       })),

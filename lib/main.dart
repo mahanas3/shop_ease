@@ -7,6 +7,7 @@ import 'package:shop_ease/provider/home_provider.dart';
 import 'package:shop_ease/provider/profile_provider.dart';
 import 'package:shop_ease/provider/auth_provider.dart';
 import 'package:shop_ease/provider/shop_provider.dart';
+import 'package:shop_ease/provider/user_provider.dart';
 import 'package:shop_ease/routes/route_name.dart';
 import 'package:shop_ease/routes/route_navigation.dart';
 
@@ -25,6 +26,7 @@ void main() async {
       ChangeNotifierProvider(create: (context) => AuthProvider()),
       ChangeNotifierProvider(create: (context) => ShopProvider()),
       ChangeNotifierProvider(create: (context) => BagProvider()),
+      ChangeNotifierProvider(create: (context) => UserProvider()),
     ],
     child: const Main(),
   ));

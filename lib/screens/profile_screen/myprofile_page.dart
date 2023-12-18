@@ -4,9 +4,9 @@ import 'package:shop_ease/provider/profile_provider.dart';
 import 'package:shop_ease/utilities/dimensions.dart';
 
 class Profile extends StatefulWidget {
-   Profile({super.key,});
+  const Profile({super.key, required this.id});
 
-  int? id;
+  final String id;
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -16,7 +16,7 @@ class _ProfileState extends State<Profile> {
   @override
   void initState() {
     super.initState();
-    context.read<ProfileProvider>().getUser(widget.id);
+    context.read<ProfileProvider>().getUserProfile(widget.id, context);
   }
 
   @override
@@ -66,12 +66,16 @@ class _ProfileState extends State<Profile> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(right: 90),
-                      child: Text(
-                        'User',
-                        style: TextStyle(
-                            fontSize: Dimensions.heightCalc(context, 22),
-                            fontFamily: 'Metropolis'),
-                      ),
+                      child: Consumer<ProfileProvider>(builder:
+                          (BuildContext context, ProfileProvider value,
+                              Widget? child) {
+                        return Text(
+                          'User',
+                          style: TextStyle(
+                              fontSize: Dimensions.heightCalc(context, 22),
+                              fontFamily: 'Metropolis'),
+                        );
+                      }),
                     ),
                     const SizedBox(
                       height: 5,

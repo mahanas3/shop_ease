@@ -1,5 +1,4 @@
-import 'package:flutter/cupertino.dart';
-
+import 'package:flutter/material.dart';
 import '../model_class/singleuser_model.dart';
 import '../services/api_function.dart';
 
@@ -12,8 +11,9 @@ class ProfileProvider extends ChangeNotifier {
 
   bool isChecking = false;
 
-  SingleUserModel? getuser;
+  Data? getUser;
 
+  bool loading = false;
 
   void myOrder(BuildContext context) {
     Navigator.pushNamed(context, '/myOrder');
@@ -67,8 +67,21 @@ class ProfileProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void getUser(int id) async {
-    getuser = await ApiServices().getProfile(id);
-    notifyListeners();
+  void getUserProfile(String id, BuildContext context) async {
+    try {
+      loading = true;
+      notifyListeners();
+      getUser = await ApiServices().getProfileDetails(id);
+      print(id);
+      loading = false;
+      notifyListeners();
+    } catch (e) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Something Went Wrong')));
+      }
+      loading = false;
+      notifyListeners();
+    }
   }
 }

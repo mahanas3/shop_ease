@@ -7,7 +7,9 @@ import '../shop_screen/categories1.dart';
 import 'fasionsale_screen.dart';
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
+  BottomNavigation({super.key,required this.id});
+
+  String? id;
 
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
@@ -15,15 +17,18 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigationState extends State<BottomNavigation> {
   int index = 0;
+
   List navigation = [
     const Home(),
     const Catergories(),
     const MyBag(),
     const Favourite(),
-    Profile(),
+    Profile(
+      id: widget.id!,
+    ),
   ];
 
-  void onitemTapped(int num) {
+  void onItemTapped(int num) {
     if (num >= 0 && num < navigation.length) {
       setState(() {
         index = num;
@@ -39,7 +44,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         currentIndex: index,
         selectedItemColor: Colors.red,
         unselectedItemColor: const Color(0xff9B9B9B),
-        onTap: onitemTapped,
+        onTap: onItemTapped,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(

@@ -30,7 +30,7 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
-  void login(
+  void loginScreen(
     BuildContext context,
     String userName,
     String password,

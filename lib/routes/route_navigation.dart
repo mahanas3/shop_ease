@@ -42,7 +42,7 @@ class AppRoute {
         );
       case RouteName.homescreen:
         return MaterialPageRoute(
-          builder: (context) => const BottomNavigation(),
+          builder: (context) =>  BottomNavigation(),
         );
       case RouteName.forgotscreen:
         return MaterialPageRoute(
